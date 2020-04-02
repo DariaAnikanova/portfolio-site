@@ -1,0 +1,250 @@
+$font-stack: 'Montserrat', 'sans-serif';
+$primary-color: #EEFBFF;
+$color2: #db3e1f;
+$color3: #4d4949;
+$trans-color1: rgba(158, 66, 47, 0.75);
+$trans-color2: rgba(0,92,179, 0.75);
+$color__blue: #008fec;
+$color__dark-blue: #005cb3;
+
+
+
+html {
+    font: 16px $font-stack;
+    letter-spacing: 0.1rem;
+}
+
+body {
+scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+-ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Disable scrollbar Chrome/Safari/Webkit */
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: transparent;
+    padding: 1em;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    transition: background-color 100ms ease-in-out;
+
+
+    .header__logo {
+
+        & span {
+            background: transparent;
+            padding: 1em;
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 50vw;
+                border-top: 3px solid $primary-color;
+                position: absolute;
+                left: -50vw;
+                top: 1.4rem;
+                border-radius: 10px;
+            }
+
+            &:after {
+                content: "";
+                width: 50vw;
+                border-top: 3px solid $primary-color;
+                position: absolute;
+                top: 1.4rem;
+                right: -50vw;
+                border-radius: 10px;
+            }
+        }
+
+        & a {
+            text-decoration: none;
+            color: $primary-color;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+    }
+
+    .header__nav__ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & li {
+            padding: 1rem 1rem 0 1rem;
+            position: relative;
+
+
+            & a {
+                color: $primary-color;
+                border-bottom: 3px solid transparent;
+                transition: all ease-in-out 250ms;
+            }
+
+            & a:hover {
+                color: white;
+                border-bottom: 3px solid $primary-color;
+
+            }
+        }
+    }
+ }
+
+.nav-scrolled {
+    background-color: $primary-color;
+
+    .header__logo {
+        color: black;
+
+        &:before, &:after {
+            border-top: 3px solid $color2;
+        }
+    }
+}
+
+
+main {
+    background: $color3;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+        color: $primary-color;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .content {
+        min-height: 100vh;
+        max-height: fit-content;
+        text-align: center;
+    }
+}
+
+.hero__container {
+    background-image: linear-gradient(to top left, $trans-color1, $trans-color2), url(/images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    position: relative;
+    width: 100%;
+
+
+    h2 {
+        color: $primary-color;
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        text-align: center;
+        color: $primary-color;
+        line-height: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    a {
+        position: absolute;
+        bottom: 1rem;
+        right: 3rem;
+        color: $primary-color;
+        text-decoration: none;
+    }
+
+    .btn__deco {
+        width: 4px;
+        height: 3rem;
+        background-color: $primary-color;
+        position: absolute;
+        bottom: 0;
+        right: 2rem;
+        border-radius: 10px;
+    }
+}
+
+.main__portfolio {
+    display: flex;
+    flex-direction: column;
+
+    .project__container {
+        margin-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, ));
+        grid-template-rows: 300px;
+        grid-column-gap: 0px;
+        grid-row-gap: 1rem;
+
+        .project {
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0rem 1rem 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            height: fit-content;
+
+            .img-container {
+                grid-area: 1/1/2/2;
+
+                height: 200px;
+                background-image: url('http://placekitten.com/200/300');
+                background-size: cover;
+            }
+
+            h4 {
+                grid-area: 1/2/2/3;
+            }
+
+            p {
+                grid-area: 2/1/3/3;
+            }
+
+        }
+
+        .project-1 {
+            grid-area: 1 / 1 / 2 / 2;
+            background: $color__blue;
+        }
+
+        .project-2 {
+            grid-area: 2 / 1 / 3 / 2;
+            background-color: $color__dark-blue;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    color: $color2;
+
+    small {
+        margin-bottom: 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Media Queries */
+
+@-moz-document url-prefix() { /* Disable scrollbar Firefox */
+    html{
+      scrollbar-width: none;
+    }
+}

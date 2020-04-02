@@ -1,0 +1,296 @@
+html {
+  font: 16px "Montserrat", "sans-serif";
+  letter-spacing: 0.1rem;
+}
+
+body {
+  scrollbar-width: none;
+  /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;
+  /* Disable scrollbar IE 10+ */
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* Disable scrollbar Chrome/Safari/Webkit */
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  background-color: transparent;
+  padding: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 100;
+  -webkit-transition: background-color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out;
+}
+
+header .header__logo span {
+  background: transparent;
+  padding: 1em;
+  position: relative;
+}
+
+header .header__logo span:before {
+  content: "";
+  width: 50vw;
+  border-top: 3px solid #EEFBFF;
+  position: absolute;
+  left: -50vw;
+  top: 1.4rem;
+  border-radius: 10px;
+}
+
+header .header__logo span:after {
+  content: "";
+  width: 50vw;
+  border-top: 3px solid #EEFBFF;
+  position: absolute;
+  top: 1.4rem;
+  right: -50vw;
+  border-radius: 10px;
+}
+
+header .header__logo a {
+  text-decoration: none;
+  color: #EEFBFF;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+header .header__nav__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .header__nav__ul li {
+  padding: 1rem 1rem 0 1rem;
+  position: relative;
+}
+
+header .header__nav__ul li a {
+  color: #EEFBFF;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
+}
+
+header .header__nav__ul li a:hover {
+  color: white;
+  border-bottom: 3px solid #EEFBFF;
+}
+
+.nav-scrolled {
+  background-color: #EEFBFF;
+}
+
+.nav-scrolled .header__logo {
+  color: black;
+}
+
+.nav-scrolled .header__logo:before, .nav-scrolled .header__logo:after {
+  border-top: 3px solid #db3e1f;
+}
+
+main {
+  background: #4d4949;
+  position: relative;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main h3 {
+  color: #EEFBFF;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+main .content {
+  min-height: 100vh;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  text-align: center;
+}
+
+.hero__container {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(rgba(158, 66, 47, 0.75)), to(rgba(0, 92, 179, 0.75))), url(/images/bg.jpg);
+  background-image: linear-gradient(to top left, rgba(158, 66, 47, 0.75), rgba(0, 92, 179, 0.75)), url(/images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.hero__container h2 {
+  color: #EEFBFF;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__container p {
+  text-align: center;
+  color: #EEFBFF;
+  line-height: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.hero__container a {
+  position: absolute;
+  bottom: 1rem;
+  right: 3rem;
+  color: #EEFBFF;
+  text-decoration: none;
+}
+
+.hero__container .btn__deco {
+  width: 4px;
+  height: 3rem;
+  background-color: #EEFBFF;
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  border-radius: 10px;
+}
+
+.main__portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main__portfolio .project__container {
+  margin-top: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px));
+  -ms-grid-rows: 300px;
+      grid-template-rows: 300px;
+  grid-column-gap: 0px;
+  grid-row-gap: 1rem;
+}
+
+.main__portfolio .project__container .project {
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0rem 1rem 0 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.main__portfolio .project__container .project .img-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1/1/2/2;
+  height: 200px;
+  background-image: url("http://placekitten.com/200/300");
+  background-size: cover;
+}
+
+.main__portfolio .project__container .project h4 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1/2/2/3;
+}
+
+.main__portfolio .project__container .project p {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 2/1/3/3;
+}
+
+.main__portfolio .project__container .project-1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  background: #008fec;
+}
+
+.main__portfolio .project__container .project-2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: #005cb3;
+}
+
+footer {
+  text-align: center;
+  color: #db3e1f;
+}
+
+footer small {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+}
+
+/* Media Queries */
+@-moz-document url-prefix() {
+  /* Disable scrollbar Firefox */
+  html {
+    scrollbar-width: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
