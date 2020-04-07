@@ -7,21 +7,19 @@ $trans-color2: rgba(0,92,179, 0.75);
 $color__blue: #008fec;
 $color__dark-blue: #005cb3;
 
-
-
 html {
     font: 16px $font-stack;
     letter-spacing: 0.1rem;
 }
 
 body {
-scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
--ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
-overflow-y: scroll;
+    scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+    -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+    overflow-y: scroll;
 
     &::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* Disable scrollbar Chrome/Safari/Webkit */
+        width: 0px;
+        background: transparent; /* Disable scrollbar Chrome/Safari/Webkit */
     }
 }
 
@@ -34,7 +32,7 @@ header {
     align-items: center;
     position: fixed;
     z-index: 100;
-    transition: background-color 100ms ease-in-out;
+    transition: all 100ms ease-in;
 
 
     .header__logo {
@@ -96,30 +94,49 @@ header {
             }
         }
     }
- }
+}
 
+// Styling for header on scroll
 .nav-scrolled {
     background-color: $primary-color;
+    border-bottom: 1px solid $color3;
 
     .header__logo {
-        color: black;
 
-        &:before, &:after {
-            border-top: 3px solid $color2;
+        & a {
+            color: black;
+        }
+
+        .logo-deco {
+            &:before, &:after {
+                border-top: 3px solid $color2;
+            }
+        }
+    }
+    .header__nav__ul {
+        & li {
+            & a {
+                color: $color3;
+            }
+
+            & a:hover {
+                color: black;
+                border-bottom: 3px solid $color2;
+            }
         }
     }
 }
 
 
 main {
-    background: $color3;
+    background: $primary-color;
     position: relative;
     width: 100%;
     align-items: center;
     justify-content: center;
 
     h3 {
-        color: $primary-color;
+        color: $color3;
         text-transform: uppercase;
         font-size: 1.5rem;
         padding-top: 1.5rem;
@@ -183,51 +200,71 @@ main {
     flex-direction: column;
 
     .project__container {
-        margin-top: 1.5rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, ));
-        grid-template-rows: 300px;
-        grid-column-gap: 0px;
-        grid-row-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-auto-rows: fit-content;
+        margin-top: 24px;
 
         .project {
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 0rem 1rem 0 1rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            height: fit-content;
+            grid-template-rows: repeat(2, minmax(fit-content, 200px));
+            overflow: hidden;
+            border: 1px solid $color3;
 
             .img-container {
-                grid-area: 1/1/2/2;
-
-                height: 200px;
-                background-image: url('http://placekitten.com/200/300');
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
                 background-size: cover;
+                position: relative;
+                z-index: 3;
+                grid-area: 1/1/3/2;
             }
 
-            h4 {
-                grid-area: 1/2/2/3;
+            .project-info {
+                background-color: #EEFBFF;
+                grid-area: 1/2/3/3;
+                position: relative;
+                z-index: 4;
+                padding: 1rem;
+
+                h4 {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.7rem;
+                }
+
+                .read-more {
+                    border-radius: 2px;
+                    background-color: $color2;
+                }
             }
-
-            p {
-                grid-area: 2/1/3/3;
-            }
-
         }
+    }
+}
 
-        .project-1 {
-            grid-area: 1 / 1 / 2 / 2;
-            background: $color__blue;
-        }
+.project-1 {
+    .img-container {
+        background-image: url("http://placekitten.com/g/500/300");
+    }
+}
 
-        .project-2 {
-            grid-area: 2 / 1 / 3 / 2;
-            background-color: $color__dark-blue;
-        }
+.project-2 {
+    .img-container {
+        background-image: url("http://placekitten.com/g/700/400");
+    }
+}
+
+.project-3 {
+    .img-container {
+        background-image: url("http://placekitten.com/g/800/400");
+    }
+}
+
+.project-4 {
+    .img-container {
+        background-image: url("http://placekitten.com/g/400/400");
     }
 }
 
@@ -244,7 +281,28 @@ footer {
 /* Media Queries */
 
 @-moz-document url-prefix() { /* Disable scrollbar Firefox */
-    html{
+    html {
       scrollbar-width: none;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .main__portfolio {
+        .project__container {
+            margin-left: 1rem;
+            margin-right: 1rem;
+
+            .project {
+                grid-template-rows: repeat(2, 200px);
+
+                .img-container {
+                    grid-area: 1/1/3/3;
+                }
+
+                .project-info {
+                    grid-area: 2/2/3/3;
+                }
+            }
+        }
     }
 }
