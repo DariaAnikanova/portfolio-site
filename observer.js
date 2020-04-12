@@ -1,5 +1,5 @@
 const header = document.querySelector("header");
-const welcomeSection = document.querySelector(".welcome");
+const greeting = document.querySelector(".greeting");
 
 const welcomeSectionOptions = {
     rootMargin: "-250px 0px 0px 0px"
@@ -18,4 +18,4 @@ const welcomeSectionObserver = new IntersectionObserver(function(
    })
 }, welcomeSectionOptions);
 
-welcomeSectionObserver.observe(welcomeSection);
+welcomeSectionObserver.observe(greeting);
