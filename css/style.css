@@ -361,6 +361,10 @@ main .content {
   visibility: hidden;
 }
 
+.modal.open {
+  visibility: visible;
+}
+
 .modal .modal-close-btn {
   background-color: #EEFBFF;
   border: 1px solid #4d4949;

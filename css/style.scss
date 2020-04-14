@@ -329,6 +329,10 @@ main {
     cursor: default;
     visibility: hidden;
 
+    &.open {
+        visibility: visible;
+    }
+
     .modal-close-btn {
         background-color: $primary-color;
         border: 1px solid $color3;
