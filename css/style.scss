@@ -7,14 +7,7 @@ $trans-color2: rgba(0,92,179, 0.75);
 $color__blue: #008fec;
 $color__dark-blue: #005cb3;
 
-html {
-    font: 16px $font-stack;
-    letter-spacing: 0.1rem;
-}
-
-body {
-    background-color: $primary-color;
-
+@mixin scrollbar-styling {
     &::-webkit-scrollbar {
         width: 1em;
     }
@@ -28,6 +21,17 @@ body {
         background-color: $color3;
         box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
     }
+}
+
+html {
+    font: 16px $font-stack;
+    letter-spacing: 0.1rem;
+}
+
+body {
+    background-color: $primary-color;
+
+    @include scrollbar-styling();
 }
 
 :target {
@@ -151,7 +155,7 @@ main {
         color: $color3;
         text-transform: uppercase;
         font-size: 1.5rem;
-        padding-top: 1.5rem;
+        padding: 1.5rem;
     }
 
     .content {
@@ -307,7 +311,9 @@ main {
     }
 }
 
-/* Projects */
+
+
+/* Modals */
 
 .modal {
     position: fixed;
@@ -320,17 +326,172 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: default;
+    visibility: hidden;
+
+    .modal-close-btn {
+        background-color: $primary-color;
+        border: 1px solid $color3;
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 20;
+        cursor: pointer;
+    }
+
+    .close-icon {
+        width: 100%;
+        height: 100%;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 1.5px);
+            left: calc(50% - 10px);
+            height: 3px;
+            width: 20px;
+            background-color: $color3;
+            transform: rotate(45deg);
+            transition: transform 200ms ease-in-out;
+        }
+
+        &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 1.5px);
+            left: calc(50% - 10px);
+            height: 3px;
+            width: 20px;
+            background-color: $color3;
+            transform: rotate(-45deg);
+            transition: transform 200ms ease-in-out;
+        }
+
+        &:hover {
+            &:before {
+                transform: rotate(135deg);
+                transition: transform 200ms ease-in-out;
+            }
+            &:after {
+                transform: rotate(45deg);
+                transition: transform 200ms ease-in-out;
+            }
+        }
+    }
 
     .project-info-modal {
         background-color: $primary-color;
         height: 95%;
         width: 90%;
+        margin: 1rem;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        @include scrollbar-styling();
+
+
+        .project-info-wrapper {
+            padding: 1rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
+
+
+        h3 {
+            color: black;
+            font-size: 1rem;
+            text-transform: initial;
+        }
+
+        .source-ul {
+            padding-top: 1rem;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            li {
+                padding: 0 0.5rem;
+                flex-grow: 1;
+                display: flex;
+                max-width: 50%;
+            }
+
+            button {
+                border: none;
+                padding: 0.5rem 1rem;
+                width: 100px;
+                min-height: 75px;
+                width: 100%;
+                font-weight: bold;
+                flex-grow: 1;
+
+            }
+
+            button.active {
+                background: lighten($color: $color2, $amount: 10);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color2;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+                width: 100%;
+            }
+
+            button.inactive {
+                background: lighten($color: $color3, $amount: 20)
+            }
+        }
+    }
+
+    .image-gallery {
+        width: 100%;
+        height: 300px;
+        background-image: url(/assets/projects/project-1/PBO-BG3.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+        .previous-btn, .next-btn {
+            position: absolute;
+            height: 100%;
+            width: 25px;
+            border: none;
+            font-size: 1rem;
+            padding: none;
+            background: none;
+            color: $color2;
+            cursor: pointer;
+        }
+
+        .previous-btn {
+            left: 0;
+        }
+        .next-btn {
+            right: 0;
+        }
     }
 }
 
+/* Projects */
+
 .project-1 {
     .img-container {
-        background-image: url("http://placekitten.com/g/500/300");
+        background-image: url(/assets/projects/project-1/PBO-BG3.jpg);
     }
 }
 
@@ -340,27 +501,39 @@ main {
     }
 }
 
-.project-3 {
-    .img-container {
-        background-image: url("http://placekitten.com/g/700/400");
-    }
-}
-
-.project-4 {
-    .img-container {
-        background-image: url("http://placekitten.com/g/700/400");
-    }
-}
-
 footer {
     text-align: center;
     color: $primary-color;
-    background-color: $color3 ;
-    margin-top: 16px;
-    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+
+    .ul-contact {
+        list-style-type: none;
+        display: flex;
+        padding: 1rem;
+        justify-content: center;
+        background-color: $color3;
+    }
+
+    li {
+        padding: 0 1rem;
+    }
+
+    i {
+        color: $primary-color;
+        font-size: 2.5rem;
+        transition: color 100ms ease-in;
+
+        &:hover {
+            color: lighten($color: $color2, $amount: 10);
+        }
+    }
 
     small {
         font-size: 0.75rem;
+        background-color: darken($color: $color3, $amount: 20);
+        padding: 1rem;
     }
 }
 
