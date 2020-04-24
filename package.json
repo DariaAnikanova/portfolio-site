@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify ./js/main.js -o ./bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DariaAnikanova/portfolio-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DariaAnikanova/portfolio-site/issues"
+  },
+  "homepage": "https://github.com/DariaAnikanova/portfolio-site#readme",
+  "devDependencies": {
+    "browserify": "^16.5.1"
+  }
+}

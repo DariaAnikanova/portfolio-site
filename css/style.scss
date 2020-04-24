@@ -25,7 +25,6 @@ $color__dark-blue: #005cb3;
 
 html {
     font: 16px $font-stack;
-    letter-spacing: 0.1rem;
 }
 
 body {
@@ -34,10 +33,10 @@ body {
     @include scrollbar-styling();
 }
 
-:target {
+#portfolio {
     display: block;
     position: relative;
-    top: -120px;
+    top: -85px;
 }
 
 header {
@@ -155,7 +154,7 @@ main {
         color: $color3;
         text-transform: uppercase;
         font-size: 1.5rem;
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .content {
@@ -188,8 +187,8 @@ main {
     p {
         text-align: center;
         color: $primary-color;
-        line-height: 2rem;
         font-size: 1.3rem;
+        line-height: 2rem;
     }
 
     .see-more {
@@ -240,12 +239,12 @@ main {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-auto-rows: fit-content;
-        margin-top: 24px;
+        line-height: 1rem;
 
         .project {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(auto-fit, minmax(fit-content, 200px));
+            grid-template-rows: repeat(2, minmax(fit-content, 200px));
             overflow: hidden;
             border: 1px solid $color3;
             transition: margin 100ms ease-in-out;
@@ -286,7 +285,7 @@ main {
                 padding: 1rem;
 
                 h4 {
-                    font-size: 0.6rem;
+                    font-size: 0.8rem;
                     text-transform: uppercase;
                 }
 
@@ -295,7 +294,7 @@ main {
                     font-size: 0.6rem;
                 }
 
-                .read-more {
+                .read-more-btn {
                     padding: 0.5rem 1rem;
                     border: none;
                     background-color: lighten($color: $color2, $amount: 10);
@@ -315,209 +314,222 @@ main {
 
 /* Modals */
 
-.modal {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: darken($color: $trans-color2, $amount: 20);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: default;
-    visibility: hidden;
+.modal-close-btn {
+    background-color: $primary-color;
+    border: 1px solid $color3;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 20;
+    cursor: pointer;
+}
 
-    &.open {
-        visibility: visible;
-    }
+.close-icon {
+    width: 100%;
+    height: 100%;
 
-    .modal-close-btn {
-        background-color: $primary-color;
-        border: 1px solid $color3;
-        border-radius: 100%;
-        height: 30px;
-        width: 30px;
+    &:before {
+        content: "";
+        display: inline-block;
         position: absolute;
-        top: 1rem;
-        left: 1rem;
-        z-index: 20;
-        cursor: pointer;
+        top: calc(50% - 1.5px);
+        left: calc(50% - 10px);
+        height: 3px;
+        width: 20px;
+        background-color: $color3;
+        transform: rotate(45deg);
+        transition: transform 200ms ease-in-out;
     }
 
-    .close-icon {
-        width: 100%;
-        height: 100%;
+    &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 1.5px);
+        left: calc(50% - 10px);
+        height: 3px;
+        width: 20px;
+        background-color: $color3;
+        transform: rotate(-45deg);
+        transition: transform 200ms ease-in-out;
+    }
 
+    &:hover {
         &:before {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            top: calc(50% - 1.5px);
-            left: calc(50% - 10px);
-            height: 3px;
-            width: 20px;
-            background-color: $color3;
+            transform: rotate(135deg);
+            transition: transform 200ms ease-in-out;
+        }
+        &:after {
             transform: rotate(45deg);
             transition: transform 200ms ease-in-out;
         }
+    }
+}
 
-        &:after {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            top: calc(50% - 1.5px);
-            left: calc(50% - 10px);
-            height: 3px;
-            width: 20px;
-            background-color: $color3;
-            transform: rotate(-45deg);
-            transition: transform 200ms ease-in-out;
-        }
+.modal {
+    position: fixed;
+    top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 5rem darken($color: $trans_color2, $amount: 30);
+    cursor: default;
+    background-color: $primary-color;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
-        &:hover {
-            &:before {
-                transform: rotate(135deg);
-                transition: transform 200ms ease-in-out;
-            }
-            &:after {
-                transform: rotate(45deg);
-                transition: transform 200ms ease-in-out;
-            }
+    @include scrollbar-styling();
+
+    &.open {
+        visibility: visible;
+        display: initial;
+    }
+
+    .project-info-wrapper {
+        padding: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+
+    h3 {
+        color: black;
+        font-size: 1rem;
+        text-transform: initial;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .tech-list {
+        li {
+            padding: 0.5rem 0;
         }
     }
 
-    .project-info-modal {
-        background-color: $primary-color;
-        height: 95%;
-        width: 90%;
-        margin: 1rem;
-        position: relative;
-        overflow-x: hidden;
-        overflow-y: scroll;
-
-        @include scrollbar-styling();
-
-
-        .project-info-wrapper {
-            padding: 1rem;
-        }
-
-        h4 {
-            font-size: 1.5rem;
-        }
-
-
-        h3 {
-            color: black;
-            font-size: 1rem;
-            text-transform: initial;
-        }
-
-        .source-ul {
-            padding-top: 1rem;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-
-            li {
-                padding: 0 0.5rem;
-                flex-grow: 1;
-                display: flex;
-                max-width: 50%;
-            }
-
-            button {
-                border: none;
-                padding: 0.5rem 1rem;
-                width: 100px;
-                min-height: 75px;
-                width: 100%;
-                font-weight: bold;
-                flex-grow: 1;
-
-            }
-
-            button.active {
-                background: lighten($color: $color2, $amount: 10);
-                cursor: pointer;
-
-                &:hover {
-                    background-color: $color2;
-                }
-            }
-
-            a {
-                text-decoration: none;
-                color: black;
-                width: 100%;
-            }
-
-            button.inactive {
-                background: lighten($color: $color3, $amount: 20)
-            }
-        }
-    }
-
-    .image-gallery {
+    .source-ul {
+        padding-top: 1rem;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        height: 300px;
-        background-image: url(/assets/projects/project-1/PBO-BG3.jpg);
-        background-position: center;
-        background-size: cover;
-        position: relative;
 
-        .previous-btn, .next-btn {
-            position: absolute;
-            height: 100%;
-            width: 25px;
+        li {
+            flex-grow: 1;
+            display: flex;
+            max-width: 50%;
+        }
+
+        button {
             border: none;
-            font-size: 1rem;
-            padding: none;
-            background: none;
-            color: $color2;
-            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            min-height: 75px;
+            font-weight: bold;
+            flex-grow: 1;
         }
 
-        .previous-btn {
-            left: 0;
+        button.active {
+            background: lighten($color: $color2, $amount: 10);
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color2;
+            }
         }
-        .next-btn {
-            right: 0;
+
+        a {
+            text-decoration: none;
+            color: black;
+            width: 100%;
+        }
+
+        button.inactive {
+            background: lighten($color: $color3, $amount: 20)
         }
     }
 }
 
 /* Projects */
 
+.image-carousel {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
 .project-1 {
     .img-container {
-        background-image: url(/assets/projects/project-1/PBO-BG3.jpg);
+        background-image: url("/assets/projects/project-1/PBO-BG3.jpg");
+    }
+}
+
+.project-modal-1 {
+    .image-carousel {
+        background-image: url("/assets/projects/project-1/PBO-BG3.jpg");
     }
 }
 
 .project-2 {
     .img-container {
-        background-image: url("http://placekitten.com/g/700/400");
+        background-image: url("/assets/projects/project-2/Gallery-ontariohome.png");
+    }
+}
+
+.project-modal-2 {
+    .image-carousel {
+        background-image: url("/assets/projects/project-2/Gallery-ontariohome.png");
+    }
+}
+
+.project-3 {
+    .img-container {
+        background-image: url("/assets/projects/project-3/jerry-zhang-ePpaQC2c1xA-unsplash.jpg");
+    }
+}
+
+.project-modal-3 {
+    .image-carousel {
+        background-image: url("/assets/projects/project-3/jerry-zhang-ePpaQC2c1xA-unsplash.jpg");
     }
 }
 
 footer {
+    background-color: $color3;
     text-align: center;
     color: $primary-color;
     display: flex;
     flex-direction: column;
-    padding-top: 1rem;
+    margin-top: 1rem;
+
+    h3 {
+        color: lighten($color: $color2, $amount: 10);
+        padding-top: 1rem;
+        text-transform: uppercase;
+    }
 
     .ul-contact {
         list-style-type: none;
         display: flex;
         padding: 1rem;
         justify-content: center;
-        background-color: $color3;
     }
 
     li {
@@ -544,19 +556,23 @@ footer {
 /* Media Queries */
 
 @media screen and (min-width: 343px) {
-    :target {
+    #portfolio {
         top: -83px;
     }
 }
 
 @media screen and (min-width: 500px) {
+    html {
+        font: 20px $font-stack;
+    }
+
     .main__portfolio {
         .project__container {
             margin-left: 1rem;
             margin-right: 1rem;
 
             .project {
-                grid-template-rows: repeat(2, 175px);
+                grid-template-rows: repeat(2, 200px);
                 border: none;
 
                 .img-container {
@@ -566,6 +582,37 @@ footer {
                 .project-info {
                     grid-area: 2/2/3/3;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html {
+        font: 28px $font-stack;
+    }
+
+    .main__portfolio {
+        .project__container {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+            .project {
+                grid-template-rows: repeat(2, 275px);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font: 30px $font-stack;
+    }
+    .main__portfolio {
+        .project__container {
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+
+            .project {
+                grid-template-rows: repeat(2, 300px);
             }
         }
     }

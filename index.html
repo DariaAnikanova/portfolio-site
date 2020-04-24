@@ -8,8 +8,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/84c50f65af.js" crossorigin="anonymous"></script>
-    <script src="js/observer.js" defer></script>
-    <script src="js/modal.js" defer></script>
+    <script src="bundle.js" defer></script>
     <title>Daria Anikanova</title>
 </head>
 <body>
@@ -28,8 +27,8 @@
             <h2 class="greeting">Hello!</h2>
             <p>My name is Daria Anikanova <br> I design and build websites and applications.</p>
             <ul class="ul-contact">
-                <li><a href="https://www.linkedin.com/in/dariaanikanova/"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/DariaAnikanova"><i class="fab fa-github-square"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/dariaanikanova/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/DariaAnikanova" target="_blank"><i class="fab fa-github-square"></i></a></li>
                 <li><a href="mailto:contact@darianova.dev"><i class="fas fa-envelope-square"></i></a></li>
             </ul>
             <a class="see-more" href="#portfolio">See More</a>
@@ -41,56 +40,118 @@
             <h3 class="portfolio__section">Portfolio</h3>
             <div class="project__container">
                 <!--PROJECT 1-->
-                <div class="project project-1">
+                <div class="read-more project project-1">
                     <div class="img-container"></div>
                     <div class="project-info">
                         <h4 class="project-title">Pale Blue Origin Inc.</h4>
-                        <p class="project-description">Company website for Toronto-based non-profit org.</p>
-                        <button class="read-more read-more1">Read More</button>
-                    </div>
-                    <!--Project Modal-->
-                    <div class="modal">
-                        <button class="modal-close-btn">
-                            <div class="close-icon"></div>
-                        </button>
-                        <div class="project-info-modal">
-                            <div class="image-gallery">
-                                <button class="previous-btn"><i class="fas fa-chevron-left"></i></button>
-                                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <div class="project-info-wrapper">
-                                <h4 class="project-title">Pale Blue Origin Inc.</h4>
-                                <ul class="source-ul">
-                                    <li><button class="inactive">Source Code Private</button></li>
-                                    <li><a href="https://paleblueorigin.org/" target="_blank"><button class="active">Live Version</button></a></li>
-                                </ul>
-                                <h3>Description</h3>
-                                <p>Pale Blue Origin Inc. is a Toronto-based non-profit focusing on developing software solutions that promote sustainability and eco-concious behaviours.</p>
-                                <h3>Contribution</h3>
-                                <p>Worked closely with a UI/UX Designer to design and build the company website. </p>
-                                <h3>Technologies Used</h3>
-                                <ul>
-                                    <li>CSS3</li>
-                                    <li>HTML5</li>
-                                    <li>ES6</li>
-                                </ul>
-                            </div> <!--/project-info-wrapper-->
-                        </div> <!--/project-info-modal-->
+                        <p class="project-description">Website for Toronto-based non-profit.</p>
+                        <button class="read-more-btn">Read More</button>
                     </div>
                 </div>
+                <!--Project 1 Modal-->
+                <div class="modal project-modal-1">
+                    <button class="modal-close-btn">
+                        <div class="close-icon"></div>
+                    </button>
+                    <div class="image-carousel"></div>
+                    <div class="project-info-wrapper">
+                        <h4 class="project-title">Pale Blue Origin Inc.</h4>
+                        <ul class="source-ul">
+                            <li><button class="inactive">Source Code Private</button></li>
+                            <li><a href="https://paleblueorigin.org/" target="_blank"><button class="active">Live Version</button></a></li>
+                        </ul>
+                        <h3>Description</h3>
+                        <p>Pale Blue Origin Inc. is a Toronto-based non-profit focusing on
+                            developing software solutions that promote sustainability and
+                            eco-concious behaviours. Being a fairly new non-profit organization,
+                            providing information about the company, their mission and
+                            primary product was at the forefront of the project. Also, incorporating
+                                <a href="https://solarsystem.nasa.gov/resources/536/voyager-1s-pale-blue-dot/" target="_blank">Nasa's photo</a>
+                                of the Earth that the company was inspired by and named after was a large consideration for the final site.</p>
+                        <h3>Contribution</h3>
+                        <p>Collaborated with a UI/UX Designer to design and build the
+                            company website.
+                        </p>
+                        <h3>Technologies Used</h3>
+                        <ul class="tech-list">
+                            <li>CSS3</li>
+                            <li>HTML5</li>
+                            <li>ES6</li>
+                        </ul>
+                    </div> <!--/project-info-wrapper-->
+                </div> <!--/modal-->
                 <!--PROJECT 2-->
-                <div class="project project-2">
+                <div class="read-more project project-2">
                     <div class="img-container"></div>
                     <div class="project-info">
-                        <h4 class="project-title">Virtual Property Tour</h4>
-                        <p class="project-description"> Custom site for showcasing properties.</p>
-                        <button class="read-more">Read More</button>
+                        <h4 class="project-title">Ontario Home</h4>
+                        <p class="project-description">Virtual Property Tour.</p>
+                        <button class="read-more-btn">Read More</button>
                     </div>
                 </div>
+                <!--Project 2 Modal-->
+                <div class="modal project-modal-2">
+                    <button class="modal-close-btn">
+                        <div class="close-icon"></div>
+                    </button>
+                    <div class="image-carousel"></div>
+                    <div class="project-info-wrapper">
+                        <h4 class="project-title">Virtual Property Tour</h4>
+                        <ul class="source-ul">
+                            <li><a href="https://github.com/LiamAttClarke/ontariohome.info" target="_blank"><button class="active">Source Code</button></a></li>
+                            <li><a href="https://ontariohome.info/#/" target="_blank"><button class="active">Live Version</button></a></li>
+                        </ul>
+                        <h3>Description</h3>
+                        <p>Custom gallery for local Realtor for showcasing properties. Built to replace previously used third-party tool/service which required an ongoing paid subscription.</p>
+                        <h3>Contribution</h3>
+                        <p>Collaborated with a UI/UX Designer to design and build the company website.</p>
+                        <h3>Technologies Used</h3>
+                        <ul class="tech-list">
+                            <li>CSS3</li>
+                            <li>HTML5</li>
+                            <li>ES6</li>
+                            <li>VUE JS</li>
+                        </ul>
+                    </div> <!--/project-info-wrapper-->
+                </div> <!--/modal-->
+                <!--PROJECT 3-->
+                <div class="read-more project project-3">
+                    <div class="img-container"></div>
+                    <div class="project-info">
+                        <h4 class="project-title">Shifty</h4>
+                        <p class="project-description">Work Schedule Parser.</p>
+                        <button class="read-more-btn">Read More</button>
+                    </div>
+                </div>
+                <!--Project 3 Modal-->
+                <div class="modal project-modal-3">
+                    <button class="modal-close-btn">
+                        <div class="close-icon"></div>
+                    </button>
+                    <div class="image-carousel"></div>
+                    <div class="project-info-wrapper">
+                        <h4 class="project-title">Shifty</h4>
+                        <ul class="source-ul">
+                            <li><a href="https://github.com/DariaAnikanova/Shifty" target="_blank"><button class="active">Source Code</button></a></li>
+                            <li><a href="https://dariaanikanova.github.io/Shifty/" target="_blank"><button class="active">Live Version</button></a></li>
+                        </ul>
+                        <h3>Description</h3>
+                        <p>Work Schedule Parser. Converts schedule csv file to .isc to import into preferred calendar app. </p>
+                        <h3>Contribution</h3>
+                        <p></p>
+                        <h3>Technologies Used</h3>
+                        <ul>
+                            <li>CSS3</li>
+                            <li>HTML5</li>
+                            <li>ES6</li>
+                        </ul>
+                    </div> <!--/project-info-wrapper-->
+                </div> <!--/modal-->
             </div> <!--/project__container-->
         </section>
     </main>
     <footer>
+        <h3>Contact Me</h3>
         <ul class="ul-contact">
             <li><a href="https://www.linkedin.com/in/dariaanikanova/"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://github.com/DariaAnikanova"><i class="fab fa-github-square"></i></a></li>

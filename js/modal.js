@@ -1,19 +1,20 @@
-const projContainer = document.querySelector('.project__container');
+module.exports = function initModal() {
+    const projContainer = document.querySelector('.project__container');
 
-projContainer.addEventListener("click", e => {
-    //Refactor markup so this works
-    const modalToggle = e.target.closest('.read-more');
-    console.log(modalToggle);
+    projContainer.addEventListener("click", e => {
+        const modalToggle = e.target.closest(".read-more");
 
-    if (! modalToggle) return
+        if (!modalToggle) return;
 
-    const modal = modalToggle.parentNode.nextElementSibling;
-    const closeBtn = modal.querySelector('.modal-close-btn');
-    console.log(modal);
+        const modal = modalToggle.nextElementSibling;
+        const closeBtn = modal.querySelector('.modal-close-btn');
 
-    modal.classList.add('open');
+        modal.classList.add('open');
+        document.body.style.overflowY= "hidden";
 
-    closeBtn.addEventListener("click", () => {
-        modal.classList.remove('open');
-    })
-});
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove('open');
+            document.body.style.overflowY = "scroll";
+        });
+    });
+}
