@@ -4,8 +4,6 @@ $color2: #db3e1f;
 $color3: #4d4949;
 $trans-color1: rgba(158, 66, 47, 0.75);
 $trans-color2: rgba(0,92,179, 0.75);
-$color__blue: #008fec;
-$color__dark-blue: #005cb3;
 
 @mixin scrollbar-styling {
     &::-webkit-scrollbar {
@@ -150,7 +148,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    h3 {
+    h3, h5 {
         color: $color3;
         text-transform: uppercase;
         font-size: 1.5rem;
@@ -393,32 +391,39 @@ main {
     }
 
     .project-info-wrapper {
-        padding: 1.2rem;
+        padding: 1.5rem;
     }
 
     h4 {
+        font-size: 2rem;
+        line-height: 2rem;
+        text-transform: uppercase;
+    }
+
+
+    h5 {
+        color: black;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin: 0.5rem;
+    }
+
+    p {
         font-size: 1.5rem;
         line-height: 1.5rem;
     }
 
-
-    h3 {
-        color: black;
-        font-size: 1rem;
-        text-transform: initial;
-    }
-
-    p {
-        font-size: 0.8rem;
-    }
-
     ul {
         list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .tech-list {
         li {
-            padding: 0.5rem 0;
+            font-size: 1.5rem;
+            margin: 0.5rem 0.5rem;
         }
     }
 
@@ -426,6 +431,7 @@ main {
         padding-top: 1rem;
         list-style: none;
         display: flex;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -434,11 +440,12 @@ main {
             flex-grow: 1;
             display: flex;
             max-width: 50%;
+            margin: 0 2px;
         }
 
         button {
+            font-size: 1rem;
             border: none;
-            padding: 1rem;
             width: 100%;
             min-height: 75px;
             font-weight: bold;
@@ -466,14 +473,14 @@ main {
     }
 }
 
-/* Projects */
-
 .image-carousel {
     width: 100%;
     height: 300px;
     background-position: center;
     background-size: cover;
 }
+
+/* Projects */
 
 .project-1 {
     .img-container {
@@ -566,6 +573,10 @@ footer {
         font: 20px $font-stack;
     }
 
+    #portfolio {
+        top: -110px;
+    }
+
     .main__portfolio {
         .project__container {
             margin-left: 1rem;
@@ -589,24 +600,50 @@ footer {
 
 @media screen and (min-width: 1024px) {
     html {
-        font: 28px $font-stack;
+        font: 24px $font-stack;
+    }
+
+    #portfolio {
+        top: -130px;
     }
 
     .main__portfolio {
         .project__container {
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
             .project {
-                grid-template-rows: repeat(2, 275px);
+                grid-template-rows: repeat(2, 200px);
             }
         }
+    }
+    .modal-close-btn {
+        height: 50px;
+        width: 50px;
+    }
+
+    .close-icon {
+        &:before, &:after {
+            width: 40px;
+            top: calc(50% - 1.5px);
+            left: calc(50% - 20px);
+        }
+    }
+
+
+    .image-carousel {
+        height: 500px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     html {
-        font: 30px $font-stack;
+        font: 26px $font-stack;
     }
+
+    #portfolio {
+        top: -140px;
+    }
+
     .main__portfolio {
         .project__container {
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));

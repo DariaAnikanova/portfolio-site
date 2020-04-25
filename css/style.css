@@ -140,7 +140,7 @@ main {
           justify-content: center;
 }
 
-main h3 {
+main h3, main h5 {
   color: #4d4949;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -451,30 +451,42 @@ main .content {
 }
 
 .modal .project-info-wrapper {
-  padding: 1.2rem;
+  padding: 1.5rem;
 }
 
 .modal h4 {
+  font-size: 2rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+}
+
+.modal h5 {
+  color: black;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin: 0.5rem;
+}
+
+.modal p {
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
 
-.modal h3 {
-  color: black;
-  font-size: 1rem;
-  text-transform: initial;
-}
-
-.modal p {
-  font-size: 0.8rem;
-}
-
 .modal ul {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal .tech-list li {
-  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  margin: 0.5rem 0.5rem;
 }
 
 .modal .source-ul {
@@ -483,6 +495,8 @@ main .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -500,11 +514,12 @@ main .content {
   display: -ms-flexbox;
   display: flex;
   max-width: 50%;
+  margin: 0 2px;
 }
 
 .modal .source-ul button {
+  font-size: 1rem;
   border: none;
-  padding: 1rem;
   width: 100%;
   min-height: 75px;
   font-weight: bold;
@@ -532,7 +547,6 @@ main .content {
   background: #817b7b;
 }
 
-/* Projects */
 .image-carousel {
   width: 100%;
   height: 300px;
@@ -540,6 +554,7 @@ main .content {
   background-size: cover;
 }
 
+/* Projects */
 .project-1 .img-container {
   background-image: url("/assets/projects/project-1/PBO-BG3.jpg");
 }
@@ -627,6 +642,9 @@ footer small {
   html {
     font: 20px "Montserrat", "sans-serif";
   }
+  #portfolio {
+    top: -110px;
+  }
   .main__portfolio .project__container {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -654,21 +672,39 @@ footer small {
 
 @media screen and (min-width: 1024px) {
   html {
-    font: 28px "Montserrat", "sans-serif";
+    font: 24px "Montserrat", "sans-serif";
+  }
+  #portfolio {
+    top: -130px;
   }
   .main__portfolio .project__container {
-    -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
   .main__portfolio .project__container .project {
-    -ms-grid-rows: (275px)[2];
-        grid-template-rows: repeat(2, 275px);
+    -ms-grid-rows: (200px)[2];
+        grid-template-rows: repeat(2, 200px);
+  }
+  .modal-close-btn {
+    height: 50px;
+    width: 50px;
+  }
+  .close-icon:before, .close-icon:after {
+    width: 40px;
+    top: calc(50% - 1.5px);
+    left: calc(50% - 20px);
+  }
+  .image-carousel {
+    height: 500px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   html {
-    font: 30px "Montserrat", "sans-serif";
+    font: 26px "Montserrat", "sans-serif";
+  }
+  #portfolio {
+    top: -140px;
   }
   .main__portfolio .project__container {
     -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
