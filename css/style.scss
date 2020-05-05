@@ -7,7 +7,7 @@ $trans-color2: rgba(0,92,179, 0.75);
 
 @mixin scrollbar-styling {
     &::-webkit-scrollbar {
-        width: 1em;
+        width: 15px;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -163,32 +163,44 @@ main {
 }
 
 .hero__container {
-    background-image: linear-gradient(to top left, $trans-color1, $trans-color2), url(/assets/images/bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 3rem 1.5rem;
-    position: relative;
-    width: 100%;
+    overflow: hidden;
 
-
-    h2 {
-        color: $primary-color;
-        text-transform: uppercase;
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
+    &:before {
+        content: "";
+        position: absolute;
+        top: -10px; left: -10px;
+        width: 120%;
+        height: 120%;
+        filter: blur(3px);
+        background-image: linear-gradient(to top left, $trans-color1, $trans-color2), url(/assets/images/bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
-    p {
-        text-align: center;
-        color: $primary-color;
-        font-size: 1.3rem;
-        line-height: 2rem;
-    }
+    .welcome-content {
+        position: relative;
 
+        h2 {
+            color: $primary-color;
+            text-transform: uppercase;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            text-align: center;
+            color: $primary-color;
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+    }
     .see-more {
         position: absolute;
         bottom: 1rem;
@@ -211,6 +223,7 @@ main {
         list-style-type: none;
         display: flex;
         padding-top: 1.5rem;
+        justify-content: center;
     }
 
     li {
@@ -228,6 +241,7 @@ main {
     }
 }
 
+
 .main__portfolio {
     display: flex;
     flex-direction: column;
@@ -244,7 +258,6 @@ main {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, minmax(fit-content, 200px));
             overflow: hidden;
-            border: 1px solid $color3;
             transition: margin 100ms ease-in-out;
             cursor: pointer;
 
@@ -266,12 +279,12 @@ main {
                     left: 0;
                     right: 0;
                     border: 0.7rem solid $primary-color;
-                    transition: all 400ms ease-in-out;
+                    transition: all 200ms ease-in-out;
                 }
 
                 &:hover:before {
                     border: 0rem solid $primary-color;
-                    transition: all 400ms ease-in-out;
+                    transition: all 200ms ease-in-out;
                 }
             }
 
@@ -281,6 +294,9 @@ main {
                 position: relative;
                 z-index: 5;
                 padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
                 h4 {
                     font-size: 0.8rem;
@@ -392,38 +408,39 @@ main {
 
     .project-info-wrapper {
         padding: 1.5rem;
+        text-align: left;
     }
 
     h4 {
         font-size: 2rem;
         line-height: 2rem;
         text-transform: uppercase;
+        text-align: center;
     }
 
 
     h5 {
         color: black;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        margin: 0.5rem;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding-left: 0;
     }
 
     p {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
     }
 
     ul {
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
     }
 
     .tech-list {
         li {
-            font-size: 1.5rem;
-            margin: 0.5rem 0.5rem;
+            font-size: 1rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
         }
     }
 
@@ -496,13 +513,13 @@ main {
 
 .project-2 {
     .img-container {
-        background-image: url("/assets/projects/project-2/Gallery-ontariohome.png");
+        background-image: url("/assets/projects/project-2/berkay-gumustekin-hRg1KL4-AUE-unsplash.jpg");
     }
 }
 
 .project-modal-2 {
     .image-carousel {
-        background-image: url("/assets/projects/project-2/Gallery-ontariohome.png");
+        background-image: url("/assets/projects/project-2/berkay-gumustekin-hRg1KL4-AUE-unsplash.jpg");
     }
 }
 
@@ -599,13 +616,6 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
-    html {
-        font: 24px $font-stack;
-    }
-
-    #portfolio {
-        top: -130px;
-    }
 
     .main__portfolio {
         .project__container {
@@ -631,7 +641,7 @@ footer {
 
 
     .image-carousel {
-        height: 500px;
+        height: 400px;
     }
 }
 

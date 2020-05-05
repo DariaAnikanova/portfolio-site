@@ -7,7 +7,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 1em;
+  width: 15px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -156,10 +156,8 @@ main .content {
 }
 
 .hero__container {
-  background-image: -webkit-gradient(linear, right bottom, left top, from(rgba(158, 66, 47, 0.75)), to(rgba(0, 92, 179, 0.75))), url(/assets/images/bg.jpg);
-  background-image: linear-gradient(to top left, rgba(158, 66, 47, 0.75), rgba(0, 92, 179, 0.75)), url(/assets/images/bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,18 +172,36 @@ main .content {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 3rem 1.5rem;
-  position: relative;
-  width: 100%;
+  overflow: hidden;
 }
 
-.hero__container h2 {
+.hero__container:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120%;
+  height: 120%;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  background-image: -webkit-gradient(linear, right bottom, left top, from(rgba(158, 66, 47, 0.75)), to(rgba(0, 92, 179, 0.75))), url(/assets/images/bg.jpg);
+  background-image: linear-gradient(to top left, rgba(158, 66, 47, 0.75), rgba(0, 92, 179, 0.75)), url(/assets/images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero__container .welcome-content {
+  position: relative;
+}
+
+.hero__container .welcome-content h2 {
   color: #EEFBFF;
   text-transform: uppercase;
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
-.hero__container p {
+.hero__container .welcome-content p {
   text-align: center;
   color: #EEFBFF;
   font-size: 1.3rem;
@@ -216,6 +232,9 @@ main .content {
   display: -ms-flexbox;
   display: flex;
   padding-top: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hero__container li {
@@ -265,7 +284,6 @@ main .content {
       grid-template-rows: repeat(2, minmax(-webkit-fit-content, 200px));
       grid-template-rows: repeat(2, minmax(fit-content, 200px));
   overflow: hidden;
-  border: 1px solid #4d4949;
   -webkit-transition: margin 100ms ease-in-out;
   transition: margin 100ms ease-in-out;
   cursor: pointer;
@@ -294,14 +312,14 @@ main .content {
   left: 0;
   right: 0;
   border: 0.7rem solid #EEFBFF;
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .main__portfolio .project__container .project .img-container:hover:before {
   border: 0rem solid #EEFBFF;
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .main__portfolio .project__container .project .project-info {
@@ -314,6 +332,16 @@ main .content {
   position: relative;
   z-index: 5;
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main__portfolio .project__container .project .project-info h4 {
@@ -432,7 +460,7 @@ main .content {
 }
 
 .modal::-webkit-scrollbar {
-  width: 1em;
+  width: 15px;
 }
 
 .modal::-webkit-scrollbar-thumb {
@@ -452,24 +480,26 @@ main .content {
 
 .modal .project-info-wrapper {
   padding: 1.5rem;
+  text-align: left;
 }
 
 .modal h4 {
   font-size: 2rem;
   line-height: 2rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .modal h5 {
   color: black;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  margin: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  padding-left: 0;
 }
 
 .modal p {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
 }
 
 .modal ul {
@@ -479,14 +509,11 @@ main .content {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .modal .tech-list li {
-  font-size: 1.5rem;
-  margin: 0.5rem 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .modal .source-ul {
@@ -564,11 +591,11 @@ main .content {
 }
 
 .project-2 .img-container {
-  background-image: url("/assets/projects/project-2/Gallery-ontariohome.png");
+  background-image: url("/assets/projects/project-2/berkay-gumustekin-hRg1KL4-AUE-unsplash.jpg");
 }
 
 .project-modal-2 .image-carousel {
-  background-image: url("/assets/projects/project-2/Gallery-ontariohome.png");
+  background-image: url("/assets/projects/project-2/berkay-gumustekin-hRg1KL4-AUE-unsplash.jpg");
 }
 
 .project-3 .img-container {
@@ -671,12 +698,6 @@ footer small {
 }
 
 @media screen and (min-width: 1024px) {
-  html {
-    font: 24px "Montserrat", "sans-serif";
-  }
-  #portfolio {
-    top: -130px;
-  }
   .main__portfolio .project__container {
     -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -695,7 +716,7 @@ footer small {
     left: calc(50% - 20px);
   }
   .image-carousel {
-    height: 500px;
+    height: 400px;
   }
 }
 
