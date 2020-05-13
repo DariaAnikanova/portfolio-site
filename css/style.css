@@ -280,9 +280,6 @@ main .content {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (minmax(fit-content, 200px))[2];
-      grid-template-rows: repeat(2, minmax(-webkit-fit-content, 200px));
-      grid-template-rows: repeat(2, minmax(fit-content, 200px));
   overflow: hidden;
   -webkit-transition: margin 100ms ease-in-out;
   transition: margin 100ms ease-in-out;
@@ -323,7 +320,7 @@ main .content {
 }
 
 .main__portfolio .project__container .project .project-info {
-  background-color: #EEFBFF;
+  background-color: rgba(238, 251, 255, 0.9);
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -350,12 +347,16 @@ main .content {
 }
 
 .main__portfolio .project__container .project .project-info .project-description {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   font-size: 0.6rem;
 }
 
 .main__portfolio .project__container .project .project-info .read-more-btn {
   padding: 0.5rem 1rem;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   border: none;
   background-color: #e56248;
   font-weight: bold;
@@ -691,9 +692,10 @@ footer small {
   .main__portfolio .project__container .project .project-info {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-area: 2/2/3/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 2/1/3/3;
+    margin: 0 1.5em 1.5em 1.5em;
   }
 }
 
@@ -705,6 +707,15 @@ footer small {
   .main__portfolio .project__container .project {
     -ms-grid-rows: (200px)[2];
         grid-template-rows: repeat(2, 200px);
+  }
+  .main__portfolio .project__container .project .project-info {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 2/2/3/3;
+    margin: 0;
+    background-color: #EEFBFF;
   }
   .modal-close-btn {
     height: 50px;
@@ -727,13 +738,9 @@ footer small {
   #portfolio {
     top: -140px;
   }
-  .main__portfolio .project__container {
-    -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  }
   .main__portfolio .project__container .project {
-    -ms-grid-rows: (300px)[2];
-        grid-template-rows: repeat(2, 300px);
+    -ms-grid-rows: (250px)[2];
+        grid-template-rows: repeat(2, 250px);
   }
 }
 /*# sourceMappingURL=style.css.map */
