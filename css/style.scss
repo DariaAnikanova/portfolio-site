@@ -1,3 +1,8 @@
+$base-font-size: 16px;
+
+$border-circle: 50%;
+$border-rounded: 20px;
+
 $base-color: #610000;
 $secondary-color: #dd410a;
 $accent-color: #ffaf72;
@@ -11,30 +16,49 @@ $size-middle-ring-3: calc(#{$size-sun-base}* 2.1);
 $size-inner-ring: calc(#{$size-sun-base}* 1.8);
 $rotation-base: 100s;
 
-@mixin solar-system {
-    position: absolute;
-    border: 5px dashed $secondary-color;
-    border-radius: 50%;
-}
-@mixin rotate-ring {
-    animation: 0 linear infinite spin;
-    animation-name: spin;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    @keyframes spin {
-        0% {
-            transform: rotateZ(0);
-        }
-        100% {
-            transform: rotateZ(360deg);
-        }
-    }
-}
+// @mixin solar-system {
+//     position: absolute;
+//     border: 5px dashed $secondary-color;
+//     border-radius: 50%;
+// }
+// @mixin rotate-ring {
+//     animation: 0 linear infinite spin;
+//     animation-name: spin;
+//     animation-timing-function: linear;
+//     animation-iteration-count: infinite;
+//     @keyframes spin {
+//         0% {
+//             transform: rotateZ(0);
+//         }
+//         100% {
+//             transform: rotateZ(360deg);
+//         }
+//     }
+// }
 
 body {
     height: 100vh;
     background: black;
     overflow: hidden;
+    font-family: sans-serif;
+    font-size: $base-font-size;
+
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    > h1 {
+        color: $secondary-color;
+        background-color: black;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-size: $base-font-size*3;
+        border-radius: $border-rounded;
+    }
+
 }
 
 .body-background {
@@ -57,63 +81,64 @@ body {
         z-index: 1;
     }
 }
-.solar-system {
-    &__outer-ring,
-    &__middle-ring-1,
-    &__middle-ring-2,
-    &__middle-ring-3,
-    &__inner-ring {
-        @include solar-system;
-        @include rotate-ring;
-    }
 
-    &__outer-ring {
-        top: calc(50% - #{$size-outer-ring} * 0.5);
-        left: calc(#{$size-outer-ring} * -0.25);
-        height: $size-outer-ring;
-        width: $size-outer-ring;
-        animation-duration: calc(#{$rotation-base * 5.5});
-    }
-    &__middle-ring-1 {
-        top: calc(50% - #{$size-middle-ring-1} * 0.5);
-        left: calc(#{$size-middle-ring-1} * -0.25);
-        height: $size-middle-ring-1;
-        width: $size-middle-ring-1;
-        animation-duration: calc(#{$rotation-base * 3});
-    }
-    &__middle-ring-2 {
-        top: calc(50% - #{$size-middle-ring-2} * 0.5);
-        left: calc(#{$size-middle-ring-2} * -0.25);
-        height: $size-middle-ring-2;
-        width: $size-middle-ring-2;
-        animation-duration: calc(#{$rotation-base * 1.5});
-    }
-    &__middle-ring-3 {
-        top: calc(50% - #{$size-middle-ring-3} * 0.5);
-        left: calc(#{$size-middle-ring-3} * -0.25);
-        height: $size-middle-ring-3;
-        width: $size-middle-ring-3;
-        animation-duration: $rotation-base;
-    }
-    &__inner-ring {
-        top: calc(50% - #{$size-inner-ring} * 0.5);
-        left: calc(#{$size-inner-ring} * -0.25);
-        height: $size-inner-ring;
-        width: $size-inner-ring;
-        animation-duration: calc(#{$rotation-base * 0.5});
-    }
-    &__sun {
-        @include solar-system;
-        top: calc(50% - #{$size-sun-base} * 0.5);
-        left: calc(#{$size-sun-base} * -0.25);
-        width: $size-sun-base;
-        height: $size-sun-base;
-        background-color: $secondary-color;
-        animation-duration: 100s;
-    }
-}
+// .solar-system {
+//     &__outer-ring,
+//     &__middle-ring-1,
+//     &__middle-ring-2,
+//     &__middle-ring-3,
+//     &__inner-ring {
+//         @include solar-system;
+//         @include rotate-ring;
+//     }
 
-.header,
-.footer {
-    background-color: white;
-}
+//     &__outer-ring {
+//         top: calc(50% - #{$size-outer-ring} * 0.5);
+//         left: calc(#{$size-outer-ring} * -0.25);
+//         height: $size-outer-ring;
+//         width: $size-outer-ring;
+//         animation-duration: calc(#{$rotation-base * 5.5});
+//     }
+//     &__middle-ring-1 {
+//         top: calc(50% - #{$size-middle-ring-1} * 0.5);
+//         left: calc(#{$size-middle-ring-1} * -0.25);
+//         height: $size-middle-ring-1;
+//         width: $size-middle-ring-1;
+//         animation-duration: calc(#{$rotation-base * 3});
+//     }
+//     &__middle-ring-2 {
+//         top: calc(50% - #{$size-middle-ring-2} * 0.5);
+//         left: calc(#{$size-middle-ring-2} * -0.25);
+//         height: $size-middle-ring-2;
+//         width: $size-middle-ring-2;
+//         animation-duration: calc(#{$rotation-base * 1.5});
+//     }
+//     &__middle-ring-3 {
+//         top: calc(50% - #{$size-middle-ring-3} * 0.5);
+//         left: calc(#{$size-middle-ring-3} * -0.25);
+//         height: $size-middle-ring-3;
+//         width: $size-middle-ring-3;
+//         animation-duration: $rotation-base;
+//     }
+//     &__inner-ring {
+//         top: calc(50% - #{$size-inner-ring} * 0.5);
+//         left: calc(#{$size-inner-ring} * -0.25);
+//         height: $size-inner-ring;
+//         width: $size-inner-ring;
+//         animation-duration: calc(#{$rotation-base * 0.5});
+//     }
+//     &__sun {
+//         @include solar-system;
+//         top: calc(50% - #{$size-sun-base} * 0.5);
+//         left: calc(#{$size-sun-base} * -0.25);
+//         width: $size-sun-base;
+//         height: $size-sun-base;
+//         background-color: $secondary-color;
+//         animation-duration: 100s;
+//     }
+// }
+
+// .header,
+// .footer {
+//     background-color: white;
+// }
