@@ -1,15 +1,119 @@
+$base-color: #610000;
+$secondary-color: #dd410a;
+$accent-color: #ffaf72;
+$accent-color-2: #fff6ec;
+
+$size-sun-base: 30vw;
+$size-outer-ring: calc(#{$size-sun-base}* 3);
+$size-middle-ring-1: calc(#{$size-sun-base}* 2.7);
+$size-middle-ring-2: calc(#{$size-sun-base}* 2.4);
+$size-middle-ring-3: calc(#{$size-sun-base}* 2.1);
+$size-inner-ring: calc(#{$size-sun-base}* 1.8);
+$rotation-base: 100s;
+
+@mixin solar-system {
+    position: absolute;
+    border: 5px dashed $secondary-color;
+    border-radius: 50%;
+}
+@mixin rotate-ring {
+    animation: 0 linear infinite spin;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @keyframes spin {
+        0% {
+            transform: rotateZ(0);
+        }
+        100% {
+            transform: rotateZ(360deg);
+        }
+    }
+}
+
 body {
     height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+
+.body-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background: url("../assets/images/bg.jpg") center/cover no-repeat;
-    backdrop-filter: blur(1px) brightness(0.8) saturate(2) hue-rotate(-25deg);
-    ::after {
+    z-index: -1;
+    &::after {
         content: "";
         position: absolute;
-        background: url("../assets/images/darianova.svg") center;
-        opacity: 0.2;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        background: url("../assets/images/darianova.svg") top/contain repeat-y;
+        opacity: 0.5;
+        top: 5rem;
+        bottom: 5rem;
+        left: 3rem;
+        right: 3rem;
+        z-index: 1;
     }
+}
+.solar-system {
+    &__outer-ring,
+    &__middle-ring-1,
+    &__middle-ring-2,
+    &__middle-ring-3,
+    &__inner-ring {
+        @include solar-system;
+        @include rotate-ring;
+    }
+
+    &__outer-ring {
+        top: calc(50% - #{$size-outer-ring} * 0.5);
+        left: calc(#{$size-outer-ring} * -0.25);
+        height: $size-outer-ring;
+        width: $size-outer-ring;
+        animation-duration: calc(#{$rotation-base * 5.5});
+    }
+    &__middle-ring-1 {
+        top: calc(50% - #{$size-middle-ring-1} * 0.5);
+        left: calc(#{$size-middle-ring-1} * -0.25);
+        height: $size-middle-ring-1;
+        width: $size-middle-ring-1;
+        animation-duration: calc(#{$rotation-base * 3});
+    }
+    &__middle-ring-2 {
+        top: calc(50% - #{$size-middle-ring-2} * 0.5);
+        left: calc(#{$size-middle-ring-2} * -0.25);
+        height: $size-middle-ring-2;
+        width: $size-middle-ring-2;
+        animation-duration: calc(#{$rotation-base * 1.5});
+    }
+    &__middle-ring-3 {
+        top: calc(50% - #{$size-middle-ring-3} * 0.5);
+        left: calc(#{$size-middle-ring-3} * -0.25);
+        height: $size-middle-ring-3;
+        width: $size-middle-ring-3;
+        animation-duration: $rotation-base;
+    }
+    &__inner-ring {
+        top: calc(50% - #{$size-inner-ring} * 0.5);
+        left: calc(#{$size-inner-ring} * -0.25);
+        height: $size-inner-ring;
+        width: $size-inner-ring;
+        animation-duration: calc(#{$rotation-base * 0.5});
+    }
+    &__sun {
+        @include solar-system;
+        top: calc(50% - #{$size-sun-base} * 0.5);
+        left: calc(#{$size-sun-base} * -0.25);
+        width: $size-sun-base;
+        height: $size-sun-base;
+        background-color: $secondary-color;
+        animation-duration: 100s;
+    }
+}
+
+.header,
+.footer {
+    background-color: white;
 }
