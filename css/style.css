@@ -6,47 +6,114 @@ body {
   font-size: 16px;
 }
 
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main > h1 {
-  color: #dd410a;
-  background-color: black;
-  padding: 1rem;
-  text-transform: uppercase;
-  font-size: 48px;
-  border-radius: 20px;
-}
-
-.body-background {
+.solar-system {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: url("../assets/images/bg.jpg") center/cover no-repeat;
-  z-index: -1;
 }
 
-.body-background::after {
-  content: "";
+.solar-system__overlay {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: calc(100vh - 10rem);
+  width: calc(100vw - 6rem);
   background: url("../assets/images/darianova.svg") top/contain repeat-y;
   opacity: 0.5;
-  top: 5rem;
-  bottom: 5rem;
-  left: 3rem;
-  right: 3rem;
-  z-index: 1;
+}
+
+.solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  stroke-dasharray: 3;
+  -webkit-animation: dash 5s linear;
+          animation: dash 5s linear;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 10;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 10;
+  }
+}
+
+.solar-system__outer-ring {
+  top: calc(50% - calc(30vw* 3) * 0.5);
+  left: calc(calc(30vw* 3) * -0.25);
+  height: calc(30vw* 3);
+  width: calc(30vw* 3);
+  -webkit-animation-duration: calc(550s);
+          animation-duration: calc(550s);
+}
+
+.solar-system__middle-ring-1 {
+  top: calc(50% - calc(30vw* 2.7) * 0.5);
+  left: calc(calc(30vw* 2.7) * -0.25);
+  height: calc(30vw* 2.7);
+  width: calc(30vw* 2.7);
+  -webkit-animation-duration: calc(300s);
+          animation-duration: calc(300s);
+}
+
+.solar-system__middle-ring-2 {
+  top: calc(50% - calc(30vw* 2.4) * 0.5);
+  left: calc(calc(30vw* 2.4) * -0.25);
+  height: calc(30vw* 2.4);
+  width: calc(30vw* 2.4);
+  -webkit-animation-duration: calc(150s);
+          animation-duration: calc(150s);
+}
+
+.solar-system__middle-ring-3 {
+  top: calc(50% - calc(30vw* 2.1) * 0.5);
+  left: calc(calc(30vw* 2.1) * -0.25);
+  height: calc(30vw* 2.1);
+  width: calc(30vw* 2.1);
+  -webkit-animation-duration: 100s;
+          animation-duration: 100s;
+}
+
+.solar-system__inner-ring {
+  top: calc(50% - calc(30vw* 1.8) * 0.5);
+  left: calc(calc(30vw* 1.8) * -0.25);
+  height: calc(30vw* 1.8);
+  width: calc(30vw* 1.8);
+  -webkit-animation-duration: calc(50s);
+          animation-duration: calc(50s);
+}
+
+.solar-system__sun {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: calc(50% - 30vw * 0.5);
+  left: calc(30vw * -0.25);
+  width: 30vw;
+  height: 30vw;
+  background-color: #dd410a;
+  -webkit-animation-duration: 100s;
+          animation-duration: 100s;
+  border-radius: 50%;
+}
+
+.header,
+.footer {
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */
