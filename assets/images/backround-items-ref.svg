@@ -1,0 +1,20 @@
+<svg height="100%" width="100%" viewbox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+    <defs>
+        <linearGradient id="name-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="50%" stop-color="#dd410a" />
+            <stop offset="100%" stop-color="#ffaf72" />
+        </linearGradient>
+    </defs>
+    <text class="solar-system__overlay__text" x="60" y="150" stroke="url(#name-gradient)" stroke-linejoin="round"
+        stroke-opacity="0.5" fill="none" stroke-width="0.6mm" font-weight="900" letter-spacing="2">
+        Daria Nova
+    </text>
+    <g class="solar-system__orbits">
+        <ellipse class="solar-system__outer-ring" cx="200" cy="200" rx="200" ry="200" />
+        <ellipse class="solar-system__middle-ring-1" cx="200" cy="200" rx="200" ry="200" />
+        <ellipse class="solar-system__middle-ring-2" cx="200" cy="200" rx="200" ry="200" />
+        <ellipse class="solar-system__middle-ring-2" cx="200" cy="200" rx="200" ry="200" />
+        <ellipse class="solar-system__inner-ring" cx="200" cy="200" rx="200" ry="200" />
+        <ellipse class="solar-system__sun" cx="200" cy="200" rx="200" ry="200" />
+    </g>
+</svg>

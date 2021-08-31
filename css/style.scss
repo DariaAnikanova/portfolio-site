@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
 $base-font-size: 16px;
 
 $border-circle: 50%;
@@ -8,6 +10,9 @@ $secondary-color: #dd410a;
 $accent-color: #ffaf72;
 $accent-color-2: #fff6ec;
 
+$background-font: "Oswald", sans-serif;
+$background-font-size: 3rem;
+
 $size-sun-base: 30vw;
 $size-outer-ring: calc(#{$size-sun-base}* 3);
 $size-middle-ring-1: calc(#{$size-sun-base}* 2.7);
@@ -15,24 +20,6 @@ $size-middle-ring-2: calc(#{$size-sun-base}* 2.4);
 $size-middle-ring-3: calc(#{$size-sun-base}* 2.1);
 $size-inner-ring: calc(#{$size-sun-base}* 1.8);
 $rotation-base: 100s;
-
-@mixin absolute-position {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-@mixin rotate-ring {
-    stroke-dasharray: 3;
-    animation: dash 5s linear;
-    @keyframes dash {
-        to {
-           stroke-dashoffset: 10;
-        }
-    }
-}
 
 body {
     height: 100vh;
@@ -42,17 +29,42 @@ body {
     font-size: $base-font-size;
 }
 
+@mixin absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@mixin orbits {
+    fill: none;
+    stroke: $secondary-color;
+    stroke-width: 3;
+    stroke-dasharray: 3;
+}
+
 .solar-system {
-    @include absolute-position;
+    @include absolute;
     background: url("../assets/images/bg.jpg") center/cover no-repeat;
 
     &__overlay {
-        @include absolute-position;
-        margin:auto;
+        @include absolute;
+
+        margin: auto;
         height: calc(100vh - 10rem);
         width: calc(100vw - 6rem);
-        background: url("../assets/images/darianova.svg") top/contain repeat-y;
-        opacity: 0.5;
+        &__text {
+            font-family: $background-font;
+            font-size: $background-font-size;
+            text-transform: uppercase;
+        }
+    }
+
+    &__orbits {
+        @include absolute;
+        height: 100%;
+        width: 100%;
     }
 
     &__outer-ring,
@@ -60,8 +72,8 @@ body {
     &__middle-ring-2,
     &__middle-ring-3,
     &__inner-ring {
-        @include absolute-position;
-        @include rotate-ring;
+        @include absolute;
+        @include orbits;
     }
 
     &__outer-ring {
@@ -100,7 +112,7 @@ body {
         animation-duration: calc(#{$rotation-base * 0.5});
     }
     &__sun {
-        @include absolute-position;
+        @include absolute;
         top: calc(50% - #{$size-sun-base} * 0.5);
         left: calc(#{$size-sun-base} * -0.25);
         width: $size-sun-base;

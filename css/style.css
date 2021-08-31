@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 body {
   height: 100vh;
   background: black;
@@ -24,8 +25,22 @@ body {
   margin: auto;
   height: calc(100vh - 10rem);
   width: calc(100vw - 6rem);
-  background: url("../assets/images/darianova.svg") top/contain repeat-y;
-  opacity: 0.5;
+}
+
+.solar-system__overlay__text {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.solar-system__orbits {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
@@ -34,21 +49,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  fill: none;
+  stroke: #dd410a;
+  stroke-width: 3;
   stroke-dasharray: 3;
-  -webkit-animation: dash 5s linear;
-          animation: dash 5s linear;
-}
-
-@-webkit-keyframes dash {
-  to {
-    stroke-dashoffset: 10;
-  }
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 10;
-  }
 }
 
 .solar-system__outer-ring {
