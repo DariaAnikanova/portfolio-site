@@ -1,36 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+/*Utils */
+/* Content and Body Styles */
 body {
   height: 100vh;
-  background: black;
+  background: black url("../assets/images/bg.jpg") center/cover no-repeat;
   overflow: hidden;
   font-family: sans-serif;
   font-size: 16px;
 }
 
-.solar-system {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url("../assets/images/bg.jpg") center/cover no-repeat;
+.header,
+.footer {
+  background-color: white;
 }
 
+/* SVG Styles */
 .solar-system__overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto;
-  height: calc(100vh - 10rem);
-  width: calc(100vw - 6rem);
 }
 
 .solar-system__overlay__text {
   font-family: "Oswald", sans-serif;
   font-size: 3rem;
   text-transform: uppercase;
+  stroke-opacity: 0.5;
+  fill: none;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  font-weight: 900;
+  letter-spacing: 2;
 }
 
 .solar-system__orbits {
@@ -114,10 +116,5 @@ body {
   -webkit-animation-duration: 100s;
           animation-duration: 100s;
   border-radius: 50%;
-}
-
-.header,
-.footer {
-  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */

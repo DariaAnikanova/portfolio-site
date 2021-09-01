@@ -12,9 +12,6 @@
     <title>Daria Anikanova</title>
 </head>
 <body>
-
-
-
    <!-- <header class="header">
         <nav class="header__nav">
             <ul class="header__nav__list">
@@ -25,8 +22,6 @@
         </nav>
     </header> -->
   <!--  <main>
-
-
     </main> -->
     <!-- <footer class="footer">
         <h3 class="footer__title">Contact Me</h3>
@@ -44,19 +39,24 @@
                 <stop offset="50%" stop-color="#dd410a" />
                 <stop offset="100%" stop-color="#ffaf72" />
             </linearGradient>
+            <pattern patternUnits="userSpaceOnUse"></pattern>
         </defs>
-        <text class="solar-system__overlay__text" x="60" y="150" stroke="url(#name-gradient)" stroke-linejoin="round"
-            stroke-opacity="0.5" fill="none" stroke-width="0.6mm" font-weight="900" letter-spacing="2">
+        <g class="solar-system__overlay">
+            <text class="solar-system__overlay__text" x="60" y="150" stroke="url(#name-gradient)" 
+            >
             Daria Nova
-        </text>
+            </text>
+        </g>
+        
         <g class="solar-system__orbits">
-            <ellipse class="solar-system__outer-ring" cx="200" cy="200" rx="200" ry="200" />
-            <ellipse class="solar-system__middle-ring-1" cx="200" cy="200" rx="200" ry="200" />
+            <!-- <ellipse class="solar-system__outer-ring" cx="200" cy="200" rx="200" ry="200" /> -->
+            <!-- <ellipse class="solar-system__middle-ring-1" cx="200" cy="200" rx="200" ry="200" />
             <ellipse class="solar-system__middle-ring-2" cx="200" cy="200" rx="200" ry="200" />
             <ellipse class="solar-system__middle-ring-2" cx="200" cy="200" rx="200" ry="200" />
             <ellipse class="solar-system__inner-ring" cx="200" cy="200" rx="200" ry="200" />
-            <ellipse class="solar-system__sun" cx="200" cy="200" rx="200" ry="200" />
+             -->
         </g>
+        <!-- <ellipse class="solar-system__sun" cx="200" cy="200" rx="200" ry="200" fill="orange"/>  -->
     </svg>
        
 </body>
