@@ -11,7 +11,7 @@ $accent-color: #ffaf72;
 $accent-color-2: #fff6ec;
 
 $background-font: "Oswald", sans-serif;
-$background-font-size: 3rem;
+$background-font-size: 1.5rem;
 
 $size-sun-base: 30vw;
 $size-outer-ring: calc(#{$size-sun-base}* 3);
@@ -55,84 +55,91 @@ body {
     stroke-dasharray: 3;
 }
 
-.solar-system {
-    &__overlay {
-        @include absolute;
+.overlay {
+    border: 2px solid yellow;
+    height: 100%;
+    width: 100%;
 
-        // margin: auto;
-        // height: calc(100vh - 10rem);
-        // width: calc(100vw - 6rem);
-        &__text {
-            font-family: $background-font;
-            font-size: $background-font-size;
-            text-transform: uppercase;
-            stroke-opacity: 0.5;
-            fill: none;
-            stroke-width: 3px;
-            stroke-linejoin: round;
-            font-weight: 900;
-            letter-spacing: 2;
-        }
+    &__text {
+        font-family: $background-font;
+        font-size: $background-font-size;
+        text-transform: uppercase;
+        stroke-opacity: 0.5;
+        fill: none;
+        stroke-width: 1.5px;
+        stroke-linejoin: round;
+        font-weight: 900;
+        letter-spacing: 2;
     }
-
-    &__orbits {
-        @include absolute;
-        height: 100%;
-        width: 100%;
-    }
-
-    &__outer-ring,
-    &__middle-ring-1,
-    &__middle-ring-2,
-    &__middle-ring-3,
-    &__inner-ring {
-        @include absolute;
-        @include orbits;
-    }
-
-    &__outer-ring {
-        top: calc(50% - #{$size-outer-ring} * 0.5);
-        left: calc(#{$size-outer-ring} * -0.25);
-        height: $size-outer-ring;
-        width: $size-outer-ring;
-        animation-duration: calc(#{$rotation-base * 5.5});
-    }
-    &__middle-ring-1 {
-        top: calc(50% - #{$size-middle-ring-1} * 0.5);
-        left: calc(#{$size-middle-ring-1} * -0.25);
-        height: $size-middle-ring-1;
-        width: $size-middle-ring-1;
-        animation-duration: calc(#{$rotation-base * 3});
-    }
-    &__middle-ring-2 {
-        top: calc(50% - #{$size-middle-ring-2} * 0.5);
-        left: calc(#{$size-middle-ring-2} * -0.25);
-        height: $size-middle-ring-2;
-        width: $size-middle-ring-2;
-        animation-duration: calc(#{$rotation-base * 1.5});
-    }
-    &__middle-ring-3 {
-        top: calc(50% - #{$size-middle-ring-3} * 0.5);
-        left: calc(#{$size-middle-ring-3} * -0.25);
-        height: $size-middle-ring-3;
-        width: $size-middle-ring-3;
-        animation-duration: $rotation-base;
-    }
-    &__inner-ring {
-        top: calc(50% - #{$size-inner-ring} * 0.5);
-        left: calc(#{$size-inner-ring} * -0.25);
-        height: $size-inner-ring;
-        width: $size-inner-ring;
-        animation-duration: calc(#{$rotation-base * 0.5});
-    }
-    &__sun {
-        @include absolute;
-        top: calc(50% - #{$size-sun-base} * 0.5);
-        left: calc(#{$size-sun-base} * -0.25);
-        width: $size-sun-base;
-        height: $size-sun-base;
-        background-color: $secondary-color;
-        animation-duration: 100s;
-        border-radius: $border-circle;
+    &__content {
+        height: calc(100% - 2rem);
+        width: calc(100% - 3rem);
     }
 }
+
+.test {
+    height: 100px;
+    width: 200px;
+}
+
+// .solar-system {
+// &__orbits {
+//     @include absolute;
+//     height: 100%;
+//     width: 100%;
+// }
+
+// &__outer-ring,
+// &__middle-ring-1,
+// &__middle-ring-2,
+// &__middle-ring-3,
+// &__inner-ring {
+//     @include absolute;
+//     @include orbits;
+// }
+
+// &__outer-ring {
+//     top: calc(50% - #{$size-outer-ring} * 0.5);
+//     left: calc(#{$size-outer-ring} * -0.25);
+//     height: $size-outer-ring;
+//     width: $size-outer-ring;
+//     animation-duration: calc(#{$rotation-base * 5.5});
+// }
+// &__middle-ring-1 {
+//     top: calc(50% - #{$size-middle-ring-1} * 0.5);
+//     left: calc(#{$size-middle-ring-1} * -0.25);
+//     height: $size-middle-ring-1;
+//     width: $size-middle-ring-1;
+//     animation-duration: calc(#{$rotation-base * 3});
+// }
+// &__middle-ring-2 {
+//     top: calc(50% - #{$size-middle-ring-2} * 0.5);
+//     left: calc(#{$size-middle-ring-2} * -0.25);
+//     height: $size-middle-ring-2;
+//     width: $size-middle-ring-2;
+//     animation-duration: calc(#{$rotation-base * 1.5});
+// }
+// &__middle-ring-3 {
+//     top: calc(50% - #{$size-middle-ring-3} * 0.5);
+//     left: calc(#{$size-middle-ring-3} * -0.25);
+//     height: $size-middle-ring-3;
+//     width: $size-middle-ring-3;
+//     animation-duration: $rotation-base;
+// }
+// &__inner-ring {
+//     top: calc(50% - #{$size-inner-ring} * 0.5);
+//     left: calc(#{$size-inner-ring} * -0.25);
+//     height: $size-inner-ring;
+//     width: $size-inner-ring;
+//     animation-duration: calc(#{$rotation-base * 0.5});
+// }
+// &__sun {
+//     @include absolute;
+//     top: calc(50% - #{$size-sun-base} * 0.5);
+//     left: calc(#{$size-sun-base} * -0.25);
+//     width: $size-sun-base;
+//     height: $size-sun-base;
+//     background-color: $secondary-color;
+//     animation-duration: 100s;
+//     border-radius: $border-circle;
+// }

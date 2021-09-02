@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/84c50f65af.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <title>Daria Anikanova</title>
 </head>
@@ -33,30 +32,29 @@
 
     </footer>  -->
 
-    <svg class="solar-system" height="100%" width="100%" viewbox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-        <defs>
-            <linearGradient id="name-gradient" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="50%" stop-color="#dd410a" />
-                <stop offset="100%" stop-color="#ffaf72" />
-            </linearGradient>
-            <pattern patternUnits="userSpaceOnUse"></pattern>
-        </defs>
-        <g class="solar-system__overlay">
-            <text class="solar-system__overlay__text" x="60" y="150" stroke="url(#name-gradient)" 
-            >
-            Daria Nova
-            </text>
-        </g>
-        
-        <g class="solar-system__orbits">
-            <!-- <ellipse class="solar-system__outer-ring" cx="200" cy="200" rx="200" ry="200" /> -->
-            <!-- <ellipse class="solar-system__middle-ring-1" cx="200" cy="200" rx="200" ry="200" />
+    <!-- <svg class="solar-system" viewbox="0 0 300 500">
+         <g class="solar-system__orbits"> 
+            <ellipse class="solar-system__outer-ring" cx="200" cy="200" rx="200" ry="200" />
+             <ellipse class="solar-system__middle-ring-1" cx="200" cy="200" rx="200" ry="200" />
             <ellipse class="solar-system__middle-ring-2" cx="200" cy="200" rx="200" ry="200" />
             <ellipse class="solar-system__middle-ring-2" cx="200" cy="200" rx="200" ry="200" />
             <ellipse class="solar-system__inner-ring" cx="200" cy="200" rx="200" ry="200" />
-             -->
         </g>
-        <!-- <ellipse class="solar-system__sun" cx="200" cy="200" rx="200" ry="200" fill="orange"/>  -->
+        <ellipse class="solar-system__sun" cx="200" cy="200" rx="200" ry="200" fill="orange"/> 
+    </svg> -->
+    <svg class="overlay">
+        <defs>
+            <linearGradient id="name-gradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="70%" stop-color="#dd410a" />
+                <stop offset="100%" stop-color="#ffaf72" />
+            </linearGradient>
+            <pattern id="name-pattern" patternUnits="userSpaceOnUse" height="25" width="125">
+                <text class="overlay__text" id="name-text" x="0" y="20" stroke="url(#name-gradient)">Daria Nova</text>
+            </pattern>
+        </defs>
+        
+        <rect class="overlay__content" x="0" y="0" fill="url(#name-pattern)"></rect>
+       
     </svg>
        
 </body>
