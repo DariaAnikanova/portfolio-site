@@ -1,117 +1,3 @@
-/* Resets, variables, mixins, and any utility classes. */
-/* Variables*/
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
-/* Mixins*/
-/* Media Queries */
-/* Reusable components such as buttons, navbars, cards, etc */
-/* Handles layout such as container and any grid systems*/
-body {
-  height: 100vh;
-  background: black url("../assets/images/bg.jpg") center/cover no-repeat;
-  overflow: hidden;
-  font-family: sans-serif;
-  font-size: 16px;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 3rem 6rem;
-  background: url("../assets/images/darianova.svg") round;
-}
-
-.header,
-.footer {
-  background-color: white;
-}
-
-/* SVG Styles*/
-.solar-system__orbits {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  fill: none;
-  stroke: #dd410a;
-  stroke-width: 3;
-  stroke-dasharray: 3;
-}
-
-.solar-system__outer-ring {
-  top: calc(50% - calc(30vw* 3) * 0.5);
-  left: calc(calc(30vw* 3) * -0.25);
-  height: calc(30vw* 3);
-  width: calc(30vw* 3);
-  -webkit-animation-duration: calc(550s);
-          animation-duration: calc(550s);
-}
-
-.solar-system__middle-ring-1 {
-  top: calc(50% - calc(30vw* 2.7) * 0.5);
-  left: calc(calc(30vw* 2.7) * -0.25);
-  height: calc(30vw* 2.7);
-  width: calc(30vw* 2.7);
-  -webkit-animation-duration: calc(300s);
-          animation-duration: calc(300s);
-}
-
-.solar-system__middle-ring-2 {
-  top: calc(50% - calc(30vw* 2.4) * 0.5);
-  left: calc(calc(30vw* 2.4) * -0.25);
-  height: calc(30vw* 2.4);
-  width: calc(30vw* 2.4);
-  -webkit-animation-duration: calc(150s);
-          animation-duration: calc(150s);
-}
-
-.solar-system__middle-ring-3 {
-  top: calc(50% - calc(30vw* 2.1) * 0.5);
-  left: calc(calc(30vw* 2.1) * -0.25);
-  height: calc(30vw* 2.1);
-  width: calc(30vw* 2.1);
-  -webkit-animation-duration: 100s;
-          animation-duration: 100s;
-}
-
-.solar-system__inner-ring {
-  top: calc(50% - calc(30vw* 1.8) * 0.5);
-  left: calc(calc(30vw* 1.8) * -0.25);
-  height: calc(30vw* 1.8);
-  width: calc(30vw* 1.8);
-  -webkit-animation-duration: calc(50s);
-          animation-duration: calc(50s);
-}
-
-.solar-system__sun {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: calc(50% - 30vw * 0.5);
-  left: calc(30vw * -0.25);
-  width: 30vw;
-  height: 30vw;
-  background-color: #dd410a;
-  -webkit-animation-duration: 100s;
-          animation-duration: 100s;
-  border-radius: 50%;
-}
-
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -119,6 +5,7 @@ Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -222,5 +109,134 @@ hr {
 
 input, select {
   vertical-align: middle;
+}
+
+/* Resets, variables, mixins, and any utility classes. */
+/* Variables*/
+/* Mixins*/
+/* Media Queries */
+/* Handles layout such as container and any grid systems*/
+body {
+  height: 100vh;
+  background: black url("../assets/images/bg.jpg") center/cover no-repeat;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 3rem 6rem;
+  background: url("../assets/images/darianova.svg") round;
+}
+
+@media (max-width: 599px) {
+  .overlay {
+    margin: 0;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .overlay {
+    margin: 1rem 4rem;
+  }
+}
+
+.header,
+.footer {
+  background-color: white;
+}
+
+/* SVG Styles*/
+.solar-system__orbits {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  fill: none;
+  stroke: #dd410a;
+  stroke-width: 3;
+  stroke-dasharray: 3;
+}
+
+.solar-system__outer-ring {
+  top: calc(50% - calc(30vw* 3) * 0.5);
+  left: calc(calc(30vw* 3) * -0.25);
+  height: calc(30vw* 3);
+  width: calc(30vw* 3);
+  -webkit-animation-duration: calc(550s);
+          animation-duration: calc(550s);
+}
+
+.solar-system__middle-ring-1 {
+  top: calc(50% - calc(30vw* 2.7) * 0.5);
+  left: calc(calc(30vw* 2.7) * -0.25);
+  height: calc(30vw* 2.7);
+  width: calc(30vw* 2.7);
+  -webkit-animation-duration: calc(300s);
+          animation-duration: calc(300s);
+}
+
+.solar-system__middle-ring-2 {
+  top: calc(50% - calc(30vw* 2.4) * 0.5);
+  left: calc(calc(30vw* 2.4) * -0.25);
+  height: calc(30vw* 2.4);
+  width: calc(30vw* 2.4);
+  -webkit-animation-duration: calc(150s);
+          animation-duration: calc(150s);
+}
+
+.solar-system__middle-ring-3 {
+  top: calc(50% - calc(30vw* 2.1) * 0.5);
+  left: calc(calc(30vw* 2.1) * -0.25);
+  height: calc(30vw* 2.1);
+  width: calc(30vw* 2.1);
+  -webkit-animation-duration: 100s;
+          animation-duration: 100s;
+}
+
+.solar-system__inner-ring {
+  top: calc(50% - calc(30vw* 1.8) * 0.5);
+  left: calc(calc(30vw* 1.8) * -0.25);
+  height: calc(30vw* 1.8);
+  width: calc(30vw* 1.8);
+  -webkit-animation-duration: calc(50s);
+          animation-duration: calc(50s);
+}
+
+.solar-system__sun {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: calc(50% - 30vw * 0.5);
+  left: calc(30vw * -0.25);
+  width: 30vw;
+  height: 30vw;
+  background-color: #dd410a;
+  -webkit-animation-duration: 100s;
+          animation-duration: 100s;
+  border-radius: 50%;
+}
+
+/* Reusable components such as buttons, navbars, cards, etc */
+.project-button {
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */

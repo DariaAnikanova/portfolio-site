@@ -12,6 +12,14 @@ body {
     @include absolute;
     margin: 3rem 6rem;
     background: url("../assets/images/darianova.svg") round;
+
+    @include small-to-large-phone {
+        margin: 0;
+    }
+
+    @include small-to-med-tablet {
+        margin: 1rem 4rem;
+    }
 }
 
 .header,

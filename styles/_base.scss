@@ -39,29 +39,30 @@ $rotation-base: 100s;
 }
 
 /* Media Queries */
+// Breakpoints taken from vuetify: https://vuetifyjs.com/en/features/breakpoints/
 
-@mixin for-phone-only {
+@mixin small-to-large-phone {
     @media (max-width: 599px) {
         @content;
     }
 }
-@mixin for-tablet-portrait-up {
-    @media (min-width: 600px) {
+@mixin small-to-med-tablet {
+    @media (min-width: 600px) and (max-width: 959px) {
         @content;
     }
 }
-@mixin for-tablet-landscape-up {
-    @media (min-width: 900px) {
+@mixin large-tablet-to-laptop {
+    @media (min-width: 960px) and (max-width: 1263px) {
         @content;
     }
 }
 @mixin for-desktop-up {
-    @media (min-width: 1200px) {
+    @media (min-width: 1264px) and (max-width: 1903px) {
         @content;
     }
 }
 @mixin for-big-desktop-up {
-    @media (min-width: 1800px) {
+    @media (min-width: 1904px) {
         @content;
     }
 }
