@@ -1,0 +1,67 @@
+/* Resets, variables, mixins, and any utility classes. */
+
+/* Variables*/
+
+$base-color: #610000;
+$secondary-color: #dd410a;
+$accent-color: #ffaf72;
+$accent-color-2: #fff6ec;
+
+$base-font-size: 16px;
+$border-circle: 50%;
+$border-rounded: 20px;
+$size-sun-base: 30vw;
+
+$size-outer-ring: calc(#{$size-sun-base}* 3);
+$size-middle-ring-1: calc(#{$size-sun-base}* 2.7);
+$size-middle-ring-2: calc(#{$size-sun-base}* 2.4);
+$size-middle-ring-3: calc(#{$size-sun-base}* 2.1);
+$size-inner-ring: calc(#{$size-sun-base}* 1.8);
+$rotation-base: 100s;
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+/* Mixins*/
+
+@mixin absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@mixin orbits {
+    fill: none;
+    stroke: $secondary-color;
+    stroke-width: 3;
+    stroke-dasharray: 3;
+}
+
+/* Media Queries */
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
