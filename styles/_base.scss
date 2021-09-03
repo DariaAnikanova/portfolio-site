@@ -1,4 +1,5 @@
 /* Resets, variables, mixins, and any utility classes. */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
 /* Variables*/
 
@@ -18,8 +19,6 @@ $size-middle-ring-2: calc(#{$size-sun-base}* 2.4);
 $size-middle-ring-3: calc(#{$size-sun-base}* 2.1);
 $size-inner-ring: calc(#{$size-sun-base}* 1.8);
 $rotation-base: 100s;
-
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
 /* Mixins*/
 
@@ -56,7 +55,7 @@ $rotation-base: 100s;
         @content;
     }
 }
-@mixin for-desktop-up {
+@mixin for-desktop {
     @media (min-width: 1264px) and (max-width: 1903px) {
         @content;
     }
