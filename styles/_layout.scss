@@ -8,8 +8,16 @@ body {
     font-size: $base-font-size;
 }
 
+.header,
+.footer {
+    background-color: white;
+}
+
+/* SVG Styles*/
+
 .overlay {
-    @include absolute;
+    @extend %absolute;
+    z-index: 1;
     margin: 3rem 6rem;
     background: url("../assets/images/darianova.svg") round;
 
@@ -22,18 +30,14 @@ body {
     }
 }
 
-.header,
-.footer {
-    background-color: white;
-}
-
-/* SVG Styles*/
-
 .solar-system {
-    &__orbits {
-        @include absolute;
-        height: 100%;
-        width: 100%;
+    @extend %absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+
+    &__sun {
+        fill: orange;
     }
 
     &__outer-ring,
@@ -41,8 +45,7 @@ body {
     &__middle-ring-2,
     &__middle-ring-3,
     &__inner-ring {
-        @include absolute;
-        @include orbits;
+        @extend %orbits;
     }
 
     &__outer-ring {
@@ -79,15 +82,5 @@ body {
         height: $size-inner-ring;
         width: $size-inner-ring;
         animation-duration: calc(#{$rotation-base * 0.5});
-    }
-    &__sun {
-        @include absolute;
-        top: calc(50% - #{$size-sun-base} * 0.5);
-        left: calc(#{$size-sun-base} * -0.25);
-        width: $size-sun-base;
-        height: $size-sun-base;
-        background-color: $secondary-color;
-        animation-duration: 100s;
-        border-radius: $border-circle;
     }
 }

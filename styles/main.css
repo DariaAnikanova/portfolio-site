@@ -5,24 +5,83 @@ Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
-*, *:before, *:after {
+/*Global Reset Styles*/
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -36,8 +95,17 @@ body {
   line-height: 1;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -50,13 +118,16 @@ nav ul li a {
   color: black;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -68,14 +139,12 @@ a {
   background: transparent;
 }
 
-/* change colours to suit your needs */
 ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
 
-/* change colours to suit your needs */
 mark {
   background-color: #ff9;
   color: #000;
@@ -87,7 +156,8 @@ del {
   text-decoration: line-through;
 }
 
-abbr[title], dfn[title] {
+abbr[title],
+dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
@@ -97,7 +167,6 @@ table {
   border-spacing: 0;
 }
 
-/* change border colour to suit your needs */
 hr {
   display: block;
   height: 1px;
@@ -107,14 +176,102 @@ hr {
   padding: 0;
 }
 
-input, select {
+input,
+select {
   vertical-align: middle;
 }
 
-/* Resets, variables, mixins, and any utility classes. */
+/* Print Reset & Styles */
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  p:first-line,
+  div:first-line,
+  blockquote:first-line,
+  li:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  body > *:not(main) {
+    display: none;
+  }
+  a[href^="http"]:not([href*="darianova.dev"]):after {
+    content: "{" attr(href) ")";
+  }
+}
+
+/* Accessability Styles */
+p {
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+/* Resets, variables, mixins, and utility classes. */
 /* Variables*/
-/* Mixins*/
+/* Mixins and Placeholders*/
+.overlay, .solar-system {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
+  fill: none;
+  stroke: #dd410a;
+  stroke-width: 0.5px;
+  stroke-dasharray: 1;
+  -webkit-animation: dash 5s linear;
+          animation: dash 5s linear;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
 /* Media Queries */
+:root {
+  font-size: 16px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1263px) {
+  :root {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1264px) and (max-width: 1903px) {
+  :root {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1904px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
 /* Handles layout such as container and any grid systems*/
 body {
   height: 100vh;
@@ -124,12 +281,14 @@ body {
   font-size: 16px;
 }
 
+.header,
+.footer {
+  background-color: white;
+}
+
+/* SVG Styles*/
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  z-index: 1;
   margin: 3rem 6rem;
   background: url("../assets/images/darianova.svg") round;
 }
@@ -146,32 +305,14 @@ body {
   }
 }
 
-.header,
-.footer {
-  background-color: white;
-}
-
-/* SVG Styles*/
-.solar-system__orbits {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.solar-system {
+  z-index: 2;
   height: 100%;
   width: 100%;
 }
 
-.solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  fill: none;
-  stroke: #dd410a;
-  stroke-width: 3;
-  stroke-dasharray: 3;
+.solar-system__sun {
+  fill: orange;
 }
 
 .solar-system__outer-ring {
@@ -219,24 +360,8 @@ body {
           animation-duration: calc(50s);
 }
 
-.solar-system__sun {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: calc(50% - 30vw * 0.5);
-  left: calc(30vw * -0.25);
-  width: 30vw;
-  height: 30vw;
-  background-color: #dd410a;
-  -webkit-animation-duration: 100s;
-          animation-duration: 100s;
-  border-radius: 50%;
-}
-
 /* Reusable components such as buttons, navbars, cards, etc */
-.project-button {
+.button {
   color: black;
 }
 /*# sourceMappingURL=main.css.map */

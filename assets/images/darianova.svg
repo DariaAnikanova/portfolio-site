@@ -6,7 +6,8 @@
         </linearGradient>
     </defs>
     <text id="pattern-text" x="7" y="35" font-size="40" fill="none" font-family="sans-serif" font-weight="900"
-        stroke-width="1.5px" stroke-opacity="0.6" stroke-linejoin="round" class="overlay__content__text"
-        stroke="url(#name-gradient)" style="text-transform: uppercase; letter-spacing: 2;">Daria
-        Nova</text>
+        stroke-width="1.5px" stroke-opacity="0.4" stroke-linejoin="round" class="overlay__content__text"
+        stroke="url(#name-gradient)" style="text-transform: uppercase; letter-spacing: 2;">
+        Daria Nova
+    </text>
 </svg>

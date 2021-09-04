@@ -1,5 +1,5 @@
-/* Resets, variables, mixins, and any utility classes. */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+/* Resets, variables, mixins, and utility classes. */
+// @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 
 /* Variables*/
 
@@ -11,8 +11,8 @@ $accent-color-2: #fff6ec;
 $base-font-size: 16px;
 $border-circle: 50%;
 $border-rounded: 20px;
-$size-sun-base: 30vw;
 
+$size-sun-base: 30vw;
 $size-outer-ring: calc(#{$size-sun-base}* 3);
 $size-middle-ring-1: calc(#{$size-sun-base}* 2.7);
 $size-middle-ring-2: calc(#{$size-sun-base}* 2.4);
@@ -20,9 +20,9 @@ $size-middle-ring-3: calc(#{$size-sun-base}* 2.1);
 $size-inner-ring: calc(#{$size-sun-base}* 1.8);
 $rotation-base: 100s;
 
-/* Mixins*/
+/* Mixins and Placeholders*/
 
-@mixin absolute {
+%absolute {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -30,11 +30,18 @@ $rotation-base: 100s;
     right: 0;
 }
 
-@mixin orbits {
+%orbits {
     fill: none;
     stroke: $secondary-color;
-    stroke-width: 3;
-    stroke-dasharray: 3;
+    stroke-width: 0.5px;
+    stroke-dasharray: 1;
+    animation: dash 5s linear;
+
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 100;
+        }
+    }
 }
 
 /* Media Queries */
@@ -55,13 +62,37 @@ $rotation-base: 100s;
         @content;
     }
 }
-@mixin for-desktop {
+@mixin desktop {
     @media (min-width: 1264px) and (max-width: 1903px) {
         @content;
     }
 }
-@mixin for-big-desktop-up {
+@mixin big-desktop-up {
     @media (min-width: 1904px) {
         @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+// Typography Rules
+:root {
+    font-size: $base-font-size;
+
+    @include small-to-med-tablet {
+        font-size: 18px;
+    }
+    @include large-tablet-to-laptop {
+        font-size: 20px;
+    }
+    @include desktop {
+        font-size: 20px;
+    }
+    @include big-desktop-up {
+        font-size: 24px;
     }
 }
