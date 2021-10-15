@@ -1,13 +1,7 @@
-<svg height="40" width="285" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="name-gradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="60%" stop-color="#dd410a" />
-            <stop offset="100%" stop-color="#ffaf72" />
-        </linearGradient>
-    </defs>
-    <text id="pattern-text" x="7" y="35" font-size="40" fill="none" font-family="sans-serif" font-weight="900"
-        stroke-width="1.5px" stroke-opacity="0.4" stroke-linejoin="round" class="overlay__content__text"
-        stroke="url(#name-gradient)" style="text-transform: uppercase; letter-spacing: 2;">
-        Daria Nova
+<svg height="45" width="285" xmlns="http://www.w3.org/2000/svg">
+    <text id="pattern-text" x="7" y="35" font-size="40" fill="#1f273d" font-weight="900" stroke-width="2px"
+        stroke-linejoin="round" stroke="#1f273d" font-family="sans-serif"
+        style="text-transform: uppercase; letter-spacing: 5;">
+        DariaNova
     </text>
 </svg>

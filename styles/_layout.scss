@@ -2,85 +2,23 @@
 
 body {
     height: 100vh;
-    background: black url("../assets/images/bg.jpg") center/cover no-repeat;
+    background: $base-color center/cover no-repeat;
     overflow: hidden;
     font-family: sans-serif;
-    font-size: $base-font-size;
 }
-
-.header,
-.footer {
-    background-color: white;
-}
-
-/* SVG Styles*/
 
 .overlay {
     @extend %absolute;
-    z-index: 1;
-    margin: 3rem 6rem;
-    background: url("../assets/images/darianova.svg") round;
-
-    @include small-to-large-phone {
-        margin: 0;
-    }
-
-    @include small-to-med-tablet {
-        margin: 1rem 4rem;
-    }
+    background: url("/assets/images/darianova.svg") center;
+    border: 10px $accent-color solid;
 }
 
-.solar-system {
-    @extend %absolute;
-    z-index: 2;
-    height: 100%;
-    width: 100%;
-
-    &__sun {
-        fill: orange;
-    }
-
-    &__outer-ring,
-    &__middle-ring-1,
-    &__middle-ring-2,
-    &__middle-ring-3,
-    &__inner-ring {
-        @extend %orbits;
-    }
-
-    &__outer-ring {
-        top: calc(50% - #{$size-outer-ring} * 0.5);
-        left: calc(#{$size-outer-ring} * -0.25);
-        height: $size-outer-ring;
-        width: $size-outer-ring;
-        animation-duration: calc(#{$rotation-base * 5.5});
-    }
-    &__middle-ring-1 {
-        top: calc(50% - #{$size-middle-ring-1} * 0.5);
-        left: calc(#{$size-middle-ring-1} * -0.25);
-        height: $size-middle-ring-1;
-        width: $size-middle-ring-1;
-        animation-duration: calc(#{$rotation-base * 3});
-    }
-    &__middle-ring-2 {
-        top: calc(50% - #{$size-middle-ring-2} * 0.5);
-        left: calc(#{$size-middle-ring-2} * -0.25);
-        height: $size-middle-ring-2;
-        width: $size-middle-ring-2;
-        animation-duration: calc(#{$rotation-base * 1.5});
-    }
-    &__middle-ring-3 {
-        top: calc(50% - #{$size-middle-ring-3} * 0.5);
-        left: calc(#{$size-middle-ring-3} * -0.25);
-        height: $size-middle-ring-3;
-        width: $size-middle-ring-3;
-        animation-duration: $rotation-base;
-    }
-    &__inner-ring {
-        top: calc(50% - #{$size-inner-ring} * 0.5);
-        left: calc(#{$size-inner-ring} * -0.25);
-        height: $size-inner-ring;
-        width: $size-inner-ring;
-        animation-duration: calc(#{$rotation-base * 0.5});
+.header {
+    &_hero {
+        &_first-name,
+        &_last-name {
+            color: $accent-color;
+            text-transform: uppercase;
+        }
     }
 }

@@ -211,10 +211,11 @@ p {
   max-width: 65ch;
 }
 
-/* Resets, variables, mixins, and utility classes. */
+/* Variables, mixins, and utility classes. */
 /* Variables*/
+/*Min-widths*/
 /* Mixins and Placeholders*/
-.overlay, .solar-system {
+.overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -222,45 +223,24 @@ p {
   right: 0;
 }
 
-.solar-system__outer-ring, .solar-system__middle-ring-1, .solar-system__middle-ring-2, .solar-system__middle-ring-3, .solar-system__inner-ring {
-  fill: none;
-  stroke: #dd410a;
-  stroke-width: 0.5px;
-  stroke-dasharray: 1;
-  -webkit-animation: dash 5s linear;
-          animation: dash 5s linear;
-}
-
-@-webkit-keyframes dash {
-  to {
-    stroke-dashoffset: 100;
-  }
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 100;
-  }
-}
-
 /* Media Queries */
 :root {
-  font-size: 16px;
+  font-size: 18px;
 }
 
-@media (min-width: 600px) and (max-width: 959px) {
+@media (min-width: 600px) and (max-width: calc($screen-md - 1)) {
   :root {
     font-size: 18px;
   }
 }
 
-@media (min-width: 960px) and (max-width: 1263px) {
+@media (min-width: 960px) and (max-width: calc($screen-lg - 1)) {
   :root {
     font-size: 20px;
   }
 }
 
-@media (min-width: 1264px) and (max-width: 1903px) {
+@media (min-width: 1264px) and (max-width: calc($screen-xl - 1)) {
   :root {
     font-size: 20px;
   }
@@ -272,92 +252,72 @@ p {
   }
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+@media (max-width: calc($screen-sm - 1)) {
+  h1 {
+    font-size: 2.4rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: calc($screen-sm - 1)) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+@media (max-width: calc($screen-sm - 1)) {
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: calc($screen-sm - 1)) {
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+@media (max-width: calc($screen-sm - 1)) {
+  h5 {
+    font-size: 3rem;
+  }
+}
+
 /* Handles layout such as container and any grid systems*/
 body {
   height: 100vh;
-  background: black url("../assets/images/bg.jpg") center/cover no-repeat;
+  background: #242d48 center/cover no-repeat;
   overflow: hidden;
   font-family: sans-serif;
-  font-size: 16px;
 }
 
-.header,
-.footer {
-  background-color: white;
-}
-
-/* SVG Styles*/
 .overlay {
-  z-index: 1;
-  margin: 3rem 6rem;
-  background: url("../assets/images/darianova.svg") round;
+  background: url("/assets/images/darianova.svg") center;
+  border: 10px #d57e8e solid;
 }
 
-@media (max-width: 599px) {
-  .overlay {
-    margin: 0;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 959px) {
-  .overlay {
-    margin: 1rem 4rem;
-  }
-}
-
-.solar-system {
-  z-index: 2;
-  height: 100%;
-  width: 100%;
-}
-
-.solar-system__sun {
-  fill: orange;
-}
-
-.solar-system__outer-ring {
-  top: calc(50% - calc(30vw* 3) * 0.5);
-  left: calc(calc(30vw* 3) * -0.25);
-  height: calc(30vw* 3);
-  width: calc(30vw* 3);
-  -webkit-animation-duration: calc(550s);
-          animation-duration: calc(550s);
-}
-
-.solar-system__middle-ring-1 {
-  top: calc(50% - calc(30vw* 2.7) * 0.5);
-  left: calc(calc(30vw* 2.7) * -0.25);
-  height: calc(30vw* 2.7);
-  width: calc(30vw* 2.7);
-  -webkit-animation-duration: calc(300s);
-          animation-duration: calc(300s);
-}
-
-.solar-system__middle-ring-2 {
-  top: calc(50% - calc(30vw* 2.4) * 0.5);
-  left: calc(calc(30vw* 2.4) * -0.25);
-  height: calc(30vw* 2.4);
-  width: calc(30vw* 2.4);
-  -webkit-animation-duration: calc(150s);
-          animation-duration: calc(150s);
-}
-
-.solar-system__middle-ring-3 {
-  top: calc(50% - calc(30vw* 2.1) * 0.5);
-  left: calc(calc(30vw* 2.1) * -0.25);
-  height: calc(30vw* 2.1);
-  width: calc(30vw* 2.1);
-  -webkit-animation-duration: 100s;
-          animation-duration: 100s;
-}
-
-.solar-system__inner-ring {
-  top: calc(50% - calc(30vw* 1.8) * 0.5);
-  left: calc(calc(30vw* 1.8) * -0.25);
-  height: calc(30vw* 1.8);
-  width: calc(30vw* 1.8);
-  -webkit-animation-duration: calc(50s);
-          animation-duration: calc(50s);
+.header_hero_first-name, .header_hero_last-name {
+  color: #d57e8e;
+  text-transform: uppercase;
 }
 
 /* Reusable components such as buttons, navbars, cards, etc */
