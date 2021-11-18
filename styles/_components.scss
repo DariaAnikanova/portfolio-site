@@ -1,5 +1,28 @@
 /* Reusable components such as buttons, navbars, cards, etc */
 
-.button {
-    color: black;
+.nav-button {
+    text-align: center;
+    font-weight: 900;
+    color: $accent-color;
+    padding: $spacer $spacer * 2;
+    text-transform: uppercase;
+    min-width: 100%;
+    &:hover {
+        color: $accent-color-2;
+        background-color: rgba($color: $accent-color-2, $alpha: 0.3);
+    }
+}
+
+.link-list {
+    display: flex;
+    &_item {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.link {
+    text-decoration: none;
 }

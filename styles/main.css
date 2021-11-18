@@ -6,6 +6,7 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 /*Global Reset Styles*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap");
 *,
 *:before,
 *:after {
@@ -223,9 +224,19 @@ p {
   right: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
 /* Media Queries */
 :root {
   font-size: 18px;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media (min-width: 600px) and (max-width: calc($screen-md - 1)) {
@@ -254,6 +265,8 @@ p {
 
 h1 {
   font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 4px;
 }
 
 @media (max-width: calc($screen-sm - 1)) {
@@ -298,30 +311,168 @@ h5 {
 
 @media (max-width: calc($screen-sm - 1)) {
   h5 {
-    font-size: 3rem;
+    font-size: 1rem;
   }
 }
 
 /* Handles layout such as container and any grid systems*/
 body {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
   background: #242d48 center/cover no-repeat;
   overflow: hidden;
-  font-family: sans-serif;
 }
 
 .overlay {
-  background: url("/assets/images/darianova.svg") center;
   border: 10px #d57e8e solid;
+  z-index: -2;
+  background: url("/assets/images/darianova.svg") center;
 }
 
-.header_hero_first-name, .header_hero_last-name {
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header_nav {
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header_nav_logo {
+  margin: 1rem;
+}
+
+.header_nav_logo_icon {
+  width: 25px;
+  height: 25px;
+  background-color: #d57e8e;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.header_nav_logo_icon:hover {
+  background-color: #ef7165;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.main-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.main-content_hero_first-name, .main-content_hero_last-name {
   color: #d57e8e;
   text-transform: uppercase;
 }
 
+.main-content_hero_last-name {
+  background-color: rgba(36, 45, 72, 0.75);
+  display: block;
+  text-align: center;
+  letter-spacing: 35px;
+  -webkit-transform: scaleY(4);
+          transform: scaleY(4);
+}
+
+.main-content_hero_subtitle {
+  color: #ef7165;
+  text-transform: uppercase;
+}
+
+.footer {
+  border: 1px #ef7165 solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer_content {
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer_content_logo {
+  margin: 1rem;
+}
+
+.footer_content_logo_icon {
+  width: 25px;
+  height: 25px;
+  background-color: #d57e8e;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.footer_content_logo_icon:hover {
+  background-color: #ef7165;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 /* Reusable components such as buttons, navbars, cards, etc */
-.button {
-  color: black;
+.nav-button {
+  text-align: center;
+  font-weight: 900;
+  color: #d57e8e;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  min-width: 100%;
+}
+
+.nav-button:hover {
+  color: #ef7165;
+  background-color: rgba(239, 113, 101, 0.3);
+}
+
+.link-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.link-list_item {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.link {
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -2,23 +2,94 @@
 
 body {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    padding: $deco-border-size;
     background: $base-color center/cover no-repeat;
     overflow: hidden;
-    font-family: sans-serif;
 }
 
 .overlay {
     @extend %absolute;
+    border: $deco-border-size $accent-color solid;
+    z-index: -2;
     background: url("/assets/images/darianova.svg") center;
-    border: 10px $accent-color solid;
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_nav {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &_logo {
+            margin: $spacer;
+            &_icon {
+                width: 25px;
+                height: 25px;
+                background-color: $accent-color;
+                transition: transform 200ms;
+                &:hover {
+                    background-color: $accent-color-2;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+.main-content {
+    flex-grow: 1;
     &_hero {
         &_first-name,
         &_last-name {
             color: $accent-color;
             text-transform: uppercase;
+        }
+
+        &_last-name {
+            background-color: rgba($base-color, 0.75);
+            display: block;
+            text-align: center;
+            letter-spacing: 35px;
+            transform: scaleY(4);
+        }
+
+        &_subtitle {
+            color: $accent-color-2;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.footer {
+    @include test-border;
+    display: flex;
+
+    &_content {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &_logo {
+            margin: $spacer;
+
+            &_icon {
+                width: 25px;
+                height: 25px;
+                background-color: $accent-color;
+                transition: transform 200ms;
+
+                &:hover {
+                    background-color: $accent-color-2;
+                    transform: scale(1.2);
+                }
+            }
         }
     }
 }

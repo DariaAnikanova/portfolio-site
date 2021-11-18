@@ -1,5 +1,5 @@
 /* Variables, mixins, and utility classes. */
-// @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap");
 
 /* Variables*/
 
@@ -10,7 +10,10 @@ $accent-color-2: #ef7165;
 
 $base-font-size: 18px;
 $border-circle: 50%;
-$border-rounded: 20px;
+$border-rounded: 10px;
+
+$deco-border-size: 10px;
+$spacer: 1rem;
 
 /*Min-widths*/
 // Breakpoints taken from Vuetify: https://vuetifyjs.com/en/features/breakpoints/
@@ -28,6 +31,14 @@ $screen-xl: 1904px;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+%headings {
+    font-family: "Montserrat", sans-serif;
+}
+
+@mixin test-border {
+    border: 1px $accent-color-2 solid;
 }
 
 /* Media Queries */
@@ -67,6 +78,7 @@ $screen-xl: 1904px;
 // Typography Rules
 :root {
     font-size: $base-font-size;
+    font-family: "Open Sans", sans-serif;
 
     @include small-to-med-tablet {
         font-size: 18px;
@@ -82,8 +94,19 @@ $screen-xl: 1904px;
     }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %headings;
+}
+
 h1 {
     font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
     @include small-to-large-phone {
         font-size: 2.4rem;
     }
