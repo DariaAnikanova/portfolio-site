@@ -6,10 +6,29 @@
     color: $accent-color;
     padding: $spacer $spacer * 2;
     text-transform: uppercase;
-    min-width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
     &:hover {
         color: $accent-color-2;
-        background-color: rgba($color: $accent-color-2, $alpha: 0.3);
+        background: rgba($color: $accent-color-2, $alpha: 0.3);
+    }
+    &:focus {
+        outline: 2px solid $accent-color-2;
+    }
+}
+
+.logo {
+    width: 25px;
+    height: 25px;
+    background-color: $accent-color;
+    transition: transform 200ms;
+    &:hover {
+        background-color: $accent-color-2;
+        transform: scale(1.2);
+    }
+    &:focus {
+        outline: 2px solid $accent-color-2;
     }
 }
 
@@ -20,6 +39,9 @@
         display: flex;
         align-items: center;
         justify-items: center;
+        &:focus {
+            outline: 2px solid $accent-color-2;
+        }
     }
 }
 

@@ -37,7 +37,19 @@ $screen-xl: 1904px;
     font-family: "Montserrat", sans-serif;
 }
 
-@mixin test-border {
+// Hides Visually but not from Screen Readers
+%hide-element {
+    border: 0;
+    clip-path: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+%test-border {
     border: 1px $accent-color-2 solid;
 }
 

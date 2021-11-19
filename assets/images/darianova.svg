@@ -1,5 +1,5 @@
-<svg height="50" width="225" xmlns="http://www.w3.org/2000/svg">
-    <text id="pattern-text" x="5" y="25" font-size="30" fill="#1f273d" font-weight="900" stroke-width="none"
+<svg height="55" width="225" xmlns="http://www.w3.org/2000/svg">
+    <text id="pattern-text" x="6" y="30" font-size="30" fill="#1f273d" font-weight="900" stroke-width="none"
         stroke-linejoin="round" font-family="sans-serif"
         style="text-transform: uppercase; letter-spacing: 5; transform: scaleY(1.75)">
         DariaNova

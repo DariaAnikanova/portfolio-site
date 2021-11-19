@@ -13,22 +13,37 @@
 <body>
     <header class="header">
         <nav class="header_nav">
-            <a href="." class="header_nav_logo"><div class="header_nav_logo_icon"></div></a>
+            <a href="." class="header_nav_logo logo"><div class="header_nav_logo_icon"></div></a>
             <ul class="header_nav_list link-list">
-                <li class="header_nav_list_item link-list_item"><a href="." class="nav-button">About</a></li>
-                <li class="header_nav_list_item link-list_item"><a href="." class="nav-button">Projects</a></li>
-                <li class="header_nav_list_item link-list_item"><a href="." class="nav-button">Blog</a></li>
+                <li class="header_nav_list_item link-list_item"><button class="nav-button">Home</button></li>
+                <li class="header_nav_list_item link-list_item"><button class="nav-button">About</button></li>
+                <li class="header_nav_list_item link-list_item"><button class="nav-button">Projects</button></li>
+                <li class="header_nav_list_item link-list_item"><button class="nav-button">Blog</button></li>
             </ul>
         </nav>
     </header>
-    <main class="main-content">
-        <div class="main-content_hero">
-            <h1 class="main-content_hero_first-name">Daria<br><span class="main-content_hero_last-name"> Anikanova
-                </span></h1>
+    <main class="content">
+        <div class="content_hero">
+            <h1 class="main-content_hero_full-name">
+                Daria
+                <div class="main-content_hero_last-name">Anikanova</div>
+                <div class="main-content_hero_deco-last-name" aria-hidden="true">
+                   <div>A</div>
+                   <div>n</div>
+                   <div>i</div>
+                   <div>k</div>
+                   <div>a</div>
+                   <div>n</div>
+                   <div>o</div>
+                   <div>v</div>
+                   <div>a</div>
+                </div>
+            </h1>
             <h2 class="main-content_hero_subtitle">Front End Developer</h2>
         </div>
         <!-- <div class="main-content_contact">
             <ul class="content_contact-list link-list">
+                If using links with role=button, have to add key event handler that listens for the space key in order to be consistent with native buttons.
                 <li class="link-list_item"><a href="https://twitter.com/DariaNovaDev"><span class="fab fa-twitter-square" role="img" aria-label="twitter"></span></a></li>
                 <li class="link-list_item"><a href="https://github.com/DariaAnikanova"><span class="fab fa-github-square" role="img" aria-label="github"></span></a></li>
                 <li class="link-list_item"><a href="https://www.linkedin.com/in/dariaanikanova/"><span class="fab fa-linkedin" role="img" aria-label="linkedin"></span></a></li>
@@ -38,17 +53,15 @@
     </main>
     <footer class="footer">
         <div class="footer_content">
-            <a href="." class="footer_content_logo"><div class="footer_content_logo_icon"></div></a>
+            <a href="." class="footer_content_logo logo"><div class="footer_content_logo_icon"></div></a>
             <ul class="footer_contact-list link-list">
-                <li class="footer_contact-list_item link-list_item"><a href="https://twitter.com/DariaNovaDev"><span class="fab fa-twitter-square" role="img" aria-label="twitter"></span></a></li>
-                <li class="footer_contact-list_item link-list_item"><a href="https://github.com/DariaAnikanova"><span class="fab fa-github-square" role="img" aria-label="github"></span></a></li>
-                <li class="footer_contact-list_item link-list_item"><a href="https://www.linkedin.com/in/dariaanikanova/"><span class="fab fa-linkedin" role="img" aria-label="linkedin"></span></a></li>
-                <li class="footer_contact-list_item link-list_item"><a href="mailto:contact@darianova.dev"><span class="fas fa-envelope-square" role="img" aria-label="email"></span></a></li>
+                <li class="footer_contact-list_item link-list_item"><a href="https://twitter.com/DariaNovaDev" class="link-list_item"><span class="fab fa-twitter-square" role="img" aria-label="twitter"></span></a></li>
+                <li class="footer_contact-list_item link-list_item"><a href="https://github.com/DariaAnikanova" class="link-list_item"><span class="fab fa-github-square" role="img" aria-label="github"></span></a></li>
+                <li class="footer_contact-list_item link-list_item"><a href="https://www.linkedin.com/in/dariaanikanova/" class="link-list_item"><span class="fab fa-linkedin" role="img" aria-label="linkedin"></span></a></li>
+                <li class="footer_contact-list_item link-list_item"><a href="mailto:contact@darianova.dev" class="link-list_item"><span class="fas fa-envelope-square" role="img" aria-label="email"></span></a></li>
             </ul>
         </div>
         
     </footer>    
-    <div class="overlay">
-    </div> 
 </body>
 </html>
