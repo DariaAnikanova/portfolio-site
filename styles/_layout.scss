@@ -5,14 +5,14 @@ body {
     display: flex;
     flex-direction: column;
     padding: $deco-border-size;
-    background: $base-color center/cover no-repeat;
+    background-color: $base-color;
     overflow: hidden;
     &::before {
         @extend %absolute;
         content: "";
         border: $deco-border-size $accent-color solid;
         z-index: -2;
-        background: url("/assets/images/darianova.svg") center;
+        background: url("/assets/images/darianova.svg") space;
     }
 }
 

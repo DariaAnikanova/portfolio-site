@@ -342,7 +342,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 10px;
-  background: #242d48 center/cover no-repeat;
+  background-color: #242d48;
   overflow: hidden;
 }
 
@@ -350,7 +350,7 @@ body::before {
   content: "";
   border: 10px #d57e8e solid;
   z-index: -2;
-  background: url("/assets/images/darianova.svg") center;
+  background: url("/assets/images/darianova.svg") space;
 }
 
 .header {
