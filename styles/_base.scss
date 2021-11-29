@@ -7,6 +7,7 @@ $base-color: #242d48;
 $secondary-color: #252d46;
 $accent-color: #d57e8e;
 $accent-color-2: #ef7165;
+$accent-color-3: #faaa58;
 
 $base-font-size: 18px;
 $border-circle: 50%;
@@ -38,7 +39,7 @@ $screen-xl: 1904px;
 }
 
 // Hides Visually but not from Screen Readers
-%hide-element {
+%hide-from-screenreader {
     border: 0;
     clip-path: rect(1px, 1px, 1px, 1px);
     height: 1px;
@@ -47,6 +48,12 @@ $screen-xl: 1904px;
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+%focus {
+    &:focus {
+        outline: 2px solid $accent-color-3;
+    }
 }
 
 %test-border {

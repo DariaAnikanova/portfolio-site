@@ -1,6 +1,7 @@
 /* Reusable components such as buttons, navbars, cards, etc */
 
 .nav-button {
+    @extend %focus;
     text-align: center;
     font-weight: 900;
     color: $accent-color;
@@ -13,12 +14,10 @@
         color: $accent-color-2;
         background: rgba($color: $accent-color-2, $alpha: 0.3);
     }
-    &:focus {
-        outline: 2px solid $accent-color-2;
-    }
 }
 
 .logo {
+    @extend %focus;
     width: 25px;
     height: 25px;
     background-color: $accent-color;
@@ -27,21 +26,16 @@
         background-color: $accent-color-2;
         transform: scale(1.2);
     }
-    &:focus {
-        outline: 2px solid $accent-color-2;
-    }
 }
 
 .link-list {
     display: flex;
     &_item {
+        @extend %focus;
         list-style: none;
         display: flex;
         align-items: center;
         justify-items: center;
-        &:focus {
-            outline: 2px solid $accent-color-2;
-        }
     }
 }
 

@@ -2,4 +2,4 @@
 
 const navList = document.querySelector(".header_nav_list");
 const navButton = document.querySelectorAll(".nav-button");
-const pageContent = document.querySelectorAll(".");
+// const pageContent = document.querySelectorAll(".");

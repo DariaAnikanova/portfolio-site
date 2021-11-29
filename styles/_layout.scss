@@ -32,7 +32,7 @@ body {
     }
 }
 
-.main-content {
+.content {
     flex-grow: 1;
     &_hero {
         margin: 0 $spacer;
@@ -41,7 +41,7 @@ body {
             text-transform: uppercase;
         }
         &_last-name {
-            @extend %hide-element;
+            @extend %hide-from-screenreader;
         }
         &_deco-last-name {
             display: flex;
