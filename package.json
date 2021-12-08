@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DariaAnikanova/portfolio-site/issues"
   },
-  "homepage": "https://github.com/DariaAnikanova/portfolio-site#readme"
+  "homepage": "https://github.com/DariaAnikanova/portfolio-site#readme",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  }
 }

@@ -1,9 +1,9 @@
 <svg height="48" width="100%" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <pattern id="pattern-text" x="0" y="0" width="225" height="40" patternUnits="userSpaceOnUse">
-            <text x="0" y="22" font-size="30" fill="#1f273d" font-weight="900" stroke-width="none"
+            <text x="5" y="22" font-size="30" fill="#1f273d" font-weight="900" stroke-width="none"
                 stroke-linejoin="round" font-family="sans-serif"
-                style="text-transform: uppercase; letter-spacing: 5; transform: scaleY(1.75)">
+                style="text-transform: uppercase; letter-spacing: 5; transform: scaleY(1.75);">
                 DariaNova
             </text>
         </pattern>

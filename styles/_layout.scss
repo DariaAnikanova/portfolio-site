@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     padding: $deco-border-size;
     background-color: $base-color;
+
     overflow: hidden;
     &::before {
         @extend %absolute;
@@ -35,7 +36,9 @@ body {
 .content {
     flex-grow: 1;
     &_hero {
-        margin: 0 $spacer;
+        &_first-name {
+            margin-left: $spacer;
+        }
         &_full-name {
             color: $accent-color;
             text-transform: uppercase;
@@ -47,13 +50,12 @@ body {
             display: flex;
             justify-content: space-around;
             background-color: rgba($base-color, 0.75);
-            // transform: scaleY(3);
-            // transform-origin: left top;
         }
         &_subtitle {
             color: $accent-color-2;
             text-transform: uppercase;
             text-align: right;
+            margin-right: $spacer;
         }
     }
 }

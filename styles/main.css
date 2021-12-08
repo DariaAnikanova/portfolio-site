@@ -6,7 +6,6 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 /*Global Reset Styles*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap");
 *,
 *:before,
 *:after {
@@ -389,8 +388,8 @@ body::before {
           flex-grow: 1;
 }
 
-.content_hero {
-  margin: 0 1rem;
+.content_hero_first-name {
+  margin-left: 1rem;
 }
 
 .content_hero_full-name {
@@ -411,6 +410,7 @@ body::before {
   color: #ef7165;
   text-transform: uppercase;
   text-align: right;
+  margin-right: 1rem;
 }
 
 .footer {
