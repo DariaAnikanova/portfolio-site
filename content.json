@@ -1,10 +1,17 @@
 {
+    "name": "Daria Anikanova",
+    "subtitle": "Front End Developer",
+    "email": "contact@darianova.dev",
+    "portfolio": "https://darianova.dev",
+    "portfolioLabel": "darianova.dev",
+    "github": "https://github.com/DariaAnikanova",
+    "about": "Description",
     "projects": [
         {
             "id": 0,
-            "ProjectName": "Project 1",
-            "Description": "Description",
-            "Media": [
+            "projectName": "Project 1",
+            "projectDescription": "Description",
+            "media": [
                 "pic",
                 "pic2",
                 "pic3"
