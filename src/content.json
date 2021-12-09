@@ -1,6 +1,10 @@
 {
-    "name": "Daria Anikanova",
+    "firstName": "Daria",
+    "lastName": "Anikanova",
     "subtitle": "Front End Developer",
+    "portfolio": "https://darianova.dev",
+    "portfolioLabel": "darianova.dev",
+    "about": " Placeholder: Front-End Developer, experienced working with diverse teams to design, validate and build web applications in both technical and business-oriented roles for 3+ years",
     "contact": {
         "email": {
             "icon": "fas fa-envelope-square",
@@ -19,14 +23,16 @@
             "link": "https://twitter.com/DariaNovaDev"
         }
     },
-    "portfolio": "https://darianova.dev",
-    "portfolioLabel": "darianova.dev",
-    "about": " Placeholder: Front-End Developer, experienced working with diverse teams to design, validate and build web applications in both technical and business-oriented roles for 3+ years",
     "projects": [
         {
             "id": 0,
             "projectName": "Project 1",
             "projectDescription": "Description",
+            "tech": [
+                "Vue.js",
+                "CSS",
+                "SCSS"
+            ],
             "media": [
                 "pic1",
                 "pic2",

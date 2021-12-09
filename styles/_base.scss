@@ -38,7 +38,7 @@ $screen-xl: 1904px;
 }
 
 // Hides Visually but not from Screen Readers
-%hide-from-screenreader {
+%hide-from-view-but-accessible {
     border: 0;
     clip-path: rect(1px, 1px, 1px, 1px);
     height: 1px;

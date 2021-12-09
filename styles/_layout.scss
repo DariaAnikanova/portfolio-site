@@ -44,14 +44,15 @@ body {
             text-transform: uppercase;
         }
         &_last-name {
-            @extend %hide-from-screenreader;
+            @extend %hide-from-view-but-accessible;
         }
         &_deco-last-name {
             display: flex;
             justify-content: space-around;
             background-color: rgba($base-color, 0.75);
         }
-        &_subtitle {
+        &_subtitle,
+        &_about {
             color: $accent-color-2;
             text-transform: uppercase;
             text-align: right;

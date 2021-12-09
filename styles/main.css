@@ -406,7 +406,7 @@ body::before {
   background-color: rgba(36, 45, 72, 0.75);
 }
 
-.content_hero_subtitle {
+.content_hero_subtitle, .content_hero_about {
   color: #ef7165;
   text-transform: uppercase;
   text-align: right;
