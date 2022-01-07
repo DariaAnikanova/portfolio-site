@@ -214,6 +214,7 @@ p {
 /* Variables, mixins, and utility classes. */
 /* Variables*/
 /*Min-widths*/
+/* Media Queries */
 /* Mixins and Placeholders*/
 body::before {
   position: absolute;
@@ -252,7 +253,6 @@ h6 {
   border: 1px #ef7165 solid;
 }
 
-/* Media Queries */
 :root {
   font-size: 18px;
   font-family: "Open Sans", sans-serif;
@@ -346,7 +346,6 @@ body {
           flex-direction: column;
   padding: 10px;
   background-color: #242d48;
-  overflow: hidden;
 }
 
 body::before {
@@ -411,6 +410,40 @@ body::before {
   text-transform: uppercase;
   text-align: right;
   margin-right: 1rem;
+}
+
+.content_projects_grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) and (max-width: calc($screen-md - 1)) {
+  .content_projects_grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 960px) and (max-width: calc($screen-lg - 1)) {
+  .content_projects_grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1264px) and (max-width: calc($screen-xl - 1)) {
+  .content_projects_grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1904px) {
+  .content_projects_grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .footer {
@@ -501,5 +534,17 @@ body::before {
 
 .link {
   text-decoration: none;
+}
+
+.project-card {
+  width: 50px;
+  height: 50px;
+  background-color: #d57e8e;
+}
+
+.article-card {
+  width: 50px;
+  height: 50px;
+  background-color: #ef7165;
 }
 /*# sourceMappingURL=main.css.map */

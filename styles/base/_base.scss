@@ -1,0 +1,178 @@
+/* Variables, mixins, and utility classes. */
+
+/* Variables*/
+
+$base-color: #242d48;
+$secondary-color: #252d46;
+$accent-color: #d57e8e;
+$accent-color-2: #ef7165;
+$accent-color-3: #faaa58;
+
+$base-font-size: 18px;
+$border-circle: 50%;
+$border-rounded: 10px;
+
+$deco-border-size: 10px;
+$spacer: 1rem;
+
+/*Min-widths*/
+
+$screen-sm: 600px;
+$screen-md: 960px;
+$screen-lg: 1264px;
+$screen-xl: 1904px;
+
+/* Media Queries */
+
+@mixin small-to-large-phone {
+  @media (max-width: calc($screen-sm - 1)) {
+    @content;
+  }
+}
+@mixin small-to-med-tablet {
+  @media (min-width: $screen-sm) and (max-width: calc($screen-md - 1)) {
+    @content;
+  }
+}
+@mixin large-tablet-to-laptop {
+  @media (min-width: $screen-md) and (max-width: calc($screen-lg - 1)) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $screen-lg) and (max-width: calc($screen-xl - 1)) {
+    @content;
+  }
+}
+@mixin big-desktop-up {
+  @media (min-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+/* Mixins and Placeholders*/
+
+%absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+%headings {
+  font-family: "Montserrat", sans-serif;
+}
+
+// Hides Visually but not from Screen Readers
+
+%hide-visually {
+  border: 0;
+  clip-path: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+%focus {
+  &:focus {
+    outline: 2px solid $accent-color-3;
+  }
+}
+
+%test-border {
+  border: 1px $accent-color-2 solid;
+}
+
+@mixin responsive-grid-gallery {
+  display: grid;
+
+  gap: 1.5rem;
+
+  @include small-to-med-tablet {
+    grid-template-columns: 1fr;
+  }
+  @include large-tablet-to-laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include big-desktop-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Typography Rules
+:root {
+  font-size: $base-font-size;
+  font-family: "Open Sans", sans-serif;
+
+  @include small-to-med-tablet {
+    font-size: 18px;
+  }
+  @include large-tablet-to-laptop {
+    font-size: 20px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
+  @include big-desktop-up {
+    font-size: 24px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %headings;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  @include small-to-large-phone {
+    font-size: 2.4rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  @include small-to-large-phone {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  @include small-to-large-phone {
+    font-size: 1.6rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+  @include small-to-large-phone {
+    font-size: 1.2rem;
+  }
+}
+
+h5 {
+  font-size: 1rem;
+  @include small-to-large-phone {
+    font-size: 1rem;
+  }
+}
