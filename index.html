@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/3f5f2bebde.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/3f5f2bebde.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
     <script type="text/javascript" src="js/main.js"></script>
     <title>Daria Anikanova Portfolio</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <nav class="header_nav">
-            <a href="." class="header_nav_logo logo"><div class="header_nav_logo_icon"></div></a>
-            <ul class="header_nav_list link-list">
-                <li class="header_nav_list_item link-list_item"><button class="nav-button">Home</button></li>
-                <li class="header_nav_list_item link-list_item"><button class="nav-button">About</button></li>
-                <li class="header_nav_list_item link-list_item"><button class="nav-button">Projects</button></li>
-                <li class="header_nav_list_item link-list_item"><button class="nav-button">Blog</button></li>
-            </ul>
-        </nav>
+      <nav class="header_nav">
+        <a href="." class="header_nav_logo logo"
+          ><div class="header_nav_logo_icon"></div
+        ></a>
+        <ul class="header_nav_list link-list">
+          <li class="header_nav_list_item link-list_item">
+            <button class="nav-button">Home</button>
+          </li>
+          <li class="header_nav_list_item link-list_item">
+            <button class="nav-button">About</button>
+          </li>
+          <li class="header_nav_list_item link-list_item">
+            <button class="nav-button">Projects</button>
+          </li>
+          <li class="header_nav_list_item link-list_item">
+            <button class="nav-button">Blog</button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main class="content">
-        <section class="content_hero">
-            <h1 class="content_hero_full-name">
-                <div class="content_hero_first-name">Daria</div>
-                <div class="content_hero_last-name">Anikanova</div>
-                <div class="content_hero_deco-last-name" aria-hidden="true">
-                    <div>A</div>
-                    <div>n</div>
-                    <div>i</div>
-                    <div>k</div>
-                    <div>a</div>
-                    <div>n</div>
-                    <div>o</div>
-                    <div>v</div>
-                    <div>a</div>
-                </div>
-            </h1>
-            <h2 class="content_hero_subtitle">Front End Developer</h2>
-            <p class="content_hero_about">About me Paragraph</p>
+      <section class="content_hero">
+        <h1 class="content_hero_full-name">
+          <div class="content_hero_first-name">Daria</div>
+          <div class="content_hero_last-name">Anikanova</div>
+        </h1>
+        <h2 class="content_hero_subtitle">Front End Developer</h2>
+        <p class="content_hero_about">About me Paragraph</p>
 
-            <!-- <div class="main-content_contact">
+        <!-- <div class="main-content_contact">
                 <ul class="content_contact-list link-list">
                     If using links with role=button, have to add key event handler that listens for the space key in order to be consistent with native buttons.
                     <li class="link-list_item"><a href="https://twitter.com/DariaNovaDev"><span class="fab fa-twitter-square" role="img" aria-label="twitter"></span></a></li>
@@ -53,17 +75,17 @@
                     <li class="link-list_item"><a href="mailto:contact@darianova.dev"><span class="fas fa-envelope-square" role="img" aria-label="email"></span></a></li>
                 </ul>
             </div> -->
-        </section>
-        <section class="content_projects">
-           <div class="content_projects_grid">
-               <div class="content_projects_grid_item project-card"></div>
-               <div class="content_projects_grid_item project-card"></div>
-               <div class="content_projects_grid_item project-card"></div>
-               <div class="content_projects_grid_item project-card"></div>
-               <div class="content_projects_grid_item project-card"></div>
-           </div>
-        </section>
-        <!-- <section class="content_blog">
+      </section>
+      <section class="content_projects">
+        <div class="content_projects_grid">
+          <div class="content_projects_grid_item project-card"></div>
+          <div class="content_projects_grid_item project-card"></div>
+          <div class="content_projects_grid_item project-card"></div>
+          <div class="content_projects_grid_item project-card"></div>
+          <div class="content_projects_grid_item project-card"></div>
+        </div>
+      </section>
+      <!-- <section class="content_blog">
             <div class="content_blog_grid">
                 <div class="content_blog_grid_article article-card"></div>
                 <div class="content_blog_grid_article article-card"></div>
@@ -72,16 +94,51 @@
         </section> -->
     </main>
     <footer class="footer">
-        <div class="footer_content">
-            <a href="." class="footer_content_logo logo"><div class="footer_content_logo_icon"></div></a>
-            <ul class="footer_contact-list link-list">
-                <li class="footer_contact-list_item link-list_item"><a href="https://twitter.com/DariaNovaDev" class="link-list_item"><span class="fab fa-twitter-square" role="img" aria-label="twitter"></span></a></li>
-                <li class="footer_contact-list_item link-list_item"><a href="https://github.com/DariaAnikanova" class="link-list_item"><span class="fab fa-github-square" role="img" aria-label="github"></span></a></li>
-                <li class="footer_contact-list_item link-list_item"><a href="https://www.linkedin.com/in/dariaanikanova/" class="link-list_item"><span class="fab fa-linkedin" role="img" aria-label="linkedin"></span></a></li>
-                <li class="footer_contact-list_item link-list_item"><a href="mailto:contact@darianova.dev" class="link-list_item"><span class="fas fa-envelope-square" role="img" aria-label="email"></span></a></li>
-            </ul>
-        </div>
-        
-    </footer>    
-</body>
+      <div class="footer_content">
+        <a href="." class="footer_content_logo logo"
+          ><div class="footer_content_logo_icon"></div
+        ></a>
+        <ul class="footer_contact-list link-list">
+          <li class="footer_contact-list_item link-list_item">
+            <a href="https://twitter.com/DariaNovaDev" class="link-list_item"
+              ><span
+                class="fab fa-twitter-square"
+                role="img"
+                aria-label="twitter"
+              ></span
+            ></a>
+          </li>
+          <li class="footer_contact-list_item link-list_item">
+            <a href="https://github.com/DariaAnikanova" class="link-list_item"
+              ><span
+                class="fab fa-github-square"
+                role="img"
+                aria-label="github"
+              ></span
+            ></a>
+          </li>
+          <li class="footer_contact-list_item link-list_item">
+            <a
+              href="https://www.linkedin.com/in/dariaanikanova/"
+              class="link-list_item"
+              ><span
+                class="fab fa-linkedin"
+                role="img"
+                aria-label="linkedin"
+              ></span
+            ></a>
+          </li>
+          <li class="footer_contact-list_item link-list_item">
+            <a href="mailto:contact@darianova.dev" class="link-list_item"
+              ><span
+                class="fas fa-envelope-square"
+                role="img"
+                aria-label="email"
+              ></span
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>

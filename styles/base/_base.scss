@@ -25,22 +25,22 @@ $screen-xl: 1904px;
 /* Media Queries */
 
 @mixin small-to-large-phone {
-  @media (max-width: calc($screen-sm - 1)) {
+  @media (max-width: #{$screen-sm - 1px}) {
     @content;
   }
 }
 @mixin small-to-med-tablet {
-  @media (min-width: $screen-sm) and (max-width: calc($screen-md - 1)) {
+  @media (min-width: $screen-sm) and (max-width: #{$screen-md - 1}) {
     @content;
   }
 }
 @mixin large-tablet-to-laptop {
-  @media (min-width: $screen-md) and (max-width: calc($screen-lg - 1)) {
+  @media (min-width: $screen-md) and (max-width: #{$screen-lg - 1}) {
     @content;
   }
 }
 @mixin desktop {
-  @media (min-width: $screen-lg) and (max-width: calc($screen-xl - 1)) {
+  @media (min-width: $screen-lg) and (max-width: #{$screen-xl - 1}) {
     @content;
   }
 }
@@ -72,7 +72,7 @@ $screen-xl: 1904px;
 
 // Hides Visually but not from Screen Readers
 
-%hide-visually {
+%visually-hidden {
   border: 0;
   clip-path: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -109,6 +109,24 @@ $screen-xl: 1904px;
   }
   @include big-desktop-up {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@mixin deco-border {
+  border-color: $accent-color;
+  border-style: solid;
+
+  // @include small-to-med-tablet {
+  //   border-width: 20px;
+  // }
+  // @include large-tablet-to-laptop {
+  //   border-width: 20px;
+  // }
+  @include desktop {
+    border-width: 30px;
+  }
+  @include big-desktop-up {
+    border-width: 20px;
   }
 }
 

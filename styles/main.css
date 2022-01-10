@@ -216,7 +216,7 @@ p {
 /*Min-widths*/
 /* Media Queries */
 /* Mixins and Placeholders*/
-body::before {
+body::before, body::after, .content_hero_last-name::before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -233,18 +233,6 @@ h6 {
   font-family: "Montserrat", sans-serif;
 }
 
-.content_hero_last-name {
-  border: 0;
-  -webkit-clip-path: rect(1px, 1px, 1px, 1px);
-          clip-path: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .nav-button:focus, .logo:focus, .link-list_item:focus {
   outline: 2px solid #faaa58;
 }
@@ -258,19 +246,19 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-@media (min-width: 600px) and (max-width: calc($screen-md - 1)) {
+@media (min-width: 600px) and (max-width: 959px) {
   :root {
     font-size: 18px;
   }
 }
 
-@media (min-width: 960px) and (max-width: calc($screen-lg - 1)) {
+@media (min-width: 960px) and (max-width: 1263px) {
   :root {
     font-size: 20px;
   }
 }
 
-@media (min-width: 1264px) and (max-width: calc($screen-xl - 1)) {
+@media (min-width: 1264px) and (max-width: 1903px) {
   :root {
     font-size: 20px;
   }
@@ -288,7 +276,7 @@ h1 {
   letter-spacing: 4px;
 }
 
-@media (max-width: calc($screen-sm - 1)) {
+@media (max-width: 599px) {
   h1 {
     font-size: 2.4rem;
   }
@@ -298,7 +286,7 @@ h2 {
   font-size: 2.5rem;
 }
 
-@media (max-width: calc($screen-sm - 1)) {
+@media (max-width: 599px) {
   h2 {
     font-size: 2rem;
   }
@@ -308,7 +296,7 @@ h3 {
   font-size: 2rem;
 }
 
-@media (max-width: calc($screen-sm - 1)) {
+@media (max-width: 599px) {
   h3 {
     font-size: 1.6rem;
   }
@@ -318,7 +306,7 @@ h4 {
   font-size: 1.5rem;
 }
 
-@media (max-width: calc($screen-sm - 1)) {
+@media (max-width: 599px) {
   h4 {
     font-size: 1.2rem;
   }
@@ -328,7 +316,7 @@ h5 {
   font-size: 1rem;
 }
 
-@media (max-width: calc($screen-sm - 1)) {
+@media (max-width: 599px) {
   h5 {
     font-size: 1rem;
   }
@@ -346,13 +334,32 @@ body {
           flex-direction: column;
   padding: 10px;
   background-color: #242d48;
+  overflow: hidden;
 }
 
 body::before {
   content: "";
-  border: 10px #d57e8e solid;
-  z-index: -2;
+  z-index: -100;
   background: url("/assets/images/darianova.svg") space;
+}
+
+body::after {
+  border-color: #d57e8e;
+  border-style: solid;
+  content: "";
+  z-index: -98;
+}
+
+@media (min-width: 1264px) and (max-width: 1903px) {
+  body::after {
+    border-width: 30px;
+  }
+}
+
+@media (min-width: 1904px) {
+  body::after {
+    border-width: 20px;
+  }
 }
 
 .header {
@@ -396,13 +403,25 @@ body::before {
   text-transform: uppercase;
 }
 
-.content_hero_deco-last-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: rgba(36, 45, 72, 0.75);
+.content_hero_last-name {
+  display: block;
+  position: relative;
+  text-align: center;
+  font-size: 10vw;
+  -webkit-transform: scale(1.2, 2);
+          transform: scale(1.2, 2);
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  z-index: -99;
+}
+
+.content_hero_last-name::before {
+  content: "";
+  z-index: -1;
+  -webkit-transform: scaleY(40%);
+          transform: scaleY(40%);
+  background-color: rgba(36, 45, 72, 0.65);
 }
 
 .content_hero_subtitle, .content_hero_about {
@@ -418,21 +437,21 @@ body::before {
   gap: 1.5rem;
 }
 
-@media (min-width: 600px) and (max-width: calc($screen-md - 1)) {
+@media (min-width: 600px) and (max-width: 959px) {
   .content_projects_grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 960px) and (max-width: calc($screen-lg - 1)) {
+@media (min-width: 960px) and (max-width: 1263px) {
   .content_projects_grid {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1264px) and (max-width: calc($screen-xl - 1)) {
+@media (min-width: 1264px) and (max-width: 1903px) {
   .content_projects_grid {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);

@@ -1,100 +1,133 @@
 /* Handles layout such as container and any grid systems*/
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: $deco-border-size;
-    background-color: $base-color;
-
-    // overflow: hidden;
-    &::before {
-        @extend %absolute;
-        content: "";
-        border: $deco-border-size $accent-color solid;
-        z-index: -2;
-        background: url("/assets/images/darianova.svg") space;
-    }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: $deco-border-size;
+  background-color: $base-color;
+  overflow: hidden;
+  &::before {
+    @extend %absolute;
+    content: "";
+    z-index: -100;
+    background: url("/assets/images/darianova.svg") space;
+  }
+  &::after {
+    @extend %absolute;
+    @include deco-border;
+    content: "";
+    z-index: -98;
+  }
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_nav {
+    min-width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
-    &_nav {
-        min-width: 100%;
-        display: flex;
-        justify-content: space-between;
-
-        &_logo {
-            margin: $spacer;
-        }
+    &_logo {
+      margin: $spacer;
     }
+  }
 }
 
 .content {
-    flex-grow: 1;
-    &_hero {
-        &_first-name {
-            margin-left: $spacer;
-        }
-        &_full-name {
-            color: $accent-color;
-            text-transform: uppercase;
-        }
-        &_last-name {
-            @extend %hide-from-view-but-accessible;
-        }
-        &_deco-last-name {
-            display: flex;
-            justify-content: space-around;
-            background-color: rgba($base-color, 0.75);
-        }
-        &_subtitle,
-        &_about {
-            color: $accent-color-2;
-            text-transform: uppercase;
-            text-align: right;
-            margin-right: $spacer;
-        }
+  flex-grow: 1;
+  &_hero {
+    &_first-name {
+      margin-left: $spacer;
     }
-    &_projects {
-        &_grid {
-            @include responsive-grid-gallery;
-        }
+    &_full-name {
+      color: $accent-color;
+      text-transform: uppercase;
     }
-    // &_blog {
-    //     margin-top: $spacer;
-    //     &_grid {
-    //         @include responsive-grid-gallery;
-    //     }
-    // }
+
+    &_last-name {
+      display: block;
+      position: relative;
+      text-align: center;
+      font-size: 10vw;
+      transform: scale(1.2, 2);
+      line-height: 1.5;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      z-index: -99;
+
+      //   @include small-to-med-tablet {
+      //     transform: scale(1.3, 2);
+      //     line-height: 2;
+      //   }
+      //   @include large-tablet-to-laptop {
+      //     transform: scale(1.3, 2);
+      //     line-height: 2;
+      //   }
+      //   @include desktop {
+      //     transform: scale(1.3, 2);
+      //     line-height: 2;
+      //   }
+      //   @include big-desktop-up {
+      //     transform: scale(1.4, 3);
+      //     line-height: 1.2;
+      //   }
+      &::before {
+        @extend %absolute;
+        content: "";
+        z-index: -1;
+        transform: scaleY(40%);
+        background-color: rgba($base-color, 0.65);
+      }
+    }
+
+    &_subtitle,
+    &_about {
+      color: $accent-color-2;
+      text-transform: uppercase;
+      text-align: right;
+      margin-right: $spacer;
+    }
+  }
+  &_projects {
+    &_grid {
+      @include responsive-grid-gallery;
+    }
+  }
+  // &_blog {
+  //     margin-top: $spacer;
+  //     &_grid {
+  //         @include responsive-grid-gallery;
+  //     }
+  // }
 }
 
 .footer {
-    @extend %test-border;
+  @extend %test-border;
+  display: flex;
+
+  &_content {
+    min-width: 100%;
     display: flex;
+    justify-content: space-between;
 
-    &_content {
-        min-width: 100%;
-        display: flex;
-        justify-content: space-between;
+    &_logo {
+      margin: $spacer;
 
-        &_logo {
-            margin: $spacer;
+      &_icon {
+        width: 25px;
+        height: 25px;
+        background-color: $accent-color;
+        transition: transform 200ms;
 
-            &_icon {
-                width: 25px;
-                height: 25px;
-                background-color: $accent-color;
-                transition: transform 200ms;
-
-                &:hover {
-                    background-color: $accent-color-2;
-                    transform: scale(1.2);
-                }
-            }
+        &:hover {
+          background-color: $accent-color-2;
+          transform: scale(1.2);
         }
+      }
     }
+  }
 }
