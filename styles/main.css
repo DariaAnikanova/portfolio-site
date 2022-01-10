@@ -224,15 +224,6 @@ body::before, body::after, .content_hero_last-name::before {
   right: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Montserrat", sans-serif;
-}
-
 .nav-button:focus, .logo:focus, .link-list_item:focus {
   outline: 2px solid #faaa58;
 }
@@ -246,28 +237,25 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-@media (min-width: 600px) and (max-width: 959px) {
-  :root {
-    font-size: 18px;
-  }
-}
-
 @media (min-width: 960px) and (max-width: 1263px) {
   :root {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1264px) and (max-width: 1903px) {
-  :root {
-    font-size: 20px;
+    font-size: 1.111rem;
   }
 }
 
 @media (min-width: 1904px) {
   :root {
-    font-size: 24px;
+    font-size: 1.333rem;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
@@ -350,9 +338,21 @@ body::after {
   z-index: -98;
 }
 
+@media (min-width: 600px) and (max-width: 959px) {
+  body::after {
+    border-width: 20px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1263px) {
+  body::after {
+    border-width: 20px;
+  }
+}
+
 @media (min-width: 1264px) and (max-width: 1903px) {
   body::after {
-    border-width: 30px;
+    border-width: 18px;
   }
 }
 
