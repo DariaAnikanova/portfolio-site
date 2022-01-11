@@ -11,8 +11,7 @@ $accent-color-3: #faaa58;
 $base-font-size: 18px;
 $border-circle: 50%;
 $border-rounded: 10px;
-
-$deco-border-size: 10px;
+$deco-border-size: 8px;
 $spacer: 1rem;
 
 /*Min-widths*/
@@ -85,7 +84,7 @@ $screen-xl: 1904px;
   }
 }
 
-%test-border {
+@mixin test-border {
   border: 1px $accent-color-2 solid;
 }
 
@@ -105,24 +104,6 @@ $screen-xl: 1904px;
   }
   @include big-desktop-up {
     grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@mixin deco-border {
-  border-color: $accent-color;
-  border-style: solid;
-
-  @include small-to-med-tablet {
-    border-width: 20px;
-  }
-  @include large-tablet-to-laptop {
-    border-width: 20px;
-  }
-  @include desktop {
-    border-width: 18px;
-  }
-  @include big-desktop-up {
-    border-width: 20px;
   }
 }
 
