@@ -356,7 +356,7 @@ body::after {
   border-color: #d57e8e;
   border-style: solid;
   border-width: 8px;
-  z-index: -98;
+  z-index: -97;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -476,7 +476,7 @@ body::after {
 
 .content_hero_last-name::before {
   content: "";
-  z-index: -1;
+  z-index: -99;
   -webkit-transform: scaleY(50%);
           transform: scaleY(50%);
   background-color: rgba(36, 45, 72, 0.65);
@@ -491,6 +491,24 @@ body::after {
   text-transform: uppercase;
   text-align: right;
   margin-right: 1rem;
+}
+
+.content_hero_img {
+  width: 15vw;
+  height: 75%;
+  background: url("../assets/images/PortfolioPic.png") 25px 10px/25vw no-repeat;
+  position: absolute;
+  bottom: 8px;
+  left: 15vw;
+  width: 25vw;
+  z-index: -98;
+  -webkit-filter: sepia(25%) saturate(726%) hue-rotate(186deg);
+          filter: sepia(25%) saturate(726%) hue-rotate(186deg);
+}
+
+.content_hero_img::after {
+  content: "";
+  background: url("../assets/images/PortfolioPic.png") 25px 10px/25vw no-repeat;
 }
 
 .content_projects_grid {
