@@ -66,12 +66,14 @@ body {
 .content {
   flex-grow: 1;
   &_hero {
+    user-select: none;
     &_full-name {
       color: $accent-color;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      margin-top: $spacer * 3;
+      margin-top: 10vh;
+      user-select: none;
     }
     &_first-name,
     &_last-name {
@@ -177,16 +179,35 @@ body {
 }
 
 .footer {
-  @include test-border;
-  display: flex;
-
+  position: relative;
+  & > small {
+    position: absolute;
+    width: 100%;
+    bottom: $spacer;
+    text-align: center;
+    color: $accent-color;
+    z-index: -1;
+  }
   &_content {
     min-width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+  &_logo {
+    margin: $spacer;
+  }
 
-    &_logo {
-      margin: $spacer;
+  &_contact-list {
+    margin-right: $spacer;
+    &_item {
+      padding: $spacer * 0.5;
+      &_link {
+        color: $accent-color;
+        font-size: 2rem;
+        &:hover {
+          color: $cta-color;
+        }
+      }
     }
   }
 }

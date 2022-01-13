@@ -3,7 +3,9 @@
 .nav-button {
   @extend %focus;
   text-align: center;
+  letter-spacing: 0.2em;
   font-weight: 900;
+  height: 100%;
   color: $accent-color;
   padding: $spacer $spacer * 2;
   text-transform: uppercase;
@@ -30,17 +32,14 @@
 
 .link-list {
   display: flex;
+  list-style: none;
   &_item {
     @extend %focus;
-    list-style: none;
     display: flex;
     align-items: center;
     justify-items: center;
+    text-decoration: none;
   }
-}
-
-.link {
-  text-decoration: none;
 }
 
 .project-card {
