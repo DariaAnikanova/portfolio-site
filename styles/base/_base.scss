@@ -7,6 +7,7 @@ $secondary-color: #252d46;
 $accent-color: #d57e8e;
 $accent-color-2: #ef7165;
 $accent-color-3: #faaa58;
+$cta-color: #78e0dc;
 
 $base-font-size: 18px;
 $border-circle: 50%;
@@ -142,7 +143,10 @@ h1 {
 h2 {
   font-size: 2.5rem;
   @include small-to-large-phone {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  @include small-to-med-tablet {
+    font-size: 1.74rem;
   }
 }
 

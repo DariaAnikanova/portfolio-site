@@ -1,56 +1,56 @@
 /* Reusable components such as buttons, navbars, cards, etc */
 
 .nav-button {
-    @extend %focus;
-    text-align: center;
-    font-weight: 900;
-    color: $accent-color;
-    padding: $spacer $spacer * 2;
-    text-transform: uppercase;
-    background: none;
-    border: none;
-    cursor: pointer;
-    &:hover {
-        color: $accent-color-2;
-        background: rgba($color: $accent-color-2, $alpha: 0.3);
-    }
+  @extend %focus;
+  text-align: center;
+  font-weight: 900;
+  color: $accent-color;
+  padding: $spacer $spacer * 2;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    color: $cta-color;
+    background: rgba($color: $cta-color, $alpha: 0.3);
+  }
 }
 
 .logo {
-    @extend %focus;
-    width: 25px;
-    height: 25px;
-    background-color: $accent-color;
-    transition: transform 200ms;
-    &:hover {
-        background-color: $accent-color-2;
-        transform: scale(1.2);
-    }
+  @extend %focus;
+  width: 25px;
+  height: 25px;
+  background-color: $accent-color;
+  transition: transform 200ms;
+  &:hover {
+    background-color: $cta-color;
+    transform: scale(1.2) rotate(90deg);
+  }
 }
 
 .link-list {
+  display: flex;
+  &_item {
+    @extend %focus;
+    list-style: none;
     display: flex;
-    &_item {
-        @extend %focus;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-items: center;
-    }
+    align-items: center;
+    justify-items: center;
+  }
 }
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .project-card {
-    width: 50px;
-    height: 50px;
-    background-color: $accent-color;
+  width: 50px;
+  height: 50px;
+  background-color: $accent-color;
 }
 
 .article-card {
-    width: 50px;
-    height: 50px;
-    background-color: $accent-color-2;
+  width: 50px;
+  height: 50px;
+  background-color: $accent-color-2;
 }

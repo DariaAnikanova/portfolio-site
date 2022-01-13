@@ -70,17 +70,19 @@ body {
       color: $accent-color;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.2em;
+      margin-top: $spacer * 3;
     }
-    &_first-name {
+    &_first-name,
+    &_last-name {
       margin-left: $spacer;
     }
     &_last-name {
-      display: block;
       position: relative;
       text-align: center;
       line-height: 1.75;
       z-index: -99;
+
       @include small-to-large-phone {
         font-size: 6.5vw;
         transform: scale(1.6, 2);
@@ -110,53 +112,55 @@ body {
         background-color: rgba($base-color, 0.65);
       }
     }
-    &_subtitle {
-      letter-spacing: 0.25em;
-    }
+
     &_subtitle {
       color: $accent-color-2;
+      font-weight: 600;
       text-align: right;
       margin-right: $spacer;
+      letter-spacing: 0.25em;
     }
     &_img-container {
-      width: 15vw;
-      height: 75%;
+      height: 70%;
       position: absolute;
       bottom: $deco-border-size - 10px;
       left: 10vw;
-      width: 25vw;
+      width: 30vw;
       z-index: -98;
+      @include small-to-large-phone {
+        display: none;
+      }
+      @include small-to-med-tablet {
+        left: 50vw;
+        width: 75vw;
+      }
     }
-    &_img {
-      position: relative;
-      background: center / contain no-repeat
-        url("../assets/images/PortfolioPic.png");
+
+    &_img,
+    &_img-deco-outer,
+    &_img-deco-middle {
+      @extend %absolute;
       width: 100%;
       height: 100%;
+      background: bottom / contain no-repeat
+        url("../assets/images/PortfolioPic.png");
+    }
+    &_img {
       filter: sepia(9%) saturate(2360%) hue-rotate(188deg) brightness(95%)
         contrast(98%);
     }
-    &_img-deco-1,
-    &_img-deco-2 {
-      @extend %absolute;
-      background: center / contain no-repeat
-        url("../assets/images/PortfolioPic.png");
-      width: 100%;
-      height: 100%;
-    }
-    &_img-deco-1 {
-      top: 35px;
-      left: -50px;
-      right: 50px;
+
+    &_img-deco-outer {
+      top: $spacer * 2;
+      left: -$spacer * 2;
       filter: brightness(0) saturate(100%) invert(62%) sepia(17%)
         saturate(3706%) hue-rotate(319deg) brightness(97%) contrast(92%);
     }
-    &_img-deco-2 {
-      top: 15px;
-      left: -25px;
-      right: 25px;
-      filter: brightness(0) saturate(100%) invert(84%) sepia(25%)
-        saturate(1438%) hue-rotate(320deg) brightness(99%) contrast(98%);
+    &_img-deco-middle {
+      top: $spacer;
+      left: -$spacer;
+      filter: brightness(0) saturate(100%) invert(86%) sepia(6%) saturate(6654%)
+        hue-rotate(319deg) brightness(103%) contrast(96%);
     }
   }
   &_projects {
@@ -183,18 +187,6 @@ body {
 
     &_logo {
       margin: $spacer;
-
-      &_icon {
-        width: 25px;
-        height: 25px;
-        background-color: $accent-color;
-        transition: transform 200ms;
-
-        &:hover {
-          background-color: $accent-color-2;
-          transform: scale(1.2);
-        }
-      }
     }
   }
 }
