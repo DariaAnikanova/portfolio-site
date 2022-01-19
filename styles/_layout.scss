@@ -1,11 +1,14 @@
-/* Handles layout such as container and any grid systems*/
-
 body {
   height: 100vh;
   display: flex;
   flex-direction: column;
   padding: $deco-border-size;
-  background-color: $base-color;
+  background: linear-gradient(
+    180deg,
+    $base-color 30%,
+    $accent-color-2 60vh,
+    $base-color 70%
+  );
   overflow: hidden;
   @include small-to-med-tablet {
     padding: $deco-border-size * 1.5;
@@ -19,12 +22,7 @@ body {
   @include big-desktop-up {
     padding: $deco-border-size * 2.5;
   }
-  &::before {
-    @extend %absolute;
-    content: "";
-    z-index: -100;
-    background: url("/assets/images/darianova.svg") space;
-  }
+
   &::after {
     @extend %absolute;
     content: "";
@@ -64,118 +62,129 @@ body {
 }
 
 .content {
+  z-index: -98;
   flex-grow: 1;
-  &_hero {
+}
+
+.hero {
+  user-select: none;
+  position: relative;
+
+  height: 100%;
+
+  &_full-name {
+    font-weight: 600;
     user-select: none;
-    &_full-name {
-      color: $accent-color;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-top: 10vh;
-      user-select: none;
-    }
-    &_first-name,
-    &_last-name {
-      margin-left: $spacer;
-    }
-    &_last-name {
-      position: relative;
-      text-align: center;
-      line-height: 1.75;
-      z-index: -99;
+  }
 
-      @include small-to-large-phone {
-        font-size: 6.5vw;
-        transform: scale(1.6, 2);
-      }
-      @include small-to-med-tablet {
-        font-size: 7.5vw;
-        transform: scale(1.6, 2);
-      }
-      @include large-tablet-to-laptop {
-        font-size: 7.5vw;
-        transform: scale(1.7, 2);
-      }
-      @include desktop {
-        font-size: 8vw;
-        transform: scale(1.7, 2);
-      }
-      @include big-desktop-up {
-        font-size: 8vw;
-        transform: scale(1.7, 2);
-      }
+  &_first-name {
+    display: inline-block;
+    margin-left: $spacer;
+    color: #fff;
+    font-family: "Dancing Script", cursive;
+    letter-spacing: normal;
+    font-size: 8vw;
+    transform: rotate(-10deg);
+    text-shadow: 0 0 7px $accent-color, 0 0 10px $accent-color,
+      0 0 12px $accent-color, 0 0 16px $accent-color, 0 0 20px $accent-color;
+  }
+  &_last-name {
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    font-size: 7.5vw;
+    line-height: 2;
+    transform: scale(1.6, 2);
+    letter-spacing: 0.1em;
+    background: linear-gradient(
+      0deg,
+      #fff 30%,
+      $accent-color 40%,
+      $base-color 45%,
+      #fff 46%,
+      darken($cta-color, 25%) 60%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 
-      &::before {
-        @extend %absolute;
-        content: "";
-        z-index: -99;
-        transform: scaleY(50%);
-        background-color: rgba($base-color, 0.65);
-      }
+    @include small-to-med-tablet {
+      font-size: 7.5vw;
     }
+    @include large-tablet-to-laptop {
+      transform: scale(1.7, 2);
+    }
+    @include desktop {
+      font-size: 8vw;
+    }
+  }
 
-    &_subtitle {
-      color: $accent-color-2;
-      font-weight: 600;
-      text-align: right;
-      margin-right: $spacer;
-      letter-spacing: 0.25em;
-    }
-    &_img-container {
-      height: 70%;
+  &_subtitle {
+    color: $accent-color-2;
+    font-weight: 600;
+    text-align: right;
+    margin-right: $spacer;
+    letter-spacing: 0.25em;
+  }
+
+  &_img-container {
+    display: none;
+
+    @include small-to-med-tablet {
+      display: unset;
       position: absolute;
+      left: 50vw;
+      width: 75vw;
+      height: 70%;
       bottom: $deco-border-size - 10px;
-      left: 10vw;
-      width: 30vw;
-      z-index: -98;
-      @include small-to-large-phone {
-        display: none;
-      }
-      @include small-to-med-tablet {
-        left: 50vw;
-        width: 75vw;
-      }
     }
 
-    &_img,
-    &_img-deco-outer,
-    &_img-deco-middle {
-      @extend %absolute;
+    @include large-tablet-to-laptop {
+      left: 5vw;
+      width: 50vw;
+    }
+  }
+
+  &_img {
+    @extend %absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba($cta-color, 0.3),
+        rgba(darken($accent-color-3, 0.2), 0.55) 50%,
+        rgba(darken($accent-color, 30%), 0.75)
+      ),
+      url("../assets/images/PortfolioPic.png") bottom / contain no-repeat;
+    mask: url("../assets/images/PortfolioPic.png") bottom / contain no-repeat;
+  }
+}
+
+.deco {
+  &_bg {
+    position: absolute;
+    bottom: 0;
+    height: 25%;
+    width: 100%;
+    z-index: -100;
+    background: url("/assets/images/grid.svg") center / cover no-repeat;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -25%;
+
+      height: 10vh;
       width: 100%;
-      height: 100%;
-      background: bottom / contain no-repeat
-        url("../assets/images/PortfolioPic.png");
-    }
-    &_img {
-      filter: sepia(9%) saturate(2360%) hue-rotate(188deg) brightness(95%)
-        contrast(98%);
-    }
-
-    &_img-deco-outer {
-      top: $spacer * 2;
-      left: -$spacer * 2;
-      filter: brightness(0) saturate(100%) invert(62%) sepia(17%)
-        saturate(3706%) hue-rotate(319deg) brightness(97%) contrast(92%);
-    }
-    &_img-deco-middle {
-      top: $spacer;
-      left: -$spacer;
-      filter: brightness(0) saturate(100%) invert(86%) sepia(6%) saturate(6654%)
-        hue-rotate(319deg) brightness(103%) contrast(96%);
+      background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba($cta-color, 0.75) 45%,
+        #fff 50%,
+        rgba($cta-color, 0.75) 55%,
+        rgba(0, 0, 0, 0) 75%
+      );
     }
   }
-  &_projects {
-    &_grid {
-      @include responsive-grid-gallery;
-    }
-  }
-  // &_blog {
-  //     margin-top: $spacer;
-  //     &_grid {
-  //         @include responsive-grid-gallery;
-  //     }
-  // }
 }
 
 .footer {

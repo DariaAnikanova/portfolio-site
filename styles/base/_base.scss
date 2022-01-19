@@ -30,17 +30,17 @@ $screen-xl: 1904px;
   }
 }
 @mixin small-to-med-tablet {
-  @media (min-width: $screen-sm) and (max-width: #{$screen-md - 1}) {
+  @media (min-width: $screen-sm) {
     @content;
   }
 }
 @mixin large-tablet-to-laptop {
-  @media (min-width: $screen-md) and (max-width: #{$screen-lg - 1}) {
+  @media (min-width: $screen-md) {
     @content;
   }
 }
 @mixin desktop {
-  @media (min-width: $screen-lg) and (max-width: #{$screen-xl - 1}) {
+  @media (min-width: $screen-lg) {
     @content;
   }
 }
@@ -134,7 +134,7 @@ h6 {
 h1 {
   font-size: 3rem;
   font-weight: 900;
-  letter-spacing: 4px;
+
   @include small-to-large-phone {
     font-size: 2.4rem;
   }
