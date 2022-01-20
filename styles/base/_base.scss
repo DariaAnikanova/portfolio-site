@@ -86,7 +86,7 @@ $screen-xl: 1904px;
 }
 
 @mixin test-border {
-  border: 1px $accent-color-2 solid;
+  border: 1px $accent-color-2 solid !important;
 }
 
 @mixin responsive-grid-gallery {

@@ -39,21 +39,27 @@
   <body>
     <header class="header">
       <nav class="header_nav">
-        <a href="." class="header_nav_logo logo"
-          ><div class="header_nav_logo_icon"></div
+        <a href="." class="header_logo logo"
+          ><div class="header_logo_icon"></div
         ></a>
+        <div
+          class="fas fa-bars header_nav_menu-btn"
+          id="mobile"
+          role="button"
+          aria-label="nav menu"
+        ></div>
         <ul class="header_nav_list link-list">
-          <li class="header_nav_list_item link-list_item">
-            <button class="nav-button">Home</button>
+          <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">Home</button>
           </li>
-          <li class="header_nav_list_item link-list_item">
-            <button class="nav-button">About</button>
+          <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">About</button>
           </li>
-          <li class="header_nav_list_item link-list_item">
-            <button class="nav-button">Projects</button>
+          <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">Projects</button>
           </li>
-          <li class="header_nav_list_item link-list_item">
-            <button class="nav-button">Blog</button>
+          <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">Blog</button>
           </li>
         </ul>
       </nav>
@@ -66,65 +72,60 @@
         </h1>
         <h2 class="hero_subtitle">Front End Developer</h2>
 
-        <div class="hero_img-container">
-          <div class="hero_img" role="img" aria-label="Photo of Daria"></div>
-        </div>
-
-        <div class="deco_bg"></div>
+        <div class="deco-bg"></div>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer_content">
-        <a href="." class="footer_logo logo"
-          ><div class="footer_logo_icon"></div
-        ></a>
-        <ul class="footer_contact-list link-list">
-          <li class="footer_contact-list_item link-list_item">
-            <a
-              href="https://github.com/DariaAnikanova"
-              class="footer_contact-list_item_link"
-              ><span
-                class="fab fa-github-square"
-                role="img"
-                aria-label="github"
-              ></span
-            ></a>
-          </li>
-          <li class="footer_contact-list_item link-list_item">
-            <a
-              href="https://www.linkedin.com/in/dariaanikanova/"
-              class="footer_contact-list_item_link"
-              ><span
-                class="fab fa-linkedin"
-                role="img"
-                aria-label="linkedin"
-              ></span
-            ></a>
-          </li>
-          <li class="footer_contact-list_item link-list_item">
-            <a
-              href="https://twitter.com/DariaNovaDev"
-              class="footer_contact-list_item_link"
-              ><span
-                class="fab fa-twitter-square"
-                role="img"
-                aria-label="twitter"
-              ></span
-            ></a>
-          </li>
-          <li class="footer_contact-list_item link-list_item">
-            <a
-              href="mailto:contact@darianova.dev"
-              class="footer_contact-list_item_link"
-              ><span
-                class="fas fa-envelope-square"
-                role="img"
-                aria-label="email"
-              ></span
-            ></a>
-          </li>
-        </ul>
-      </div>
+      <a href="." class="footer_logo logo"
+        ><div class="footer_logo_icon"></div
+      ></a>
+      <ul class="footer_contact-list link-list">
+        <li class="footer_contact-list_item link-list_item">
+          <a
+            href="https://www.linkedin.com/in/dariaanikanova/"
+            class="footer_contact-list_item_link link-list_item"
+            ><span
+              class="fab fa-linkedin"
+              role="img"
+              aria-label="linkedin"
+            ></span
+          ></a>
+        </li>
+        <li class="footer_contact-list_item link-list_item">
+          <a
+            href="https://twitter.com/DariaNovaDev"
+            class="footer_contact-list_item_link link-list_item"
+            ><span
+              class="fab fa-twitter-square"
+              role="img"
+              aria-label="twitter"
+            ></span
+          ></a>
+        </li>
+        <li class="footer_contact-list_item link-list_item">
+          <a
+            href="https://github.com/DariaAnikanova"
+            class="footer_contact-list_item_link link-list_item"
+            ><span
+              class="fab fa-github-square"
+              role="img"
+              aria-label="github"
+            ></span
+          ></a>
+        </li>
+        <li class="footer_contact-list_item link-list_item">
+          <a
+            href="mailto:contact@darianova.dev"
+            class="footer_contact-list_item_link link-list_item"
+            ><span
+              class="fas fa-envelope-square"
+              role="img"
+              aria-label="email"
+            ></span
+          ></a>
+        </li>
+      </ul>
+
       <small>Daria Anikanova - 2022 &copy;</small>
     </footer>
   </body>
