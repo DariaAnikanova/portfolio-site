@@ -12,7 +12,7 @@ $cta-color: #78e0dc;
 $base-font-size: 18px;
 $border-circle: 50%;
 $border-rounded: 10px;
-$deco-border-size: 8px;
+$deco-border-size: 8px; // TODO: Find a way to make this change w/ media queries
 $spacer: 1rem;
 
 /*Min-widths*/
@@ -22,11 +22,6 @@ $breakpoints: (
   large: 1264px,
   x-large: 1904px,
 );
-
-$screen-sm: 600px;
-$screen-md: 960px;
-$screen-lg: 1264px;
-$screen-xl: 1904px;
 
 /* Media Query Mixins */
 
