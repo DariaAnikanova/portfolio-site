@@ -11,16 +11,16 @@ body {
     )
     center no-repeat;
   overflow: hidden;
-  @include small-to-med-tablet {
+  @include mq(small) {
     padding: $deco-border-size * 1.5;
   }
-  @include large-tablet-to-laptop {
+  @include mq(medium) {
     padding: $deco-border-size * 1.875;
   }
-  @include desktop {
+  @include mq(large) {
     padding: $deco-border-size * 2.25;
   }
-  @include big-desktop-up {
+  @include mq(x-large) {
     padding: $deco-border-size * 2.5;
   }
 
@@ -31,16 +31,16 @@ body {
     border-style: solid;
     border-width: $deco-border-size;
     z-index: -97;
-    @include small-to-med-tablet {
+    @include mq(small) {
       border-width: $deco-border-size * 1.5;
     }
-    @include large-tablet-to-laptop {
+    @include mq(medium) {
       border-width: $deco-border-size * 1.875;
     }
-    @include desktop {
+    @include mq(large) {
       border-width: $deco-border-size * 2.25;
     }
-    @include big-desktop-up {
+    @include mq(x-large) {
       border-width: $deco-border-size * 2.5;
     }
   }
@@ -53,9 +53,10 @@ body {
   align-items: center;
 
   &_nav {
-    min-width: 100%;
-    // display: hidden;
-    @include large-tablet-to-laptop {
+    // min-width: 100%;
+    // visibility: hidden;
+    @include mq(medium) {
+      visibility: visible;
       display: flex;
       justify-content: space-between;
     }
@@ -66,21 +67,32 @@ body {
       width: 100%;
     }
     &_menu-btn {
-      @include test-border;
+      position: absolute;
+      right: $deco-border-size;
+      top: $deco-border-size;
       color: $accent-color;
-      float: right;
       padding: $spacer;
       text-align: right;
-      font-size: 25px;
+      font-size: $base-font-size;
+
+      @include mq(medium) {
+        display: none;
+      }
       &:hover {
         color: $cta-color;
+        background: rgba($cta-color, 0.3);
         cursor: pointer;
+      }
+    }
+    &_list {
+      @include mq(medium) {
+        display: flex;
       }
     }
   }
   &_logo {
     display: none;
-    @include large-tablet-to-laptop {
+    @include mq(medium) {
       display: unset;
       margin: $spacer;
     }
@@ -134,17 +146,17 @@ body {
     background-clip: text;
     color: transparent;
 
-    @include small-to-med-tablet {
+    @include mq(small) {
       font-size: 7.5vw;
     }
-    @include large-tablet-to-laptop {
+    @include mq(medium) {
       transform: scale(1.7, 2);
     }
 
-    @include desktop {
+    @include mq(large) {
       padding: $deco-border-size * 2.25;
     }
-    @include big-desktop-up {
+    @include mq(x-large) {
       padding: $deco-border-size * 2.5;
     }
   }
@@ -158,38 +170,32 @@ body {
   }
 }
 
-// .deco-bg {
-//   position: absolute;
-//   bottom: 0;
-//   height: 25%;
-//   width: 100%;
-//   z-index: -100;
-//   background: url("/assets/images/grid2.svg") center / cover no-repeat,
-//     linear-gradient(180deg, rgba($cta-color, 0.75), rgba(0, 0, 0, 0) 50%);
+.deco-bg {
+  position: absolute;
+  bottom: 0;
+  height: 25%;
+  width: 100%;
+  z-index: -100;
+  background: url("/assets/images/grid.svg") center / cover no-repeat,
+    linear-gradient(180deg, rgba($cta-color, 0.75), rgba(0, 0, 0, 0) 50%);
 
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: -25%;
-//     height: 10vh;
-//     width: 100%;
-//     background-image: linear-gradient(
-//       180deg,
-//       rgba(0, 0, 0, 0) 0%,
-//       rgba($cta-color, 0.75) 45%,
-//       #fff 50%,
-//       rgba($cta-color, 0.75) 55%,
-//       rgba(0, 0, 0, 0) 75%
-//     );
-//   }
-// }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 5px #fff, 0 0 25px 15px $cta-color;
+  }
+}
 
 .footer {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @include large-tablet-to-laptop {
+  @include mq(medium) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -198,7 +204,7 @@ body {
     font-size: 0.7rem;
     text-align: center;
     margin-bottom: $spacer * 0.25;
-    @include large-tablet-to-laptop {
+    @include mq(medium) {
       color: $base-color;
       position: absolute;
       bottom: -$deco-border-size * 1.75;
@@ -210,7 +216,7 @@ body {
 
   &_logo {
     display: none;
-    @include large-tablet-to-laptop {
+    @include mq(medium) {
       display: unset;
       margin: $spacer;
       align-self: center;
@@ -230,7 +236,7 @@ body {
       &_link {
         color: $accent-color;
         font-size: 2.5rem;
-        @include large-tablet-to-laptop {
+        @include mq(medium) {
           font-size: 2rem;
         }
         &:hover {
