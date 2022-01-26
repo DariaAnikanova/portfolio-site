@@ -2,46 +2,54 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: $deco-border-size;
   background-color: $base-color;
+  border-color: $accent-color;
+  border-style: solid;
+  border-width: $deco-border-size;
   overflow: hidden;
   @include mq(small) {
-    padding: $deco-border-size * 1.5;
+    border-width: $deco-border-size * 1.5;
   }
   @include mq(medium) {
-    padding: $deco-border-size * 1.875;
+    border-width: $deco-border-size * 1.875;
   }
   @include mq(large) {
-    padding: $deco-border-size * 2.25;
+    border-width: $deco-border-size * 2.25;
   }
   @include mq(x-large) {
-    padding: $deco-border-size * 2.5;
+    border-width: $deco-border-size * 2.5;
   }
-
-  &::after {
-    @extend %absolute;
+  &::before {
     content: "";
-    border-color: $accent-color;
-    border-style: solid;
-    border-width: $deco-border-size;
-    z-index: -97;
-    @include mq(small) {
-      border-width: $deco-border-size * 1.5;
-    }
-    @include mq(medium) {
-      border-width: $deco-border-size * 1.875;
-    }
-    @include mq(large) {
-      border-width: $deco-border-size * 2.25;
-    }
-    @include mq(x-large) {
-      border-width: $deco-border-size * 2.5;
-    }
+    position: absolute;
+    bottom: 0;
+    height: 40%;
+    width: 100%;
+    z-index: -100;
+    background: url("/assets/images/grid.svg") center / cover no-repeat,
+      linear-gradient(180deg, rgba($cta-color, 0.5), rgba(0, 0, 0, 0) 40%),
+      radial-gradient(
+        ellipse at top,
+        rgba($accent-color-2, 1),
+        rgba(0, 0, 0, 0)
+      );
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 3px #fff, 0 0 25px 15px $cta-color;
+
+    z-index: -99;
   }
 }
 
 .header {
-  @include test-border;
+  background-color: $base-color;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +58,8 @@ body {
     min-width: 100%;
 
     @include mq(medium) {
-      visibility: visible;
+      // visibility: visible;
+
       display: flex;
       justify-content: space-between;
     }
@@ -113,21 +122,10 @@ body {
   user-select: none;
   position: relative;
   height: 100%;
-
+  background: url("../assets/images/triangle.svg") top / contain no-repeat;
   &_full-name {
     font-weight: 600;
     user-select: none;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 60%;
-      background: url("../assets/images/triangle.svg") center / contain
-        no-repeat;
-      transform: rotate(180deg);
-    }
   }
 
   &_first-name {
@@ -185,33 +183,12 @@ body {
   }
 }
 
-.deco-bg {
-  position: absolute;
-  bottom: 0;
-  height: 40%;
-  width: 100%;
-  z-index: -100;
-  background: url("/assets/images/grid.svg") center / cover no-repeat,
-    linear-gradient(180deg, rgba($cta-color, 0.5), rgba(0, 0, 0, 0) 40%),
-    radial-gradient(ellipse at top, rgba($accent-color-2, 1), rgba(0, 0, 0, 0));
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-    box-shadow: 0 0 5px 3px #fff, 0 0 25px 15px $cta-color;
-  }
-}
-
 .footer {
-  position: relative;
   display: flex;
+  background-color: $base-color;
   flex-direction: column;
   justify-content: center;
-  z-index: -99;
+
   @include mq(medium) {
     flex-direction: row;
     justify-content: space-between;
