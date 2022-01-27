@@ -2,7 +2,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: $base-color;
+  background: linear-gradient(180deg, $base-color 20%, $accent-color-2 70%);
   border-color: $accent-color;
   border-style: solid;
   border-width: $deco-border-size;
@@ -30,14 +30,16 @@ body {
       linear-gradient(180deg, rgba($cta-color, 0.5), rgba(0, 0, 0, 0) 40%),
       radial-gradient(
         ellipse at top,
-        rgba($accent-color-2, 1),
+        $accent-color-3,
+        rgba($accent-color-2, 0.5),
         rgba(0, 0, 0, 0)
-      );
+      ),
+      $base-color;
   }
   &::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 10%;
     bottom: 40%;
     width: 100%;
     z-index: -99;
@@ -127,13 +129,17 @@ body {
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   user-select: none;
-  position: relative;
-  height: 100%;
+  height: 60%;
 
   &_full-name {
     font-weight: 600;
     user-select: none;
+    position: relative;
+    top: -50%;
   }
 
   &_first-name {
@@ -143,7 +149,7 @@ body {
     font-family: "Dancing Script", cursive;
     letter-spacing: normal;
     font-size: 8vw;
-    transform: rotate(-10deg);
+    transform: rotate(-15deg);
     text-shadow: 0 0 7px $accent-color, 0 0 10px $accent-color,
       0 0 12px $accent-color, 0 0 16px $accent-color, 0 0 20px $accent-color;
   }
@@ -155,17 +161,21 @@ body {
     line-height: 2;
     transform: scale(1.6, 2);
     letter-spacing: 0.1em;
-    background: linear-gradient(
-      0deg,
-      #fff 30%,
-      $accent-color 40%,
-      $base-color 45%,
-      #fff 46%,
-      darken($cta-color, 25%) 60%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
+
+    text-shadow: 0 0 7px $cta-color, 0 0 10px $cta-color, 0 0 12px $cta-color,
+      0 0 16px $cta-color, 0 0 20px $cta-color;
+    // background: linear-gradient(
+    //   0deg,
+    //   #fff 30%,
+    //   $accent-color 40%,
+    //   $base-color 45%,
+    //   #fff 46%,
+    //   darken($cta-color, 25%) 60%
+    // );
+    // -webkit-background-clip: text;
+    // background-clip: text;
+    // color: transparent;
 
     @include mq(small) {
       font-size: 7.5vw;
@@ -173,7 +183,6 @@ body {
     @include mq(medium) {
       transform: scale(1.7, 2);
     }
-
     @include mq(large) {
       padding: $deco-border-size * 2.25;
     }
@@ -206,13 +215,6 @@ body {
     font-size: 0.7rem;
     text-align: center;
     margin-bottom: $spacer * 0.25;
-    @include mq(medium) {
-      color: $base-color;
-      position: absolute;
-      bottom: -$deco-border-size * 2;
-      width: 100%;
-      margin-bottom: 0;
-    }
   }
 
   &_logo {

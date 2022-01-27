@@ -12,8 +12,6 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs387" />
   <sodipodi:namedview
      id="namedview385"
      pagecolor="#ffffff"
@@ -41,7 +39,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
      transform="matrix(0.1,0,0,-0.20989479,0,1022.5737)"
      fill="#78e0dc"
      stroke="none"
-     id="g381">
+  
+     >
     <path
        d="m 238,4863 c 39,-2 105,-2 145,0 39,1 7,3 -73,3 -80,0 -112,-2 -72,-3 z"
        id="path201" />

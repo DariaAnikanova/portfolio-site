@@ -11,7 +11,19 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs23" />
+     id="defs23">
+      <linearGradient id="Gradient1" x1="0" x2="0.5" y1="1" y2="0">
+        <stop offset="0%" stop-color="#faaa58" />
+        <stop offset="10%" stop-color="#944400"  />
+        <stop offset="35%" stop-color="#faaa58" />
+        <stop offset="55%" stop-color="#ffdd8b" />
+        <stop offset="60%" stop-color="#fff" />
+        <stop offset="65%" stop-color="#ffdd8b"  />
+        <stop offset="78%" stop-color="#faaa58" />
+        <stop offset="90%" stop-color="#944400" />
+      <stop offset="100%" stop-color="#faaa58" />
+      </linearGradient>
+   </defs>
   <sodipodi:namedview
      id="namedview21"
      pagecolor="#ffffff"
@@ -31,10 +43,18 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg19" />
   <polygon
-     points="85,85 15,85 50,16 "
+     points="83,11 12,11 48,78 "
      fill="none"
-     stroke="#faaa58"
-     stroke-width="2"
-     id="polygon17"
-     transform="matrix(1,0,0,-1,0,99.78945)" />
+     stroke="#ef7165"
+     stroke-width="1"
+     transform="rotate(25) translate(100px)"
+     transform-origin="center"
+     />
+     <polygon
+     points="90,7 5,7 48,86 "
+     fill="none"
+     stroke="#78e0dc"
+     stroke-width="1"
+     
+     />
 </svg>
