@@ -1,0 +1,37 @@
+<template>
+  <header class="header">
+    <a href="." class="header_logo logo"
+      ><div class="header_logo_icon"></div
+    ></a>
+    <nav class="header_nav">
+      <div
+        class="fas fa-bars header_nav_menu-btn"
+        id="burgerBtn"
+        role="button"
+        aria-label="nav menu"
+        onclick="toggleNav()"
+      ></div>
+      <ul class="header_nav_list link-list" id="navLinks">
+        <li class="header_nav_list_item">
+          <button class="link-list_item btn header_nav_btn">Home</button>
+        </li>
+        <!-- <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">About</button>
+          </li>
+          <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">Projects</button>
+          </li>
+          <li class="header_nav_list_item">
+            <button class="link-list_item btn header_nav_btn">Blog</button>
+          </li> -->
+      </ul>
+    </nav>
+  </header>
+</template>
+
+<script>
+export default {
+  name: "Header",
+};
+</script>
+<style scoped lang="scss"></style>
