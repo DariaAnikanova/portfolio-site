@@ -6,7 +6,7 @@ function toggleNavMenuIcon() {
   burgerBtn.classList.toggle("fa-times-circle");
 }
 
-function toggleMobileNav() {
+function toggleNav() {
   const burgerBtn = document.getElementById("burgerBtn");
   const navLinks = document.getElementById("navLinks");
   if (

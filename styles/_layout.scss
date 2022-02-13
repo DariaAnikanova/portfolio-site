@@ -19,47 +19,10 @@ body {
   @include mq(x-large) {
     border-width: $deco-border-size * 2.5;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 40%;
-    width: 100%;
-    z-index: -100;
-    background: url("/assets/images/grid.svg") center / cover no-repeat,
-      linear-gradient(180deg, rgba($cta-color, 0.5), rgba(0, 0, 0, 0) 40%),
-      radial-gradient(
-        ellipse at top,
-        $accent-color-3,
-        rgba($accent-color-2, 0.5),
-        rgba(0, 0, 0, 0)
-      ),
-      $base-color;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 10%;
-    bottom: 40%;
-    width: 100%;
-    z-index: -99;
-    background: url("/assets/images/triangle.svg") center / contain no-repeat;
-  }
-}
-.deco_bg-line {
-  position: absolute;
-  bottom: 40%;
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-  box-shadow: 0 0 5px 3px #fff, 0 0 25px 15px $cta-color;
-
-  z-index: -98;
 }
 
 .header {
   background-color: $base-color;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,8 +31,7 @@ body {
     min-width: 100%;
 
     @include mq(medium) {
-      // visibility: visible;
-
+      visibility: visible;
       display: flex;
       justify-content: space-between;
     }
@@ -111,35 +73,27 @@ body {
     }
   }
   &_logo {
-    display: none;
     @include mq(medium) {
-      display: unset;
       margin: $spacer;
     }
   }
 }
 
-// .navMenuActive {
-
-// }
-
 .content {
-  z-index: -98;
+  display: flex;
   flex-grow: 1;
 }
 
+section {
+  min-width: 100%;
+  gap: $deco-border-size;
+}
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   user-select: none;
-  height: 60%;
 
   &_full-name {
     font-weight: 600;
     user-select: none;
-    position: relative;
-    top: -50%;
   }
 
   &_first-name {
@@ -148,7 +102,7 @@ body {
     color: #fff;
     font-family: "Dancing Script", cursive;
     letter-spacing: normal;
-    font-size: 8vw;
+    font-size: 5vw;
     transform: rotate(-15deg);
     text-shadow: 0 0 7px $accent-color, 0 0 10px $accent-color,
       0 0 12px $accent-color, 0 0 16px $accent-color, 0 0 20px $accent-color;
@@ -157,29 +111,14 @@ body {
     text-align: center;
     display: block;
     text-transform: uppercase;
-    font-size: 7.5vw;
+    font-size: 5vw;
     line-height: 2;
     transform: scale(1.6, 2);
     letter-spacing: 0.1em;
     color: white;
-
     text-shadow: 0 0 7px $cta-color, 0 0 10px $cta-color, 0 0 12px $cta-color,
       0 0 16px $cta-color, 0 0 20px $cta-color;
-    // background: linear-gradient(
-    //   0deg,
-    //   #fff 30%,
-    //   $accent-color 40%,
-    //   $base-color 45%,
-    //   #fff 46%,
-    //   darken($cta-color, 25%) 60%
-    // );
-    // -webkit-background-clip: text;
-    // background-clip: text;
-    // color: transparent;
 
-    @include mq(small) {
-      font-size: 7.5vw;
-    }
     @include mq(medium) {
       transform: scale(1.7, 2);
     }
@@ -194,12 +133,49 @@ body {
   &_subtitle {
     color: $accent-color-2;
     font-weight: 600;
-    text-align: right;
-    margin-right: $spacer;
-    letter-spacing: 0.25em;
+    font-size: 5vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 0 7px $accent-color-2, 0 0 10px $accent-color-2,
+      0 0 12px $accent-color-2, 0 0 16px $accent-color-2,
+      0 0 20px $accent-color-2;
+  }
+  &_bg {
+    height: 60%;
+    background: url("/assets/images/triangle.svg") center / contain no-repeat;
+  }
+  &_bg2 {
+    position: relative;
+    height: 40%;
+    background: url("/assets/images/grid.svg") center / cover no-repeat,
+      linear-gradient(180deg, rgba($cta-color, 0.5), rgba(0, 0, 0, 0) 40%),
+      radial-gradient(
+        ellipse at top,
+        $accent-color-3,
+        rgba($accent-color-2, 0.5),
+        rgba(0, 0, 0, 0)
+      ),
+      $base-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5vh;
+      left: 0;
+      right: 0;
+      height: 10vh;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0),
+        rgba($cta-color, 0.7) 40%,
+        #fff 50%,
+        rgba($cta-color, 0.7) 60%,
+        rgba(0, 0, 0, 0)
+      );
+    }
   }
 }
-
 .footer {
   display: flex;
   background-color: $base-color;
@@ -207,14 +183,9 @@ body {
   justify-content: center;
 
   @include mq(medium) {
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
-  }
-  & > small {
-    color: $accent-color;
-    font-size: 0.7rem;
-    text-align: center;
-    margin-bottom: $spacer * 0.25;
   }
 
   &_logo {
@@ -225,12 +196,27 @@ body {
       align-self: center;
     }
   }
+  & > small {
+    color: $accent-color;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-bottom: $spacer * 0.25;
+    @include mq(medium) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 
   &_contact-list {
     display: flex;
     justify-content: center;
     gap: $spacer;
-    margin: $spacer 0;
+    padding: $spacer 0;
+    @include mq(medium) {
+      margin-right: $spacer;
+    }
     &_item {
       &_link {
         color: $accent-color;

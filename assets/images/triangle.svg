@@ -43,15 +43,13 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg19" />
   <polygon
-     points="83,11 12,11 48,78 "
+     points="86,11 14,11 50,78 "
      fill="none"
      stroke="#ef7165"
      stroke-width="1"
-     transform="rotate(25) translate(100px)"
-     transform-origin="center"
      />
      <polygon
-     points="90,7 5,7 48,86 "
+     points="92,7 7,7 50,86 "
      fill="none"
      stroke="#78e0dc"
      stroke-width="1"
