@@ -1,5 +1,6 @@
 <template>
   <section class="projects">
+    <h1>This is the projects page</h1>
     <div class="projects_container">
       <project-card />
     </div>
@@ -7,10 +8,9 @@
 </template>
 
 <script>
-import ProjectCard from "@/components/ProjectCard.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 export default {
   name: "Projects",
-  components: { ProjectCardProjectCard },
+  components: { ProjectCard },
 };
 </script>

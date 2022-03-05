@@ -1,32 +1,29 @@
 <template>
-  <header class="header">
-    <a href="." class="header_logo logo"
-      ><div class="header_logo_icon"></div
-    ></a>
+  <v-app-bar app>
+    <v-app-bar-nav-icon
+      ><router-link to="/" class="footer_logo logo"></router-link
+    ></v-app-bar-nav-icon>
+
     <nav class="header_nav">
-      <div
-        class="fas fa-bars header_nav_menu-btn"
-        id="burgerBtn"
-        role="button"
-        aria-label="nav menu"
-        onclick="toggleNav()"
-      ></div>
       <ul class="header_nav_list link-list" id="navLinks">
         <li class="header_nav_list_item">
-          <button class="link-list_item btn header_nav_btn">Home</button>
+          <router-link to="/" class="link-list_item btn header_nav_btn"
+            >Home</router-link
+          >
         </li>
-        <!-- <li class="header_nav_list_item">
-            <button class="link-list_item btn header_nav_btn">About</button>
-          </li>
-          <li class="header_nav_list_item">
-            <button class="link-list_item btn header_nav_btn">Projects</button>
-          </li>
-          <li class="header_nav_list_item">
-            <button class="link-list_item btn header_nav_btn">Blog</button>
-          </li> -->
+        <li class="header_nav_list_item">
+          <router-link to="/about" class="link-list_item btn header_nav_btn"
+            >About</router-link
+          >
+        </li>
+        <li class="header_nav_list_item">
+          <router-link to="/projects" class="link-list_item btn header_nav_btn"
+            >Projects</router-link
+          >
+        </li>
       </ul>
     </nav>
-  </header>
+  </v-app-bar>
 </template>
 
 <script>
@@ -34,29 +31,28 @@ export default {
   name: "Header",
   methods: {
     // TODO: Refactor to make sense with Vue
-    toggleNav() {
-      const burgerBtn = document.getElementById("burgerBtn");
-      const navLinks = document.getElementById("navLinks");
-      if (
-        navLinks.style.visibility === "hidden" ||
-        navLinks.style.visibility === ""
-      ) {
-        navLinks.style.visibility = "visible";
-        toggleNavMenuIcon();
-      } else {
-        navLinks.style.visibility = "hidden";
-        toggleNavMenuIcon();
-      }
-      //   burgerBtn.classList.toggle("navMenuActive");
-    },
-    // TODO: Refactor to make sense with Vue
-    toggleNavMenuIcon() {
-      burgerBtn.classList.toggle("fas");
-      burgerBtn.classList.toggle("fa-bars");
-      burgerBtn.classList.toggle("far");
-      burgerBtn.classList.toggle("fa-times-circle");
-    },
+    // toggleNav() {
+    //   const burgerBtn = document.getElementById("burgerBtn");
+    //   const navLinks = document.getElementById("navLinks");
+    //   if (
+    //     navLinks.style.visibility === "hidden" ||
+    //     navLinks.style.visibility === ""
+    //   ) {
+    //     navLinks.style.visibility = "visible";
+    //     toggleNavMenuIcon();
+    //   } else {
+    //     navLinks.style.visibility = "hidden";
+    //     toggleNavMenuIcon();
+    //   }
+    //   //   burgerBtn.classList.toggle("navMenuActive");
+    // },
+    // // TODO: Refactor to make sense with Vue
+    // toggleNavMenuIcon() {
+    //   burgerBtn.classList.toggle("fas");
+    //   burgerBtn.classList.toggle("fa-bars");
+    //   burgerBtn.classList.toggle("far");
+    //   burgerBtn.classList.toggle("fa-times-circle");
+    // },
   },
 };
 </script>
-<style scoped lang="scss"></style>

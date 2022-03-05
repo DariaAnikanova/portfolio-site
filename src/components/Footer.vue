@@ -1,8 +1,6 @@
 <template>
   <footer class="footer">
-    <a href="." class="footer_logo logo"
-      ><div class="footer_logo_icon"></div
-    ></a>
+    <router-link to="/" class="footer_logo logo"></router-link>
     <ul class="footer_contact-list link-list">
       <li class="footer_contact-list_item link-list_item">
         <a

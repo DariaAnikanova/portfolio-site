@@ -79,10 +79,10 @@ body {
   }
 }
 
-.content {
-  display: flex;
-  flex-grow: 1;
-}
+// .content {
+//   display: flex;
+//   flex-grow: 1;
+// }
 
 section {
   min-width: 100%;
@@ -143,12 +143,12 @@ section {
   }
   &_bg {
     height: 60%;
-    background: url("/assets/images/triangle.svg") center / contain no-repeat;
+    background: url("../images/triangle.svg") center / contain no-repeat;
   }
   &_bg2 {
     position: relative;
     height: 40%;
-    background: url("/assets/images/grid.svg") center / cover no-repeat,
+    background: url("../images/grid.svg") center / farthest-corner no-repeat,
       linear-gradient(180deg, rgba($cta-color, 0.5), rgba(0, 0, 0, 0) 40%),
       radial-gradient(
         ellipse at top,
