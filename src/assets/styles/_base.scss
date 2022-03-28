@@ -2,17 +2,9 @@
 
 /* Variables*/
 
-$base-color: #242d48;
-$secondary-color: #252d46;
-$accent-color: #d57e8e;
-$accent-color-2: #ef7165;
-$accent-color-3: #faaa58;
-$cta-color: #78e0dc;
-
 $base-font-size: 18px;
 $border-circle: 50%;
 $border-rounded: 10px;
-$deco-border-size: 8px; // TODO: Find a way to make this change w/ media queries
 $spacer: 1rem;
 
 /*Min-widths*/
@@ -61,95 +53,4 @@ $breakpoints: (
   padding: 0;
   position: absolute;
   width: 1px;
-}
-
-%focus {
-  &:focus {
-    outline: 2px solid $cta-color;
-  }
-}
-
-@mixin test-border {
-  border: 1px $accent-color-2 solid !important;
-}
-
-@mixin responsive-grid-gallery {
-  display: grid;
-
-  gap: 1.5rem;
-
-  // @include mq(small) {
-  //   grid-template-columns: 1fr;
-  // }
-  // @include mq(medium) {
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
-  // @include mq(large) {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
-  // @include mq(x-large) {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
-}
-
-// Typography Rules
-:root {
-  font-size: $base-font-size;
-  font-family: "Open Sans", sans-serif;
-
-  @include mq(large) {
-    font-size: 1.111rem;
-  }
-
-  @include mq(x-large) {
-    font-size: 1.333rem;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Jost", sans-serif;
-}
-
-h1 {
-  font-size: 2.4rem;
-  font-weight: 900;
-
-  @include mq(small) {
-    font-size: 3rem;
-  }
-}
-
-h2 {
-  font-size: 1.5rem;
-
-  @include mq(small) {
-    font-size: 1.74rem;
-  }
-  @include mq(medium) {
-    font-size: 2.5rem;
-  }
-}
-
-h3 {
-  font-size: 1.6rem;
-  @include mq(small) {
-    font-size: 2rem;
-  }
-}
-
-h4 {
-  font-size: 1.2rem;
-
-  @include mq(small) {
-    font-size: 1.5rem;
-  }
-}
-
-h5 {
-  font-size: 1rem;
 }

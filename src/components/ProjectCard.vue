@@ -1,8 +1,5 @@
 <template>
-  <div class="project" id="id">
-    <div class="project_img"></div>
-    <div class="project_desc"></div>
-  </div>
+  <v-card></v-card>
 </template>
 <script>
 export default {
