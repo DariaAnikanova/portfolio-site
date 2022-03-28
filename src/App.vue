@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="background">
     <Header />
     <v-main class="border">
       <router-view />
@@ -11,6 +11,9 @@
 .border {
   border-left: 15px solid #d57e8e;
   border-right: 15px solid #d57e8e;
+}
+.background {
+  background-color: #242d48 !important;
 }
 </style>
 <script>

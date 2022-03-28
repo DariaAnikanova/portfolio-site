@@ -1,16 +1,34 @@
 <template>
-  <v-container fill-height>
-    <div>
-      <h1>Daria Anikanova</h1>
-      <h2>Frontend Developer</h2>
+  <v-container>
+    <div class="d-flex">
+      <v-avatar size="200"
+        ><v-img
+          src="https://placekitten.com/200/300"
+          alt="Photo of Daria Anikanova"
+        ></v-img
+      ></v-avatar>
+      <div>
+        <h1 class="accent--text text-uppercase text-h4">Daria Anikanova</h1>
+        <h2 class="accent--text">Front End Developer</h2>
+      </div>
     </div>
-    <div class="hero_bg2"></div>
+
+    <div class="grid-container pa-0">
+      <project-card v-for="n in 3" :key="n" />
+    </div>
   </v-container>
 </template>
-
+<style lang="scss" scoped>
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+</style>
 <script>
+import ProjectCard from "../components/ProjectCard.vue";
 export default {
   name: "Main",
-  components: {},
+  components: { ProjectCard },
 };
 </script>
