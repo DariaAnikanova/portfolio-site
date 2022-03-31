@@ -1,19 +1,19 @@
 <template>
-  <v-card class="mx-auto" outlined>
+  <v-card class="mx-auto" tile outlined min-width="100%">
     <v-list-item three-line>
-      <v-list-item-content>
-        <div class="text-overline mb-4">OVERLINE</div>
-        <v-list-item-title class="text-h5 mb-1"> Headline 5 </v-list-item-title>
-        <v-list-item-subtitle
-          >Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle
-        >
-      </v-list-item-content>
-
       <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+      <v-list-item-content>
+        <v-list-item-title class="text-h5 mb-1">
+          Project Name
+        </v-list-item-title>
+        <v-list-item-subtitle>Tech</v-list-item-subtitle>
+      </v-list-item-content>
     </v-list-item>
 
     <v-card-actions>
-      <v-btn outlined rounded text> Button </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn outlined rounded icon text> <v-icon>mdi-link</v-icon> </v-btn>
+      <v-btn outlined rounded icon text> <v-icon>mdi-github</v-icon> </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -22,3 +22,4 @@ export default {
   name: "ProjectCard",
 };
 </script>
+

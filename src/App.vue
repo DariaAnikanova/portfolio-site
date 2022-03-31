@@ -1,9 +1,7 @@
 <template>
   <v-app class="background">
     <Header />
-    <v-main class="border">
-      <router-view />
-    </v-main>
+    <v-main class="border"><Main /> </v-main>
     <Footer />
   </v-app>
 </template>
@@ -18,17 +16,19 @@
 </style>
 <style lang="scss">
 .content-bg {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(36, 45, 72, 0.7);
 }
 </style>
 <script>
 import Header from "./components/Header.vue";
+import Main from "./views/Main.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Header,
+    Main,
     Footer,
   },
   data: () => ({
