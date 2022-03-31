@@ -1,7 +1,6 @@
 <template>
   <v-app class="background">
     <Header />
-    <Side-Bar />
     <v-main class="border">
       <router-view />
     </v-main>
@@ -17,16 +16,19 @@
   background-color: #242d48 !important;
 }
 </style>
+<style lang="scss">
+.content-bg {
+  background: rgba(0, 0, 0, 0.5);
+}
+</style>
 <script>
 import Header from "./components/Header.vue";
-import SideBar from "./components/SideBar.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    SideBar,
     Footer,
   },
   data: () => ({
