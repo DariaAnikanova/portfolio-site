@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app flat color="accent" class="pl-4">
+  <v-app-bar app flat clipped-left color="accent" class="pl-4">
     <v-app-bar-nav-icon
       ><v-avatar color="accent--text primary">DN</v-avatar></v-app-bar-nav-icon
     >
@@ -22,3 +22,4 @@ export default {
   methods: {},
 };
 </script>
+
