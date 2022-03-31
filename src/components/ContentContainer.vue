@@ -1,28 +1,28 @@
 <template>
   <v-card flat width="100%">
+    <v-toolbar flat color="primary" dark> </v-toolbar>
+
     <v-tabs
       vertical
       v-model="tab"
       background-color="primary"
-      slider-color="accent"
+      slider-color="cta"
+      active-class="cta--text"
+      class="accent--text"
     >
       <v-tab
-        v-for="item in tabs"
+        v-for="(item, index) in tabs"
         :key="item.title"
         v-ripple="{ class: `accent--text` }"
-        active-class=""
       >
-        <v-hover v-slot="{ hover }" open-delay="0">
-          <div class="tab d-flex">
-            <v-icon left :color="hover ? 'cta' : 'accent'">{{
-              item.icon
-            }}</v-icon>
-            <div :class="hover ? 'cta--text' : 'accent--text'">
-              {{ item.title }}
-            </div>
+        <div class="tab d-flex accent--text">
+          <v-icon left :color="tab === index ? 'cta' : 'accent'">{{
+            item.icon
+          }}</v-icon>
+          <div :class="tab === index ? 'cta--text' : 'accent--text'">
+            {{ item.title }}
           </div>
-        </v-hover>
-
+        </div>
         <v-spacer></v-spacer>
       </v-tab>
 
@@ -58,7 +58,7 @@ export default {
   name: "ContentContainer",
   components: { ProjectCard },
   data: () => ({
-    tab: "About",
+    tab: 0,
     tabs: [
       { title: "About", icon: "mdi-account-outline" },
       { title: "Projects", icon: "mdi-file-code-outline" },
