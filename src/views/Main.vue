@@ -9,13 +9,31 @@
           ></v-img
         ></v-avatar> -->
 
-        <div class="deco-border d-flex flex-column pa-4 content-bg">
+        <div class="deco-border content-bg d-flex flex-column pa-4">
           <h1
             class="accent--text text-uppercase name d-flex flex-column align-center justify-center"
           >
             <span class="name_first">Daria</span>
             <span class="name_last">Anikanova</span>
           </h1>
+          <div class="d-flex">
+            <v-spacer></v-spacer>
+            <v-btn
+              v-for="(social, index) in socials"
+              :key="index"
+              :href="social.link"
+              target="_blank"
+              icon
+              outlined
+              x-large
+              depressed
+              color="accent"
+              class="mx-2 mt-4"
+            >
+              <v-icon color="accent">{{ social.icon }}</v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
+          </div>
         </div>
         <Content-Container />
       </div>
@@ -28,7 +46,9 @@
 .main-bg {
   background: url("../assets/images/darianova.svg") round content-box;
 }
-
+.content-bg {
+  background: #191f32;
+}
 .name {
   font-family: "Pragati Narrow", sans-serif !important;
   &_first {
@@ -59,6 +79,11 @@ import ContentContainer from "../components/ContentContainer.vue";
 export default {
   name: "Main",
   components: { ContentContainer },
+  computed: {
+    socials() {
+      return this.$store.getters.getSocials;
+    },
+  },
 };
 </script>
 

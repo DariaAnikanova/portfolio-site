@@ -41,62 +41,116 @@ const projects = {
     projects: [
       {
         id: 0,
-        projectName: "Project 1",
-        projectDescription: "Description",
-        tech: ["Vue.js", "CSS", "SCSS"],
-        media: ["pic1", "pic2", "pic3"],
-        Links: {
-          Github: {
-            Private: true,
-            Source: "url",
+        title: "Project 1",
+        tech: ["JS", "HTML", "CSS"],
+        description: "Description",
+        media: [
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+        ],
+        links: {
+          github: {
+            disabled: false,
+            icon: "mdi-github",
+            url: "https://placekitten.com/",
+          },
+          live: {
+            disabled: true,
+            icon: "mdi-open-in-new",
+            url: "https://placekitten.com/",
           },
         },
       },
       {
         id: 1,
-        ProjectName: "Project 2",
-        Description: "Description",
-        Media: ["pic", "pic2", "pic3"],
-        Links: {
-          Github: {
-            Private: true,
-            Source: "url",
+        title: "Project 2",
+        tech: ["JS", "HTML", "CSS"],
+        description: "Description",
+        media: [
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+        ],
+        links: {
+          github: {
+            disabled: true,
+            icon: "mdi-github",
+            url: "https://placekitten.com/",
+          },
+          live: {
+            disabled: true,
+            icon: "mdi-open-in-new",
+            url: "https://placekitten.com/",
           },
         },
       },
       {
         id: 2,
-        ProjectName: "Project 3",
-        Description: "Description",
-        Media: ["pic", "pic2", "pic3"],
-        Links: {
-          Github: {
-            Private: true,
-            Source: "url",
+        title: "Project 3",
+        tech: ["JS", "HTML", "CSS"],
+        description: "Description",
+        media: [
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+        ],
+        links: {
+          github: {
+            disabled: true,
+            icon: "mdi-github",
+            url: "https://placekitten.com/",
+          },
+          live: {
+            disabled: true,
+            icon: "mdi-open-in-new",
+            url: "https://placekitten.com/",
           },
         },
       },
       {
         id: 3,
-        ProjectName: "Project 4",
-        Description: "Description",
-        Media: ["pic", "pic2", "pic3"],
-        Links: {
-          Github: {
-            Private: true,
-            Source: "url",
+        title: "Project 4",
+        tech: ["JS", "HTML", "CSS"],
+        description: "Description",
+        media: [
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+        ],
+        links: {
+          github: {
+            disabled: true,
+            icon: "mdi-github",
+            url: "https://placekitten.com/",
+          },
+          live: {
+            disabled: true,
+            icon: "mdi-open-in-new",
+            url: "https://placekitten.com/",
           },
         },
       },
       {
         id: 4,
-        ProjectName: "Project 5",
-        Description: "Description",
-        Media: ["pic", "pic2", "pic3"],
-        Links: {
-          Github: {
-            Private: true,
-            Source: "url",
+        title: "Project 5",
+        tech: ["JS", "HTML", "CSS"],
+        description: "Description",
+        media: [
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+          "http://placekitten.com/200/300",
+        ],
+        links: {
+          github: {
+            disabled: true,
+            icon: "mdi-github",
+            url: "https://placekitten.com/",
+          },
+          live: {
+            disabled: true,
+            icon: "mdi-open-in-new",
+            url: "https://placekitten.com/",
           },
         },
       },
@@ -191,32 +245,33 @@ export default new Vuex.Store({
     contentTabs: {
       tabs: [
         {
-          title: "About",
+          title: "about",
           icon: "mdi-account-outline",
-          description: "Here are some true facts about me:",
+          description:
+            "Front End Developer with a Business background. Here are some true facts about me:",
           disabled: false,
         },
         {
-          title: "Projects",
+          title: "projects",
           icon: "mdi-file-code-outline",
           description: "A sample of my work",
           disabled: false,
         },
         {
-          title: "Blog",
+          title: "blog",
           icon: "mdi-post-outline",
           description: "Business and Technical subjects I write about",
-          disabled: false,
+          disabled: true,
         },
         {
-          title: "Gallery",
+          title: "gallery",
           icon: "mdi-palette-outline",
           description:
             "I love exploring my creativity by finding ways to combine art and technology.",
-          disabled: false,
+          disabled: true,
         },
         {
-          title: "Contact",
+          title: "contact",
           icon: "mdi-email-outline",
           description: "Reach out to me if you're interested in collaborating!",
           disabled: false,

@@ -3,47 +3,47 @@
     flat
     tile
     rounded
-    width="100%"
-    class="content-container content-bg mt-2 mt-md-4"
+    class="content--deco-border content-bg mt-2 mt-md-4"
   >
     <v-tabs
-      v-model="tab"
-      background-color="primary"
+      v-model="currentTab"
+      background-color="secondary"
       slider-color="cta"
       active-class="cta--text"
       class="accent--text align-items"
       centered
     >
       <v-tab
-        v-for="(item, index) in tabs"
-        :key="item.title"
+        v-for="(tab, index) in tabs"
+        :key="tab.title"
         v-ripple="{ class: `accent--text` }"
-        :disabled="item.disabled"
+        :disabled="tab.disabled"
       >
         <div class="d-flex accent--text">
-          <v-icon left :color="tab === index ? 'cta' : 'accent'">{{
-            item.icon
+          <v-icon left :color="currentTab === index ? 'cta' : 'accent'">{{
+            tab.icon
           }}</v-icon>
           <div
-            :class="tab === index ? 'cta--text' : 'accent--text'"
+            :class="currentTab === index ? 'cta--text' : 'accent--text'"
             class="my-auto"
           >
-            {{ item.title }}
+            {{ tab.title }}
           </div>
         </div>
         <v-spacer></v-spacer>
       </v-tab>
 
-      <v-tabs-items v-model="tab" class="primary">
+      <v-tabs-items v-model="currentTab" class="secondary">
         <v-tab-item
-          v-for="item in tabs"
-          :key="item.title"
+          v-for="(tab, index) in tabs"
+          :key="index"
           transition="fade-transition"
         >
-          <v-card flat tile color="primary" class="px-4 pb-4">
+          <v-card flat tile color="secondary" class="px-4 pb-4">
             <v-card-text class="accent--text">
-              <h3>{{ item.description }}</h3>
+              <h3>{{ tab.description }}</h3>
               <div
+                v-if="tab.title !== 'contact'"
                 class="mt-2 mt-md-4"
                 :class="
                   $vuetify.breakpoint.mdAndUp
@@ -51,7 +51,18 @@
                     : 'grid-container'
                 "
               >
-                <project-card v-for="n of 3" :key="n" />
+                <content-card
+                  v-for="(info, index) in contentType"
+                  :key="index"
+                  :title="info.title"
+                  :tech="info.tech"
+                  :links="info.links"
+                  :media="info.media"
+                  :content="info.description || info.content"
+                />
+              </div>
+              <div v-else>
+                <p>Contact Form goes here</p>
               </div>
             </v-card-text>
           </v-card>
@@ -71,29 +82,47 @@
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
 }
-.content-container {
+.content--deco-border {
   border-left: 2px solid #d57e8e;
   border-top: 2px solid #d57e8e;
 }
 </style>
 <script>
 import { mapGetters } from "vuex";
-import ProjectCard from "./ProjectCard.vue";
+import ContentCard from "./ContentCard.vue";
 
 export default {
   name: "ContentContainer",
-  components: { ProjectCard },
+  components: { ContentCard },
   data: () => ({
-    tab: 0,
+    currentTab: 0,
   }),
   computed: {
     ...mapGetters({
       tabs: "getContentTabs",
-      aboutContent: "Root/about/getAboutContent",
-      projects: "Root/projects/getProjects",
-      blog: "Root/blog/getArticles",
-      gallery: "Root/gallery/getArt",
+      aboutContent: "getAboutContent",
+      projects: "getProjects",
+      blog: "getArticles",
+      gallery: "getArt",
     }),
+    contentType() {
+      let content = null;
+      switch (this.currentTab) {
+        case 0:
+          content = this.aboutContent;
+          break;
+        case 1:
+          content = this.projects;
+          break;
+        case 2:
+          content = this.blog;
+          break;
+        case 3:
+          content = this.gallery;
+          break;
+      }
+      return content;
+    },
   },
 };
 </script>

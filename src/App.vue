@@ -16,7 +16,7 @@
 </style>
 <style lang="scss">
 .content-bg {
-  background: rgba(36, 45, 72, 0.7);
+  background: #191f32;
 }
 </style>
 <script>
