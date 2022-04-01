@@ -41,20 +41,19 @@
           transition="fade-transition"
         >
           <v-card flat tile color="primary" class="px-4 pb-4">
-            <v-card-text class="accent--text"
-              >{{ item.title }} Content
-              <p>Something</p></v-card-text
-            >
-            <v-card-content
-              ><div
+            <v-card-text class="accent--text">
+              <h3>{{ item.description }}</h3>
+              <div
+                class="mt-2 mt-md-4"
                 :class="
                   $vuetify.breakpoint.mdAndUp
                     ? 'grid-container-md'
                     : 'grid-container'
                 "
               >
-                <project-card v-for="n of 3" :key="n" /></div
-            ></v-card-content>
+                <project-card v-for="n of 3" :key="n" />
+              </div>
+            </v-card-text>
           </v-card>
         </v-tab-item>
       </v-tabs-items>
@@ -78,6 +77,7 @@
 }
 </style>
 <script>
+import { mapGetters } from "vuex";
 import ProjectCard from "./ProjectCard.vue";
 
 export default {
@@ -85,13 +85,15 @@ export default {
   components: { ProjectCard },
   data: () => ({
     tab: 0,
-    tabs: [
-      { title: "About", icon: "mdi-account-outline", disabled: false },
-      { title: "Projects", icon: "mdi-file-code-outline", disabled: false },
-      { title: "Blog", icon: "mdi-post-outline", disabled: true },
-      { title: "Gallery", icon: "mdi-palette-outline", disabled: true },
-      { title: "Contact", icon: "mdi-email-outline", disabled: false },
-    ],
   }),
+  computed: {
+    ...mapGetters({
+      tabs: "getContentTabs",
+      aboutContent: "Root/about/getAboutContent",
+      projects: "Root/projects/getProjects",
+      blog: "Root/blog/getArticles",
+      gallery: "Root/gallery/getArt",
+    }),
+  },
 };
 </script>

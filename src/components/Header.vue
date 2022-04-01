@@ -4,14 +4,18 @@
       ><v-avatar color="accent--text primary">DN</v-avatar></v-app-bar-nav-icon
     >
     <v-spacer></v-spacer>
-    <v-btn fab small depressed color="primary" class="mr-2">
-      <v-icon color="accent">mdi-twitter</v-icon>
-    </v-btn>
-    <v-btn fab small depressed color="primary" class="mr-2">
-      <v-icon color="accent">mdi-linkedin</v-icon>
-    </v-btn>
-    <v-btn fab small depressed color="primary">
-      <v-icon color="accent">mdi-github</v-icon>
+    <v-btn
+      v-for="(social, index) in socials"
+      :key="index"
+      :href="social.link"
+      target="_blank"
+      fab
+      small
+      depressed
+      color="primary"
+      class="mr-2"
+    >
+      <v-icon color="accent">{{ social.icon }}</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
@@ -19,7 +23,11 @@
 <script>
 export default {
   name: "Header",
-  methods: {},
+  computed: {
+    socials() {
+      return this.$store.getters.getSocials;
+    },
+  },
 };
 </script>
 
