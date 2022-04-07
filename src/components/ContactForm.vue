@@ -1,43 +1,56 @@
 <template>
-  <v-form class="mt-4">
+  <v-form ref="form" class="mt-4">
     <v-text-field
       v-model="name"
       :rules="nameRules"
       label="Name"
       required
+      dense
       outlined
       clearable
       color="accent"
-      class="custom-text-color accent--text"
     ></v-text-field>
     <v-text-field
       v-model="email"
       :rules="emailRules"
       label="E-mail"
       required
+      dense
       outlined
       clearable
+      color="accent"
     ></v-text-field>
     <v-text-field
       v-model="subject"
       :rules="subjectRules"
       label="Subject"
       required
+      dense
       outlined
       clearable
+      color="accent"
     ></v-text-field>
     <v-textarea
       v-model="message"
       :rules="messageRules"
       label="Message"
       required
+      dense
       outlined
       clearable
+      color="accent"
     ></v-textarea>
-    <v-btn :disabled="!valid" class="mr-4 primary--text" @click="validate">
+    <v-btn
+      :disabled="!valid"
+      color="cta"
+      class="mr-4 primary--text"
+      @click="validate"
+    >
       Send
     </v-btn>
-    <v-btn color="error" class="primary--text" @click="reset"> Cancel </v-btn>
+    <v-btn color="accent_2" class="primary--text" @click="reset">
+      Cancel
+    </v-btn>
   </v-form>
 </template>
 <style lang="scss" scoped>
@@ -46,6 +59,7 @@
 }
 
 ::v-deep input,
+::v-deep textarea,
 ::v-deep .v-label,
 ::v-deep .mdi-close::before {
   color: #d57e8e !important;
@@ -54,6 +68,9 @@
 <script>
 export default {
   name: "ContactForm",
+  props: {
+    tab: Number,
+  },
   data: () => ({
     valid: true,
     name: "",
@@ -68,15 +85,19 @@ export default {
     message: "",
     messageRules: [(v) => !!v || "Message is required"],
   }),
+  watch: {
+    tab(newTab) {
+      if (newTab != 4) {
+        this.reset();
+      }
+    },
+  },
   methods: {
     validate() {
       this.$refs.form.validate();
     },
     reset() {
       this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
     },
   },
 };

@@ -62,7 +62,7 @@
                 />
               </div>
               <div v-else>
-                <contact-form />
+                <contact-form :tab="currentTab" />
               </div>
             </v-card-text>
           </v-card>
