@@ -40,15 +40,10 @@
       clearable
       color="accent"
     ></v-textarea>
-    <v-btn
-      :disabled="!valid"
-      color="cta"
-      class="mr-4 primary--text"
-      @click="validate"
-    >
-      Send
+    <v-btn color="cta" class="mr-4 primary--text" @click="validate">
+      Submit
     </v-btn>
-    <v-btn color="accent_2" class="primary--text" @click="reset">
+    <v-btn color="accent_2" class="primary--text" @click="onSubmit">
       Cancel
     </v-btn>
   </v-form>
@@ -69,7 +64,7 @@
 export default {
   name: "ContactForm",
   props: {
-    tab: Number,
+    tab: { type: Number, required: true },
   },
   data: () => ({
     valid: true,
@@ -98,6 +93,15 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
+    },
+    sendEmail() {
+      console.log("Email Sent!");
+    },
+    onSubmit() {
+      this.validate();
+      if (this.valid) {
+        this.sendEmail();
+      }
     },
   },
 };
