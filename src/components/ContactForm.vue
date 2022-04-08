@@ -1,8 +1,8 @@
 <template>
-  <v-form ref="form" class="mt-4">
+  <v-form ref="form" class="mt-4" @submit.prevent="onSubmit">
     <v-text-field
-      v-model="name"
-      :rules="nameRules"
+      v-model="formFields.name"
+      :rules="rules.nameRules"
       label="Name"
       required
       dense
@@ -11,8 +11,8 @@
       color="accent"
     ></v-text-field>
     <v-text-field
-      v-model="email"
-      :rules="emailRules"
+      v-model="formFields.email"
+      :rules="rules.emailRules"
       label="E-mail"
       required
       dense
@@ -21,8 +21,8 @@
       color="accent"
     ></v-text-field>
     <v-text-field
-      v-model="subject"
-      :rules="subjectRules"
+      v-model="formFields.subject"
+      :rules="rules.subjectRules"
       label="Subject"
       required
       dense
@@ -31,8 +31,8 @@
       color="accent"
     ></v-text-field>
     <v-textarea
-      v-model="message"
-      :rules="messageRules"
+      v-model="formFields.message"
+      :rules="rules.messageRules"
       label="Message"
       required
       dense
@@ -40,10 +40,8 @@
       clearable
       color="accent"
     ></v-textarea>
-    <v-btn color="cta" class="mr-4 primary--text" @click="validate">
-      Submit
-    </v-btn>
-    <v-btn color="accent_2" class="primary--text" @click="onSubmit">
+    <v-btn color="cta" class="mr-4 primary--text" type="submit"> Submit </v-btn>
+    <v-btn color="accent_2" class="primary--text" @click="reset">
       Cancel
     </v-btn>
   </v-form>
@@ -68,17 +66,21 @@ export default {
   },
   data: () => ({
     valid: true,
-    name: "",
-    nameRules: [(v) => !!v || "Name is required"],
-    email: "",
-    emailRules: [
-      (v) => !!v || "Email is required",
-      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
-    ],
-    subject: "",
-    subjectRules: [(v) => !!v || "Subject is required"],
-    message: "",
-    messageRules: [(v) => !!v || "Message is required"],
+    formFields: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    rules: {
+      nameRules: [(v) => !!v || "Name is required"],
+      emailRules: [
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      ],
+      subjectRules: [(v) => !!v || "Subject is required"],
+      messageRules: [(v) => !!v || "Message is required"],
+    },
   }),
   watch: {
     tab(newTab) {
