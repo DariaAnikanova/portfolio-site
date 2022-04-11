@@ -1,5 +1,5 @@
 <template>
-  <v-form ref="form" class="mt-4" @submit.prevent="onSubmit">
+  <v-form ref="form" id="form" v-model="valid" class="mt-4">
     <v-text-field
       v-model="formFields.name"
       :rules="rules.nameRules"
@@ -40,7 +40,14 @@
       clearable
       color="accent"
     ></v-textarea>
-    <v-btn color="cta" class="mr-4 primary--text" type="submit"> Submit </v-btn>
+    <v-btn
+      color="cta"
+      class="mr-4 primary--text"
+      :disabled="!valid"
+      @click="onSubmit"
+    >
+      Submit
+    </v-btn>
     <v-btn color="accent_2" class="primary--text" @click="reset">
       Cancel
     </v-btn>
@@ -60,7 +67,7 @@
 </style>
 <script>
 import emailjs from "@emailjs/browser";
-import { contactFormIDs } from "../secrets";
+import { contactFormIDs } from "../constants";
 
 export default {
   name: "ContactForm",
@@ -68,7 +75,7 @@ export default {
     tab: { type: Number, required: true },
   },
   data: () => ({
-    valid: true,
+    valid: false,
     formFields: {
       name: "",
       email: "",
@@ -85,6 +92,7 @@ export default {
       messageRules: [(v) => !!v || "Message is required"],
     },
   }),
+
   watch: {
     tab(newTab) {
       if (newTab != 4) {
@@ -93,19 +101,16 @@ export default {
     },
   },
   methods: {
-    validate() {
-      this.$refs.form.validate();
-    },
     reset() {
       this.$refs.form.reset();
     },
     sendEmail() {
       emailjs
-        .sendForm(
+        .send(
           contactFormIDs.serviceID,
           contactFormIDs.templateID,
-          this.$refs.form,
-          contactFormIDs.userID
+          this.formFields,
+          contactFormIDs.publicKey
         )
         .then(
           (result) => {
@@ -117,7 +122,7 @@ export default {
         );
     },
     onSubmit() {
-      this.validate();
+      this.$refs.form.validate();
       if (this.valid) {
         this.sendEmail();
       }
