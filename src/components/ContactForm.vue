@@ -1,57 +1,75 @@
 <template>
-  <v-form ref="form" id="form" v-model="valid" class="mt-4">
-    <v-text-field
-      v-model="formFields.name"
-      :rules="rules.nameRules"
-      label="Name"
-      required
-      dense
-      outlined
-      clearable
-      color="accent"
-    ></v-text-field>
-    <v-text-field
-      v-model="formFields.email"
-      :rules="rules.emailRules"
-      label="E-mail"
-      required
-      dense
-      outlined
-      clearable
-      color="accent"
-    ></v-text-field>
-    <v-text-field
-      v-model="formFields.subject"
-      :rules="rules.subjectRules"
-      label="Subject"
-      required
-      dense
-      outlined
-      clearable
-      color="accent"
-    ></v-text-field>
-    <v-textarea
-      v-model="formFields.message"
-      :rules="rules.messageRules"
-      label="Message"
-      required
-      dense
-      outlined
-      clearable
-      color="accent"
-    ></v-textarea>
-    <v-btn
-      color="cta"
-      class="mr-4 primary--text"
-      :disabled="!valid"
-      @click="onSubmit"
-    >
-      Submit
-    </v-btn>
-    <v-btn color="accent_2" class="primary--text" @click="reset">
-      Cancel
-    </v-btn>
-  </v-form>
+  <div>
+    <v-form ref="form" v-model="valid" class="mt-4">
+      <div>
+        <v-text-field
+          v-model="formFields.name"
+          :rules="rules.nameRules"
+          label="Name"
+          required
+          dense
+          outlined
+          clearable
+          color="accent"
+        ></v-text-field>
+        <v-text-field
+          v-model="formFields.email"
+          :rules="rules.emailRules"
+          label="E-mail"
+          required
+          dense
+          outlined
+          clearable
+          color="accent"
+        ></v-text-field>
+        <v-text-field
+          v-model="formFields.subject"
+          :rules="rules.subjectRules"
+          label="Subject"
+          required
+          dense
+          outlined
+          clearable
+          color="accent"
+        ></v-text-field>
+        <v-textarea
+          v-model="formFields.message"
+          :rules="rules.messageRules"
+          label="Message"
+          required
+          dense
+          outlined
+          clearable
+          color="accent"
+        ></v-textarea>
+        <v-btn
+          color="cta"
+          class="mr-4 primary--text"
+          :disabled="!valid"
+          @click.stop="onSubmit"
+        >
+          Submit
+        </v-btn>
+        <v-btn color="accent_2" class="primary--text" @click="reset">
+          Cancel
+        </v-btn>
+      </div>
+      <v-dialog v-model="emailSent" width="500">
+        <v-card color="primary">
+          <v-card-title class="accent--text"> Email Sent! </v-card-title>
+          <v-card-text class="accent--text">
+            Thank you for your message!
+          </v-card-text>
+          <v-divider></v-divider>
+          <v-card-actions>
+            <v-btn color="accent_2" class="primary--text" @click="reset"
+              >Back</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-form>
+  </div>
 </template>
 <style lang="scss" scoped>
 ::v-deep fieldset {
@@ -76,6 +94,7 @@ export default {
   },
   data: () => ({
     valid: false,
+    emailSent: true,
     formFields: {
       name: "",
       email: "",
@@ -102,6 +121,7 @@ export default {
   methods: {
     reset() {
       this.$refs.form.reset();
+      this.emailSent = false;
     },
     sendEmail() {
       emailjs
@@ -124,6 +144,7 @@ export default {
       this.$refs.form.validate();
       if (this.valid) {
         this.sendEmail();
+        this.emailSent = true;
       }
     },
   },
