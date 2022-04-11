@@ -59,6 +59,9 @@
 }
 </style>
 <script>
+import emailjs from "@emailjs/browser";
+import { contactFormIDs } from "../secrets";
+
 export default {
   name: "ContactForm",
   props: {
@@ -97,7 +100,21 @@ export default {
       this.$refs.form.reset();
     },
     sendEmail() {
-      console.log("Email Sent!");
+      emailjs
+        .sendForm(
+          contactFormIDs.serviceID,
+          contactFormIDs.templateID,
+          this.$refs.form,
+          contactFormIDs.userID
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
     },
     onSubmit() {
       this.validate();
