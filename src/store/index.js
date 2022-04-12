@@ -247,8 +247,7 @@ export default new Vuex.Store({
         {
           title: "about",
           icon: "mdi-account-outline",
-          description:
-            "Front End Developer with a Business background. Here are some true facts about me:",
+          description: "Here are some true facts about me:",
           disabled: false,
         },
         {
@@ -273,7 +272,7 @@ export default new Vuex.Store({
         {
           title: "contact",
           icon: "mdi-email-outline",
-          description: "Reach out to me if you're interested in collaborating!",
+          description: "Feel free to reach out!",
           disabled: false,
         },
       ],
@@ -294,4 +293,3 @@ export default new Vuex.Store({
     blog: blog,
   },
 });
-

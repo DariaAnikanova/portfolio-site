@@ -43,29 +43,39 @@
           color="accent"
         ></v-textarea>
         <v-btn
-          color="cta"
+          :color="valid ? 'cta ' : 'cta darken-2'"
+          small
+          :outlined="!valid"
           class="mr-4 primary--text"
-          :disabled="!valid"
           @click.stop="onSubmit"
         >
           Submit
         </v-btn>
-        <v-btn color="accent_2" class="primary--text" @click="reset">
+        <v-btn color="accent_2" small class="primary--text" @click="reset">
           Cancel
         </v-btn>
       </div>
-      <v-dialog v-model="emailSent" width="500">
-        <v-card color="primary">
-          <v-card-title class="accent--text"> Email Sent! </v-card-title>
-          <v-card-text class="accent--text">
-            Thank you for your message!
-          </v-card-text>
-          <v-divider></v-divider>
-          <v-card-actions>
-            <v-btn color="accent_2" class="primary--text" @click="reset"
-              >Back</v-btn
+      <v-dialog v-model="emailSent" max-width="400" min-width="30vw">
+        <v-card tile color="secondary">
+          <v-alert tile outlined color="accent" class="pa-0">
+            <v-card-title class="accent--text text-h5"
+              >Email Sent!</v-card-title
             >
-          </v-card-actions>
+            <v-card-text class="accent--text"
+              >Thank you for your message!</v-card-text
+            >
+
+            <v-card-actions class="px-4 pb-4">
+              <v-btn
+                color="accent_2"
+                small
+                class="primary--text"
+                @click="reset"
+              >
+                Close
+              </v-btn>
+            </v-card-actions>
+          </v-alert>
         </v-card>
       </v-dialog>
     </v-form>
@@ -81,6 +91,10 @@
 ::v-deep .v-label,
 ::v-deep .mdi-close::before {
   color: #d57e8e !important;
+}
+
+::v-deep .v-dialog {
+  border-radius: 0 !important;
 }
 </style>
 <script>
