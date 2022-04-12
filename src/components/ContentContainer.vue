@@ -62,7 +62,7 @@
                 />
               </div>
               <div v-else>
-                <p>Contact Form goes here</p>
+                <contact-form :tab="currentTab" />
               </div>
             </v-card-text>
           </v-card>
@@ -90,10 +90,11 @@
 <script>
 import { mapGetters } from "vuex";
 import ContentCard from "./ContentCard.vue";
+import ContactForm from "./ContactForm.vue";
 
 export default {
   name: "ContentContainer",
-  components: { ContentCard },
+  components: { ContentCard, ContactForm },
   data: () => ({
     currentTab: 0,
   }),
