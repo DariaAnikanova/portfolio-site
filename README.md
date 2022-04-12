@@ -1,24 +1,7 @@
-# portfolio-site
+# Daria Anikanova - Portfolio Site
 
-## Project setup
-```
-npm install
-```
+https://darianova.dev/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+My portfolio site to showcase my technical skills and projects.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Built using Vue.js and hosted on Github Pages.
