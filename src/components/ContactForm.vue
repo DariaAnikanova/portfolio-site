@@ -108,7 +108,7 @@ export default {
   },
   data: () => ({
     valid: false,
-    emailSent: true,
+    emailSent: false,
     formFields: {
       name: "",
       email: "",
