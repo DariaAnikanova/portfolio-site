@@ -1,85 +1,76 @@
 <template>
-  <div>
-    <v-form ref="form" v-model="valid" class="mt-4">
-      <div>
-        <v-text-field
-          v-model="formFields.name"
-          :rules="rules.nameRules"
-          label="Name"
-          required
-          dense
-          outlined
-          clearable
-          color="accent"
-        ></v-text-field>
-        <v-text-field
-          v-model="formFields.email"
-          :rules="rules.emailRules"
-          label="E-mail"
-          required
-          dense
-          outlined
-          clearable
-          color="accent"
-        ></v-text-field>
-        <v-text-field
-          v-model="formFields.subject"
-          :rules="rules.subjectRules"
-          label="Subject"
-          required
-          dense
-          outlined
-          clearable
-          color="accent"
-        ></v-text-field>
-        <v-textarea
-          v-model="formFields.message"
-          :rules="rules.messageRules"
-          label="Message"
-          required
-          dense
-          outlined
-          clearable
-          color="accent"
-        ></v-textarea>
-        <v-btn
-          :color="valid ? 'cta ' : 'cta darken-2'"
-          small
-          :outlined="!valid"
-          class="mr-4 primary--text"
-          @click.stop="onSubmit"
-        >
-          Submit
-        </v-btn>
-        <v-btn color="accent_2" small class="primary--text" @click="reset">
-          Cancel
-        </v-btn>
-      </div>
-      <v-dialog v-model="emailSent" max-width="400" min-width="30vw">
-        <v-card tile color="secondary">
-          <v-alert tile outlined color="accent" class="pa-0">
-            <v-card-title class="accent--text text-h5"
-              >Email Sent!</v-card-title
-            >
-            <v-card-text class="accent--text"
-              >Thank you for your message!</v-card-text
-            >
+  <v-form ref="form" v-model="valid" class="mt-4">
+    <div>
+      <v-text-field
+        v-model="formFields.name"
+        :rules="rules.nameRules"
+        label="Name"
+        required
+        dense
+        outlined
+        clearable
+        color="accent"
+      ></v-text-field>
+      <v-text-field
+        v-model="formFields.email"
+        :rules="rules.emailRules"
+        label="E-mail"
+        required
+        dense
+        outlined
+        clearable
+        color="accent"
+      ></v-text-field>
+      <v-text-field
+        v-model="formFields.subject"
+        :rules="rules.subjectRules"
+        label="Subject"
+        required
+        dense
+        outlined
+        clearable
+        color="accent"
+      ></v-text-field>
+      <v-textarea
+        v-model="formFields.message"
+        :rules="rules.messageRules"
+        label="Message"
+        required
+        dense
+        outlined
+        clearable
+        color="accent"
+      ></v-textarea>
+      <v-btn
+        :color="valid ? 'cta ' : 'cta darken-2'"
+        small
+        :outlined="!valid"
+        class="mr-4 primary--text"
+        @click.stop="onSubmit"
+      >
+        Submit
+      </v-btn>
+      <v-btn color="accent_2" small class="primary--text" @click="reset">
+        Cancel
+      </v-btn>
+    </div>
+    <v-dialog v-model="emailSent" max-width="400" min-width="30vw">
+      <v-card tile color="secondary">
+        <v-alert tile outlined color="accent" class="pa-0">
+          <v-card-title class="accent--text text-h5">Email Sent!</v-card-title>
+          <v-card-text class="accent--text"
+            >Thank you for your message!</v-card-text
+          >
 
-            <v-card-actions class="px-4 pb-4">
-              <v-btn
-                color="accent_2"
-                small
-                class="primary--text"
-                @click="reset"
-              >
-                Close
-              </v-btn>
-            </v-card-actions>
-          </v-alert>
-        </v-card>
-      </v-dialog>
-    </v-form>
-  </div>
+          <v-card-actions class="px-4 pb-4">
+            <v-btn color="accent_2" small class="primary--text" @click="reset">
+              Close
+            </v-btn>
+          </v-card-actions>
+        </v-alert>
+      </v-card>
+    </v-dialog>
+  </v-form>
 </template>
 <style lang="scss" scoped>
 ::v-deep fieldset {

@@ -34,11 +34,7 @@
       </v-tab>
 
       <v-tabs-items v-model="currentTab" class="secondary">
-        <v-tab-item
-          v-for="(tab, index) in tabs"
-          :key="index"
-          transition="fade-transition"
-        >
+        <v-tab-item v-for="(tab, index) in tabs" :key="index">
           <v-card flat tile color="secondary" class="px-4 pb-4">
             <v-card-text class="accent--text">
               <h3>{{ tab.description }}</h3>
@@ -61,9 +57,7 @@
                   :content="info.description || info.content"
                 />
               </div>
-              <div v-else>
-                <contact-form :tab="currentTab" />
-              </div>
+              <contact-form v-else :tab="currentTab" />
             </v-card-text>
           </v-card>
         </v-tab-item>

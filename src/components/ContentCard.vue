@@ -3,7 +3,7 @@
     class="mx-auto"
     tile
     outlined
-    min-width="100%"
+    width="100%"
     min-height="200px"
     max-height="350px"
     color="accent_2"
@@ -61,4 +61,3 @@ export default {
   },
 };
 </script>
-
