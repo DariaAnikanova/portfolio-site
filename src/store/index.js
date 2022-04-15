@@ -170,6 +170,7 @@ const blog = {
       {
         id: 0,
         title: "Placeholder - 1",
+        date: "Today",
         img: "http://placekitten.com/200/300",
         text: "Placeholder text for the article",
         tags: ["list", "of", "topic", "tags"],
@@ -177,6 +178,7 @@ const blog = {
       {
         id: 1,
         title: "Placeholder - 2",
+        date: "Today",
         img: "http://placekitten.com/200/300",
         text: "Placeholder text for the article",
         tags: ["list", "of", "topic", "tags"],
@@ -184,6 +186,7 @@ const blog = {
       {
         id: 2,
         title: "Placeholder - 3",
+        date: "Today",
         img: "http://placekitten.com/200/300",
         text: "Placeholder text for the article",
         tags: ["list", "of", "topic", "tags"],
@@ -261,7 +264,7 @@ export default new Vuex.Store({
           title: "blog",
           icon: "mdi-post-outline",
           description: "Business and Technical subjects I write about",
-          disabled: true,
+          disabled: false,
         },
         {
           title: "gallery",

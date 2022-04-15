@@ -1,7 +1,10 @@
 <template>
   <v-container fluid fill-height class="main-bg px-2 pt-2 pb-0">
-    <v-container fill-height class="justify-center">
-      <div class="align-center mb-auto">
+    <v-container
+      fill-height
+      class="justify-center align-content-start align-center"
+    >
+      <div class="content-wrapper d-flex flex-column align-center">
         <!-- <v-avatar size="15rem"
           ><v-img
             src="https://placekitten.com/200/300"
@@ -9,7 +12,9 @@
           ></v-img
         ></v-avatar> -->
 
-        <div class="deco-border content-bg d-flex flex-column pa-4">
+        <div
+          class="header-wrapper deco-border content-bg d-flex flex-column pa-4"
+        >
           <h1
             class="accent--text text-uppercase name d-flex flex-column align-center justify-center"
           >
@@ -70,8 +75,17 @@
   letter-spacing: 0.2vw;
 }
 .deco-border {
-  border-right: 2px solid #d57e8e;
-  border-bottom: 2px solid #d57e8e;
+  border-right: 5px solid #d57e8e;
+  border-bottom: 5px solid #d57e8e;
+}
+
+.content-wrapper {
+  height: 100%;
+  width: 60vw;
+}
+
+.header-wrapper {
+  width: 100%;
 }
 </style>
 <script>
@@ -86,4 +100,3 @@ export default {
   },
 };
 </script>
-

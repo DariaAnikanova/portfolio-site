@@ -4,6 +4,8 @@
     tile
     rounded
     class="content--deco-border content-bg mt-2 mt-md-4"
+    height="100%"
+    width="100%"
   >
     <v-tabs
       v-model="currentTab"
@@ -48,13 +50,16 @@
                 "
               >
                 <content-card
-                  v-for="(info, index) in contentType"
+                  v-for="(info, index) in content.items"
                   :key="index"
+                  :contentType="content.type"
                   :title="info.title"
                   :tech="info.tech"
                   :links="info.links"
                   :media="info.media"
+                  :img="info.img"
                   :content="info.description || info.content"
+                  :date="info.date"
                 />
               </div>
               <contact-form v-else :tab="currentTab" />
@@ -75,10 +80,11 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(30px, auto);
 }
 .content--deco-border {
-  border-left: 2px solid #d57e8e;
-  border-top: 2px solid #d57e8e;
+  border-left: 5px solid #d57e8e;
+  border-top: 5px solid #d57e8e;
 }
 </style>
 <script>
@@ -100,20 +106,20 @@ export default {
       blog: "getArticles",
       gallery: "getArt",
     }),
-    contentType() {
+    content() {
       let content = null;
       switch (this.currentTab) {
         case 0:
-          content = this.aboutContent;
+          content = { type: "about", items: [...this.aboutContent] };
           break;
         case 1:
-          content = this.projects;
+          content = { type: "projects", items: [...this.projects] };
           break;
         case 2:
-          content = this.blog;
+          content = { type: "blog", items: [...this.blog] };
           break;
         case 3:
-          content = this.gallery;
+          content = { type: "gallery", items: [...this.gallery] };
           break;
       }
       return content;
