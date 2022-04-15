@@ -89,7 +89,8 @@ const projects = {
         id: 2,
         title: "Project 3",
         tech: ["JS", "HTML", "CSS"],
-        description: "Description",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus purus, cursus a diam a, scelerisque fermentum erat. Proin ullamcorper purus id velit porttitor feugiat. Praesent porta nunc tempus, dictum velit sed, convallis metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam nisi enim, placerat in mattis ultrices, convallis in ligula. Proin sed ex sapien. Vestibulum elementum libero non mauris congue, ut hendrerit eros rhoncus.",
         media: [
           "http://placekitten.com/200/300",
           "http://placekitten.com/200/300",

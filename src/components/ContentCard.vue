@@ -3,44 +3,47 @@
     class="mx-auto"
     tile
     outlined
-    width="100%"
-    min-height="200px"
+    width="20vw"
     max-height="350px"
-    color="accent_2"
+    color="primary"
   >
     <v-img
       height="45%"
       v-if="media"
       :src="media[0]"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)"
+      gradient="to bottom, rgba(0,0,0,.2), rgba(0,0,0,1)"
       class="align-end"
     >
+      <v-card-title class="text-h5 mb-1 text-uppercase accent--text">
+        {{ title }}
+      </v-card-title>
     </v-img>
-    <v-card-title class="text-h5 mb-1 text-uppercase">
-      {{ title }}
-    </v-card-title>
+
     <v-card-subtitle v-if="tech">
       <v-btn
         color="accent"
+        class="no-events"
         outlined
         tile
-        small
+        x-small
         v-for="(item, index) in tech"
         :key="index"
         >{{ item }}</v-btn
       >
     </v-card-subtitle>
-    <v-card-text>{{ content }}</v-card-text>
+    <v-card-text class="accent--text">
+      {{ content }}
+    </v-card-text>
     <v-card-actions v-if="links" class="px-4 pt-0">
       <v-btn
         v-for="(link, index) in links"
         :key="index"
-        :disabled="link.disabled"
+        :class="link.disabled ? 'no-events' : ''"
         :href="link.url"
-        color="accent"
+        :color="link.disabled ? 'accent darken-2' : 'cta'"
         target="_blank"
-        outlined
         tile
+        outlined
         icon
         small
       >
@@ -49,6 +52,17 @@
     </v-card-actions>
   </v-card>
 </template>
+<style lang="scss" scoped>
+.no-events {
+  pointer-events: none;
+}
+
+.content-text {
+  max-width: 250px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+</style>
 <script>
 export default {
   name: "ProjectCard",
