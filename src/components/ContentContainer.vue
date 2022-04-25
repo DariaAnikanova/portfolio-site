@@ -44,7 +44,7 @@
                 v-if="tab.title !== 'contact'"
                 class="mt-2 mt-md-4"
                 :class="
-                  $vuetify.breakpoint.mdAndUp
+                  $vuetify.breakpoint.mdAndUp && content.type !== 'about'
                     ? 'grid-container-md'
                     : 'grid-container'
                 "
@@ -101,16 +101,16 @@ export default {
   computed: {
     ...mapGetters({
       tabs: "getContentTabs",
-      aboutContent: "getAboutContent",
+      about: "getAboutContent",
       projects: "getProjects",
       blog: "getArticles",
       gallery: "getArt",
     }),
     content() {
-      let content = null;
+      let content = {};
       switch (this.currentTab) {
         case 0:
-          content = { type: "about", items: [...this.aboutContent] };
+          content = { type: "about", items: [...this.about] };
           break;
         case 1:
           content = { type: "projects", items: [...this.projects] };

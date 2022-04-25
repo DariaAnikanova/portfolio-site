@@ -8,24 +8,20 @@ const about = {
     about: [
       {
         id: 0,
-        title: "Constantly Learning",
-        description: "Write something about myself",
+        title: "Continuous Learning",
+        description:
+          "Being a self-taught developer, the importance of constantly honing and expanding my technical abilities is something I am especially aware of. My excellent research skills serve to identify the most valuable concepts and technologies to learn so I can continuously level-up and make myself more valuable as a developer, team member and person. The best thing in the world to me is taking advantage of opportunities to learn something new and put it in practice as soon as possible.",
       },
       {
         id: 1,
-        title: "Risk Taker",
+        title: "Innovative Risk Taking",
         description:
           "Diving into the deep end with the expectation of making mistakes and learning from them. Love to identify opportunities and pursue them.",
       },
       {
         id: 2,
-        title: "'Multi-lingual'",
+        title: "'Multi-lingual' Communication",
         description: "Speaks tech and business",
-      },
-      {
-        id: 3,
-        title: "Social Chameleon",
-        description: "Title is kinda lame but concept is good.",
       },
     ],
   }),
@@ -175,22 +171,6 @@ const blog = {
         text: "Placeholder text for the article",
         tags: ["list", "of", "topic", "tags"],
       },
-      {
-        id: 1,
-        title: "Placeholder - 2",
-        date: "Today",
-        img: "http://placekitten.com/200/300",
-        text: "Placeholder text for the article",
-        tags: ["list", "of", "topic", "tags"],
-      },
-      {
-        id: 2,
-        title: "Placeholder - 3",
-        date: "Today",
-        img: "http://placekitten.com/200/300",
-        text: "Placeholder text for the article",
-        tags: ["list", "of", "topic", "tags"],
-      },
     ],
   }),
   getters: {
@@ -251,7 +231,8 @@ export default new Vuex.Store({
         {
           title: "about",
           icon: "mdi-account-outline",
-          description: "Here are some true facts about me:",
+          description:
+            "Here are the qualities and skills that drive my work and approach to life:",
           disabled: false,
         },
         {
@@ -263,20 +244,19 @@ export default new Vuex.Store({
         {
           title: "blog",
           icon: "mdi-post-outline",
-          description: "Business and Technical subjects I write about",
+          description: "",
           disabled: false,
         },
         {
           title: "gallery",
           icon: "mdi-palette-outline",
-          description:
-            "I love exploring my creativity by finding ways to combine art and technology.",
+          description: "Combining Art and Technology",
           disabled: true,
         },
         {
           title: "contact",
           icon: "mdi-email-outline",
-          description: "Feel free to reach out!",
+          description: "Reach",
           disabled: false,
         },
       ],
