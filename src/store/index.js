@@ -16,12 +16,13 @@ const about = {
         id: 1,
         title: "Innovative Risk Taking",
         description:
-          "Diving into the deep end with the expectation of making mistakes and learning from them. Love to identify opportunities and pursue them.",
+          "I consider myself to be a very ambitious person that is always looking for ways to take advantage of new information, resources and opportunities in any way I can. Through this ongoing process I have learned to not only to take risks and work with uncertainty but also to embrace failure; I see setbacks as worthwhile, valuable lessons that only make me better, faster and stronger going forward and wisdom I can share with my peers and colleagues.",
       },
       {
         id: 2,
         title: "'Multi-lingual' Communication",
-        description: "Speaks tech and business",
+        description:
+          "Coming from a business-oriented background and moving into a more technical career path has allowed me to effectively communicate on both sides of the spectrum and understand both sides and motivations. By speaking both these 'languages' I am not only able to effectively resolve conflicts between these two sides but I also bring a holistic perspective to the teams that I work on.",
       },
     ],
   }),
